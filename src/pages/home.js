@@ -46,8 +46,8 @@ function Home() {
         <img className="episodeButton" onClick={() => { RouteChange("episodes"); console.log("episode onClick");}} src={episodesMenuImage} alt="logo" />
         <img className="merchButton" src={merchMenuImage} alt="logo" />
 
-        <img className="aboutButton" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="logo" />
-        <img className="darkButton" src={afterDarkMenuImage} alt="logo" />
+        {/* <img className="aboutButton" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="logo" />
+        <img className="darkButton" src={afterDarkMenuImage} alt="logo" /> */}
 
         {aboutOpen ? <DisplayInfo/> : null}
 
