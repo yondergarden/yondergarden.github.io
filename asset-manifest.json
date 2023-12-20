@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/yondergarden/yondergarden.github.io/static/css/main.9c088555.css",
+    "main.js": "/yondergarden/yondergarden.github.io/static/js/main.03cfd43d.js",
+    "static/js/787.510ee1e4.chunk.js": "/yondergarden/yondergarden.github.io/static/js/787.510ee1e4.chunk.js",
+    "index.html": "/yondergarden/yondergarden.github.io/index.html",
+    "main.9c088555.css.map": "/yondergarden/yondergarden.github.io/static/css/main.9c088555.css.map",
+    "main.03cfd43d.js.map": "/yondergarden/yondergarden.github.io/static/js/main.03cfd43d.js.map",
+    "787.510ee1e4.chunk.js.map": "/yondergarden/yondergarden.github.io/static/js/787.510ee1e4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9c088555.css",
+    "static/js/main.03cfd43d.js"
+  ]
+}
