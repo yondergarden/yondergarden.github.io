@@ -104,7 +104,7 @@
 }
 
 .darkButton:hover {
-  filter: grayscale(100%) drop-shadow(0 0 2em #646cffaa);
+  filter: grayscale(60%) drop-shadow(0 0 2em #646cffaa);
   z-index: 1;
 }
 
