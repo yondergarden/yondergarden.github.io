@@ -31,31 +31,44 @@ function Home() {
   const DisplayInfo = () => {
     return (
       <div>
-        <div className="rectangle"></div>
-        <button type="button" className="closeButton" onClick={() => {setAboutOpen(false); console.log(aboutOpen)}}>X</button>
-        <h1 className="textHeading">Yonder Garden:</h1>
+        <div className="menu-container center-home">
+          <div className='info-box'>
+            <button type="button" className="closeButton" onClick={() => {setAboutOpen(false); console.log(aboutOpen)}}>X</button>
+            <h1 className="text-heading">Yonder Garden:</h1>
+            <p> This is where the information for Yonder Garden would go... If there was any ^.^</p>
+          </div>
+        </div>
       </div>
     );
   };
 
   const DisplayBackground = () => {
 
-    console.log(window.length)
-    console.log(window.height)
-
     return (
       <div>
-        <img className="center-home layer-50 no-events" src={titleImage} alt="logo" />
-        <img className="center-home layer-1 no-events" src={backgroundImage} alt="logo" />
-        <img className="center-home layer-50 no-events" src={yonderFrameImage} alt="logo" />
-        <img className="center-home layer-1 no-events" src={yonderGrassImage} alt="logo" />
+        <img className="center-home layer-50 " src={titleImage} alt="" />
+        <img className="center-home layer-1 " src={backgroundImage} alt="" />
+        <img className="center-home layer-50 " src={yonderFrameImage} alt="" />
+        <img className="center-home layer-1 " src={yonderGrassImage} alt="" />
     
-        <img className="center-home layer-0 no-events offset-bg-right" src={backgroundImage} alt="logo" />
-        <img className="center-home layer-1 no-events offset-bg-right" src={yonderGrassImage} alt="logo" />
+        <img className="center-home layer-0 offset-bg-right" src={backgroundImage} alt="" />
+        <img className="center-home layer-1 offset-bg-right" src={yonderGrassImage} alt="" />
         
-        <img className="center-home layer-0 no-events offset-bg-left" src={backgroundImage} alt="logo" />
-        <img className="center-home layer-1 no-events offset-bg-left" src={yonderGrassImage} alt="logo" />
+        <img className="center-home layer-0 offset-bg-left" src={backgroundImage} alt="" />
+        <img className="center-home layer-1 offset-bg-left" src={yonderGrassImage} alt="" />
       </div>
+    );
+  }
+
+  const DisplayMenu = () => {
+
+    return (
+      <div className="menu-container center-home">
+        <img className="image-button" onClick={() => { RouteChange("episodes"); console.log("episode onClick");}} src={episodesMenuImage} alt="logo" />
+        <img className="image-button" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="logo" />  
+        <img className="image-button spin-hover" src={merchMenuImage} alt="logo" />  
+        <img className="image-button App-logo" src={afterDarkMenuImage} alt="logo" /> 
+    </div>
     );
   }
 
@@ -63,14 +76,8 @@ function Home() {
       <header>
         <body >
         <DisplayBackground />
-        <div className="menu-container center-home">
-          <img className="image-button" onClick={() => { RouteChange("episodes"); console.log("episode onClick");}} src={episodesMenuImage} alt="logo" />
-          <img className="image-button" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="logo" />  
-          <img className="image-button spin-hover" src={merchMenuImage} alt="logo" />  
-          <img className="image-button App-logo" src={afterDarkMenuImage} alt="logo" /> 
-        </div>
+        {aboutOpen ? <DisplayInfo/> : <DisplayMenu />}
         </body>
-        {aboutOpen ? <DisplayInfo/> : null}
       </header>
 
   );
