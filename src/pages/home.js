@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 
-function Home() {
+const Home = () => {
 
 
   const [aboutOpen, setAboutOpen] = useState(false);
@@ -46,7 +46,8 @@ function Home() {
 
     return (
       <div>
-        <img className="center-home layer-50 " src={titleImage} alt="" />
+        <img className="center-home layer-51" src={titleImage} alt="" />
+
         <img className="center-home layer-1 " src={backgroundImage} alt="" />
         <img className="center-home layer-50 " src={yonderFrameImage} alt="" />
         <img className="center-home layer-1 " src={yonderGrassImage} alt="" />
@@ -64,10 +65,10 @@ function Home() {
 
     return (
       <div className="menu-container center-home">
-        <img className="image-button" onClick={() => { RouteChange("episodes"); console.log("episode onClick");}} src={episodesMenuImage} alt="logo" />
-        <img className="image-button" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="logo" />  
-        <img className="image-button spin-hover" src={merchMenuImage} alt="logo" />  
-        <img className="image-button App-logo" src={afterDarkMenuImage} alt="logo" /> 
+        <img className="image-button" onClick={() => { RouteChange("episodes"); console.log("episode onClick");}} src={episodesMenuImage} alt="" />
+        <img className="image-button" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="" />  
+        <img className="image-button spin-hover" src={merchMenuImage} alt="" />  
+        <img className="image-button" src={afterDarkMenuImage} alt="" /> 
     </div>
     );
   }

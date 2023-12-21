@@ -4,6 +4,37 @@
   }
 }
 
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .Title-logo{
+    animation: Title-logo-spin infinite 4s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+}
+
+@keyframes Title-logo-spin {
+  from {
+    height: auto;
+    width: 95vh;
+  }
+  to {
+    height: auto;
+    width: 105vh;
+  }
+}
+
+/* .yonder-title {
+  transform:translate(+25%, +25%) scale(1);
+} */
+
 .layer-0 {
   z-index: 0;
   pointer-events: none;
@@ -20,7 +51,26 @@
   z-index: 50;
   pointer-events: none;
 }
+.layer-51 {
+  z-index: 51;
+  pointer-events: none;
+}
 
+.center-home {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100vh;
+  height: 100vh;
+}
+.offset-bg-right {
+  padding-left:80vw;
+}
+.offset-bg-left {
+  padding-right:80vw;
+}
 
 .menu-container {
   top: 23vh;
@@ -38,12 +88,6 @@
 
 }
 
-.text-box {
-  border: 10px solid #000000;
-  background-color: white;
-}
-
-
 .image-button {
   z-index: 2;
   width: 27vh;
@@ -59,10 +103,7 @@
   transform: rotate(10deg);
 }
 
-.closeButton {
-  position: absolute;
-  z-index: 100;
-}
+
 
 .info-box {
   border: 8px solid #000000;
@@ -72,9 +113,11 @@
   max-width: 54vh;   
   min-height: 54vh;   
   max-height: 54vh;
-  
 }
-
+.closeButton {
+  position: absolute;
+  z-index: 100;
+}
 .text-heading {
   z-index: 5;
   position: relative;
@@ -85,21 +128,4 @@
   letter-spacing: -1px;
   line-height: 1;
   text-align: center;
-}
-
-.center-home {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  margin-left: auto;
-  margin-right: auto;
-  width: 100vh;
-  height: 100vh;
-}
-
-.offset-bg-right {
-  padding-left:80vw;
-}
-.offset-bg-left {
-  padding-right:80vw;
 }
