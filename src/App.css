@@ -1,32 +1,9 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .App-logo:hover {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {
@@ -37,108 +14,51 @@
   }
 }
 
-.parent {
-  position: relative;
-  top: 0;
-  left: 0;
-}
-.yonderFrame {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-left: auto;
-  margin-right: auto;
-  width: 1050px;
-  height: 1050px;
+
+.layer-0 {
   z-index: 0;
-  pointer-events: none;
-  z-index: 100;
+}
+.layer-1 {
+  z-index: 1;
+}
+.layer-2 {
+  z-index: 2;
+}
+.layer-50 {
+  z-index: 50;
 }
 
+
 .menu-container {
+  top: 17vh;
+  align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-content: space-evenly;
-  gap: 0.5em;
-  width: 610px;
-  height: 610px;
-  border: solid;
-}
-
-.column-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.episodeButton {
+  min-width: 60vh;   
+  max-width: 60vh;   
+  min-height: 60vh;   
+  max-height: 60vh;
   z-index: 1;
+  padding-top: 6vh;
 }
 
-.episodeButton:hover {
+
+.image-button {
+  z-index: 2;
+  width: 27vh;
+  height: 27vh;
+}
+
+.image-button:hover {
   filter: grayscale(60%) drop-shadow(0 0 2em #646cffaa);
-  z-index: 1;
   cursor: pointer;
 }
 
-.merchButton {
-  z-index: 1;
-}
-
-.merchButton:hover {
-  filter: grayscale(60%) drop-shadow(0 0 2em #646cffaa);
-  z-index: 1;
-  cursor: pointer;
+.spin-hover:hover {
   transform: rotate(10deg);
-}
-
-.aboutButton {
-  z-index: 1;
-}
-
-.circleBackground {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-left: auto;
-  margin-right: auto;
-  width: 1050px;
-  height: 1050px;
-  z-index: 0;
-}
-
-.aboutButton:hover {
-  filter: grayscale(60%) drop-shadow(0 0 2em #646cffaa);
-  z-index: 3;
-  cursor: pointer;
-}
-
-
-
-
-.darkButton {
-  z-index: 1;
-}
-
-.darkButton:hover {
-  filter: grayscale(60%) drop-shadow(0 0 2em #646cffaa);
-  cursor: pointer;
-  z-index: 1;
-}
-
-.yonderTitle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-left: auto;
-  margin-right: auto;
-  width: 1050px;
-  height: 1050px;
-  z-index: 0;
 }
 
 .closeButton {
@@ -149,14 +69,12 @@
 }
 
 .rectangle {
-  position: relative;
-  top: -3895px;
-  width: 580px;
-  height: 580px;
+  /* position: relative; */
   border: 10px solid #000000;
   background-color: #f7f7f7;
   z-index: 2;
 }
+
 .textHeading {
   z-index: 5;
   position: relative;
@@ -167,6 +85,26 @@
   font-weight: bold;
   letter-spacing: -1px;
   line-height: 1;
-  text-align:
-  center;
+  text-align: center;
+}
+
+.center-home {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100vh;
+  height: 100vh;
+}
+
+.no-events {
+  pointer-events: none;
+}
+
+.offset-bg-right {
+  padding-left:80vw;
+}
+.offset-bg-left {
+  padding-right:80vw;
 }
