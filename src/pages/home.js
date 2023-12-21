@@ -40,14 +40,17 @@ function Home() {
     <div className="parent">
       <header className="App-header">
 
-        <img className="circleBackground" src={backgroundImage} alt="logo" />
-        <img className="yonderFrame" src={yonderFrameImage} alt="logo" />
-        <img className="yonderTitle" src={titleImage} alt="logo" />
-        <img className="episodeButton" onClick={() => { RouteChange("episodes"); console.log("episode onClick");}} src={episodesMenuImage} alt="logo" />
-        <img className="merchButton" src={merchMenuImage} alt="logo" />
-
-        <img className="aboutButton" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="logo" />
-        <img className="darkButton" src={afterDarkMenuImage} alt="logo" />
+        <body>
+            <img className="circleBackground" src={backgroundImage} alt="logo" />
+            <img className="yonderFrame" src={yonderFrameImage} alt="logo" />
+            <img className="yonderTitle" src={titleImage} alt="logo" />
+            <div className="menu-container">
+              <img className="episodeButton" onClick={() => { RouteChange("episodes"); console.log("episode onClick");}} src={episodesMenuImage} alt="logo" />
+              <img className="aboutButton" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="logo" />  
+              <img className="merchButton" src={merchMenuImage} alt="logo" />  
+              <img className="darkButton" src={afterDarkMenuImage} alt="logo" /> 
+            </div>
+        </body>
 
         {aboutOpen ? <DisplayInfo/> : null}
 

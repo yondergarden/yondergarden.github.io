@@ -43,75 +43,102 @@
   left: 0;
 }
 .yonderFrame {
-  position: relative;
-  top: -970px;
-  left: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: auto;
+  margin-right: auto;
+  width: 1050px;
+  height: 1050px;
+  z-index: 0;
   pointer-events: none;
   z-index: 100;
 }
 
+.menu-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  gap: 0.5em;
+  width: 610px;
+  height: 610px;
+  border: solid;
+}
+
+.column-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .episodeButton {
-  position: relative;
-  top: -2720px;
-  left: -150px;
   z-index: 1;
 }
 
 .episodeButton:hover {
   filter: grayscale(60%) drop-shadow(0 0 2em #646cffaa);
   z-index: 1;
+  cursor: pointer;
 }
-
-.aboutButton {
-  position: relative;
-  top: -3305px;
-  left: 155px;
-  z-index: 1;
-}
-
-.circleBackground {
-  position: relative;
-  width: 1050px;
-  height: 1050px;
-  background-repeat: repeat
-}
-
-.aboutButton:hover {
-  filter: grayscale(60%) drop-shadow(0 0 2em #646cffaa);
-  z-index: 3;
-}
-
 
 .merchButton {
-  position: relative;
-  top: -2710px;
-  left: -150px;
   z-index: 1;
-  transition: transform .1s ease-in-out-elastic;
 }
 
 .merchButton:hover {
   filter: grayscale(60%) drop-shadow(0 0 2em #646cffaa);
   z-index: 1;
-  transform: rotate(360deg);
+  cursor: pointer;
+  transform: rotate(10deg);
 }
 
+.aboutButton {
+  z-index: 1;
+}
+
+.circleBackground {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: auto;
+  margin-right: auto;
+  width: 1050px;
+  height: 1050px;
+  z-index: 0;
+}
+
+.aboutButton:hover {
+  filter: grayscale(60%) drop-shadow(0 0 2em #646cffaa);
+  z-index: 3;
+  cursor: pointer;
+}
+
+
+
+
 .darkButton {
-  position: relative;
-  top: -3295px;
-  left: 155px;
   z-index: 1;
 }
 
 .darkButton:hover {
   filter: grayscale(60%) drop-shadow(0 0 2em #646cffaa);
+  cursor: pointer;
   z-index: 1;
 }
 
 .yonderTitle {
-  position: relative;
-  left: -15px;
-  top: -2000px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: auto;
+  margin-right: auto;
+  width: 1050px;
+  height: 1050px;
+  z-index: 0;
 }
 
 .closeButton {
