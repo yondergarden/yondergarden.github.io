@@ -1,6 +1,7 @@
-import '../App.css';
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Buttons from "./buttons";
+import '../App.css';
 
 
 const Home = () => {
@@ -45,7 +46,7 @@ const Home = () => {
   const DisplayBackground = () => {
 
     return (
-      <div>
+      <div className='bind-bg'>
         <img className="center-home layer-51" src={titleImage} alt="" />
 
         <img className="center-home layer-1 " src={backgroundImage} alt="" />
@@ -65,6 +66,7 @@ const Home = () => {
 
     return (
       <div className="menu-container center-home">
+        <Buttons className="center-home layer-49" />
         <img className="image-button" onClick={() => { RouteChange("episodes"); console.log("episode onClick");}} src={episodesMenuImage} alt="" />
         <img className="image-button" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="" />  
         <img className="image-button spin-hover" src={merchMenuImage} alt="" />  
@@ -77,6 +79,7 @@ const Home = () => {
       <header>
         <body >
         <DisplayBackground />
+        <Buttons className="center-home layer-49" />
         {aboutOpen ? <DisplayInfo/> : <DisplayMenu />}
         </body>
       </header>
