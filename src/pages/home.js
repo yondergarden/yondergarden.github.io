@@ -46,27 +46,52 @@ const Home = () => {
   const DisplayBackground = () => {
 
     return (
-      <div className='bind-bg'>
-        <img className="center-home layer-51" src={titleImage} alt="" />
+      <div>
+          <img className="center-home layer-51" src={titleImage} alt="" />
+  
+          {/* <img className="center-home layer-50 " src={yonderFrameImage} alt="" /> */}
 
-        <img className="center-home layer-1 " src={backgroundImage} alt="" />
-        <img className="center-home layer-50 " src={yonderFrameImage} alt="" />
-        <img className="center-home layer-1 " src={yonderGrassImage} alt="" />
-    
-        <img className="center-home layer-0 offset-bg-right" src={backgroundImage} alt="" />
-        <img className="center-home layer-1 offset-bg-right" src={yonderGrassImage} alt="" />
-        
-        <img className="center-home layer-0 offset-bg-left" src={backgroundImage} alt="" />
-        <img className="center-home layer-1 offset-bg-left" src={yonderGrassImage} alt="" />
+        <div className='bind-bg'>
+          <img className="test-bg-align" src={backgroundImage} alt="" />
+          <img className="test-bg-align" src={backgroundImage} alt="" />
+          <img className="test-bg-align" src={backgroundImage} alt="" />
+          <img className="test-bg-align" src={backgroundImage} alt="" />
+          <img className="test-bg-align" src={backgroundImage} alt="" />
+          <img className="test-bg-align" src={backgroundImage} alt="" />
+          <img className="test-bg-align" src={backgroundImage} alt="" />
+        </div>
+        <div className='bind-bg'>
+          <img className="test-bg-align" src={yonderGrassImage} alt="" />
+          <img className="test-bg-align" src={yonderGrassImage} alt="" />
+          <img className="test-bg-align" src={yonderGrassImage} alt="" /> 
+          <img className="test-bg-align" src={yonderGrassImage} alt="" />
+          <img className="test-bg-align" src={yonderGrassImage} alt="" /> 
+          <img className="test-bg-align" src={yonderGrassImage} alt="" />
+          <img className="test-bg-align" src={yonderGrassImage} alt="" /> 
+        </div>
+
+          <img className="center-home layer-50 " src={yonderFrameImage} alt="" />
+
+          {/* <img className="center-home layer-1 offset-bg-right" src={yonderGrassImage} alt="" /> */}
+          {/* <img className="center-home layer-1 offset-bg-right" src={yonderGrassImage} alt="" /> */}
+
+
+          <img className="center-home layer-1 " src={yonderGrassImage} alt="" />
+          {/* <img className="center-home layer-1" src={backgroundImage} alt="" /> */}
+      
+          {/* <img className="center-home layer-0 offset-bg-right" src={backgroundImage} alt="" /> */}
+          {/* <img className="center-home layer-1 offset-bg-right" src={yonderGrassImage} alt="" /> */}
+          
+          {/* <img className="center-home layer-0 offset-bg-left" src={backgroundImage} alt="" />
+          <img className="center-home layer-1 offset-bg-left" src={yonderGrassImage} alt="" /> */}
       </div>
-    );
+      );
   }
 
   const DisplayMenu = () => {
 
     return (
       <div className="menu-container center-home">
-        <Buttons className="center-home layer-49" />
         <img className="image-button" onClick={() => { RouteChange("episodes"); console.log("episode onClick");}} src={episodesMenuImage} alt="" />
         <img className="image-button" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="" />  
         <img className="image-button spin-hover" src={merchMenuImage} alt="" />  
@@ -79,7 +104,6 @@ const Home = () => {
       <header>
         <body >
         <DisplayBackground />
-        <Buttons className="center-home layer-49" />
         {aboutOpen ? <DisplayInfo/> : <DisplayMenu />}
         </body>
       </header>
