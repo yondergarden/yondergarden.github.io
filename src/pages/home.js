@@ -13,11 +13,14 @@ const Home = () => {
   let yonderFrameImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/yonderGardenFrameFg.png?v=1702515498646"
   let yonderGrassImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/grassLandscape.png?v=1702081026940"
   let titleImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/yonderGardenFrameBackgroundWords.png?v=1702515532263"
-
-  let episodesMenuImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/websiteButtons_0001_Episodes-copy.png?v=1702518334396"
-  let merchMenuImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/websiteButtons_0003_Merch-copy.png?v=1702518333830"
-  let aboutMenuImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/websiteButtons_0002_About-copy.png?v=1702518334131"
-  let afterDarkMenuImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/websiteButtons_0000_Layer-1-copy.png?v=1702518334889"
+  let episodesMenuImage = "https://i.imgur.com/0ZaNojS.png"
+  let episodesMenuImageHover = "https://i.imgur.com/Ce4NMJ4.png"
+  let merchMenuImage = "https://i.imgur.com/T2FqH5l.png"
+  let merchMenuImageHover = "https://i.imgur.com/3JhojrH.png"
+  let aboutMenuImage = "https://i.imgur.com/SPmRVGn.png"
+  let aboutMenuImageHover = "https://i.imgur.com/lWLPQc5.png"
+  let premiumMenuImage = "https://i.imgur.com/tsffzkB.png"
+  let premiumMenuImageHover = "https://i.imgur.com/b8CvcMX.png"
 
   let navigate = useNavigate();
 
@@ -48,7 +51,7 @@ const Home = () => {
     return (
       <div>
           <img className="center-home layer-51" src={titleImage} alt="" />
-  
+
           {/* <img className="center-home layer-50 " src={yonderFrameImage} alt="" /> */}
 
         <div className='bind-bg'>
@@ -63,11 +66,11 @@ const Home = () => {
         <div className='bind-bg'>
           <img className="test-bg-align" src={yonderGrassImage} alt="" />
           <img className="test-bg-align" src={yonderGrassImage} alt="" />
-          <img className="test-bg-align" src={yonderGrassImage} alt="" /> 
           <img className="test-bg-align" src={yonderGrassImage} alt="" />
-          <img className="test-bg-align" src={yonderGrassImage} alt="" /> 
           <img className="test-bg-align" src={yonderGrassImage} alt="" />
-          <img className="test-bg-align" src={yonderGrassImage} alt="" /> 
+          <img className="test-bg-align" src={yonderGrassImage} alt="" />
+          <img className="test-bg-align" src={yonderGrassImage} alt="" />
+          <img className="test-bg-align" src={yonderGrassImage} alt="" />
         </div>
 
           <img className="center-home layer-50 " src={yonderFrameImage} alt="" />
@@ -78,10 +81,10 @@ const Home = () => {
 
           <img className="center-home layer-1 " src={yonderGrassImage} alt="" />
           {/* <img className="center-home layer-1" src={backgroundImage} alt="" /> */}
-      
+
           {/* <img className="center-home layer-0 offset-bg-right" src={backgroundImage} alt="" /> */}
           {/* <img className="center-home layer-1 offset-bg-right" src={yonderGrassImage} alt="" /> */}
-          
+
           {/* <img className="center-home layer-0 offset-bg-left" src={backgroundImage} alt="" />
           <img className="center-home layer-1 offset-bg-left" src={yonderGrassImage} alt="" /> */}
       </div>
@@ -92,11 +95,11 @@ const Home = () => {
 
     return (
       <div className="menu-container center-home">
-        <img className="image-button" onClick={() => { RouteChange("episodes"); console.log("episode onClick");}} src={episodesMenuImage} alt="" />
-        <img className="image-button" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="" />  
-        <img className="image-button spin-hover" src={merchMenuImage} alt="" />  
-        <img className="image-button" src={afterDarkMenuImage} alt="" /> 
-    </div>
+        <img className="image-button-episodes" onClick={() => { RouteChange("episodes"); console.log("episode onClick");}} src={episodesMenuImage} alt="" />
+        <img className="image-button-premium" src={premiumMenuImage} alt="" />
+        <img className="image-button-merch spin-hover" src={merchMenuImage} alt="" />
+        <img className="image-button-about" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="" />
+      </div>
     );
   }
 

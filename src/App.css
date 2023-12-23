@@ -56,21 +56,38 @@
   pointer-events: none;
 }
 
-.center-home {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  margin-left: auto;
-  margin-right: auto;
-  width: 100vh;
-  height: 100vh;
+@media (orientation: landscape) {
+  .center-home {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin-left: auto;
+    margin-right: auto;
+    width: 100vh;
+    height: 100vh;
+  }
 }
+
+@media (orientation: portrait) {
+  .center-home {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin-left: auto;
+    margin-right: auto;
+    width: 100vw;
+    height: 100vw;
+  }
+}
+
 .offset-bg-right {
   padding-left:80vw;
 }
+
 .offset-bg-left {
   padding-right:80vw;
 }
+
 .bind-bg {
   position: absolute;
   left: 50%;
@@ -86,34 +103,69 @@
 }
 
 .menu-container {
-  top: 23vh;
+  top: 20vh;
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-content: space-evenly;
-  min-width: 60vh;   
-  max-width: 60vh;   
-  min-height: 60vh;   
+  min-width: 60vh;
+  max-width: 60vh;
+  min-height: 60vh;
   max-height: 60vh;
-  z-index: 1;
+  z-index: 500;
 
 }
 
-.image-button {
+
+
+.image-button-episodes {
   z-index: 2;
-  width: 27vh;
-  height: 27vh;
+  width: 75vh;
+  height: 15vh;
 }
 
-.image-button:hover {
-  filter: grayscale(60%) drop-shadow(0 0 2em #646cffaa);
+.image-button-episodes:hover {
   cursor: pointer;
+  content: url('https://i.imgur.com/Ce4NMJ4.png');
+}
+
+.image-button-premium {
+  z-index: 2;
+  width: 75vh;
+  height: 15vh;
+}
+
+.image-button-premium:hover {
+  cursor: pointer;
+  content: url('https://i.imgur.com/b8CvcMX.png');
+}
+
+.image-button-merch {
+  z-index: 2;
+  width: 75vh;
+  height: 15vh;
+}
+
+.image-button-merch:hover {
+  cursor: pointer;
+  content: url('https://i.imgur.com/3JhojrH.png');
+}
+
+.image-button-about {
+  z-index: 2;
+  width: 75vh;
+  height: 15vh;
+}
+
+.image-button-about:hover {
+  cursor: pointer;
+  content: url('https://i.imgur.com/lWLPQc5.png');
 }
 
 .spin-hover:hover {
-  transform: rotate(10deg);
+  transform: rotate(3.5deg);
 }
 
 
@@ -122,9 +174,9 @@
   border: 8px solid #000000;
   background-color: white;
   z-index: 49;
-  min-width: 54vh;   
-  max-width: 54vh;   
-  min-height: 54vh;   
+  min-width: 54vh;
+  max-width: 54vh;
+  min-height: 54vh;
   max-height: 54vh;
 }
 .closeButton {
