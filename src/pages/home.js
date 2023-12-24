@@ -13,14 +13,10 @@ const Home = () => {
   let yonderFrameImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/yonderGardenFrameFg.png?v=1702515498646"
   let yonderGrassImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/grassLandscape.png?v=1702081026940"
   let titleImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/yonderGardenFrameBackgroundWords.png?v=1702515532263"
-  let episodesMenuImage = "https://i.imgur.com/0ZaNojS.png"
-  let episodesMenuImageHover = "https://i.imgur.com/Ce4NMJ4.png"
-  let merchMenuImage = "https://i.imgur.com/T2FqH5l.png"
-  let merchMenuImageHover = "https://i.imgur.com/3JhojrH.png"
-  let aboutMenuImage = "https://i.imgur.com/SPmRVGn.png"
-  let aboutMenuImageHover = "https://i.imgur.com/lWLPQc5.png"
-  let premiumMenuImage = "https://i.imgur.com/tsffzkB.png"
-  let premiumMenuImageHover = "https://i.imgur.com/b8CvcMX.png"
+  let episodesMenuImage = "https://i.imgur.com/tHMXkUr.png"
+  let merchMenuImage = "https://i.imgur.com/EEKI1Td.png"
+  let aboutMenuImage = "https://i.imgur.com/ZjdrIPQ.png"
+  let premiumMenuImage = "https://i.imgur.com/UHet8Vq.png"
 
   let navigate = useNavigate();
 
@@ -95,10 +91,10 @@ const Home = () => {
 
     return (
       <div className="menu-container center-home">
-        <img className="image-button-episodes" onClick={() => { RouteChange("episodes"); console.log("episode onClick");}} src={episodesMenuImage} alt="" />
-        <img className="image-button-premium" src={premiumMenuImage} alt="" />
-        <img className="image-button-merch spin-hover" src={merchMenuImage} alt="" />
-        <img className="image-button-about" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="" />
+        <img id="episodes-button" className="image-button" onClick={() => { RouteChange("episodes"); console.log("episode onClick");}} src={episodesMenuImage} alt="" />
+        <img id="premium-button" className="image-button" src={premiumMenuImage} alt="" />
+        <img id="merch-button" className="image-button spin-hover" src={merchMenuImage} alt="" />
+        <img id="about-button" className="image-button" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="" />
       </div>
     );
   }
