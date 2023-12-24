@@ -56,7 +56,7 @@
   pointer-events: none;
 }
 
-/* styles dependent on orientation */
+/* desktop styles */
 @media (orientation: landscape) {
   .center-home {
     position: absolute;
@@ -85,11 +85,18 @@
 
   .image-button {
     z-index: 2;
-    width: 75vh;
+    width: 50vh;
+    height: 13vh;
+  }
+
+  .image-button:hover {
+    z-index: 2;
+    width: 57vh;
     height: 15vh;
   }
 }
 
+/* mobile styles */
 @media (orientation: portrait) {
   .center-home {
     position: absolute;
@@ -121,8 +128,8 @@
 
   .image-button {
     z-index: 2;
-    width: 59vw;
-    height: 16vw;
+    width: 50vw;
+    height: 13vw;
   }
 }
 
@@ -154,17 +161,23 @@
 
 #episodes-button:hover {
   cursor: pointer;
-  content: url('https://i.imgur.com/Ce4NMJ4.png');
+  content: url('https://i.imgur.com/f6gNmHR.png');
 }
 
 #premium-button:hover {
   cursor: pointer;
-  content: url('https://i.imgur.com/b8CvcMX.png');
+  content: url('https://i.imgur.com/Hj4Ehh7.png');
 }
 
 #merch-button:hover {
   cursor: pointer;
-  content: url('https://i.imgur.com/3JhojrH.png');
+  content: url('https://i.imgur.com/M0NZyfJ.png');
+  z-index: 3
+}
+
+.image-button:active {
+    background-color: red;
+    width: 100%
 }
 
 #about-button:hover {
@@ -174,7 +187,7 @@
 
 #about-button:hover, #about-button:active {
   cursor: pointer;
-  content: url('https://i.imgur.com/lWLPQc5.png');
+  content: url('https://i.imgur.com/xDGevDU.png');
 }
 
 .spin-hover:hover {
