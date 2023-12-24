@@ -95,10 +95,10 @@ const Home = () => {
 
     return (
       <div className="menu-container center-home">
-        <img className="image-button-episodes" onClick={() => { RouteChange("episodes"); console.log("episode onClick");}} src={episodesMenuImage} alt="" />
-        <img className="image-button-premium" src={premiumMenuImage} alt="" />
-        <img className="image-button-merch spin-hover" src={merchMenuImage} alt="" />
-        <img className="image-button-about" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="" />
+        <img id = "episodes-button" className="image-button" onClick={() => { RouteChange("episodes"); console.log("episode onClick");}} src={episodesMenuImage} alt="" />
+        <img id = "premium-button" className="image-button" src={premiumMenuImage} alt="" />
+        <img id = "merch-button" className="image-button spin-hover" src={merchMenuImage} alt="" />
+        <img id = "about-button" className="image-button" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="" />
       </div>
     );
   }
