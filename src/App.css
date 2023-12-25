@@ -155,12 +155,7 @@
 .test-bg-align {
   width: 100vh;
   height: 100vh;
-
 }
-
-
-
-
 
 #episodes-button:hover {
   cursor: pointer;
@@ -182,12 +177,9 @@
   content: url('https://i.imgur.com/xDGevDU.png');
 }
 
-
 .spin-hover:hover {
   transform: rotate(3.5deg);
 }
-
-
 
 .info-box {
   border: 8px solid #000000;
@@ -198,10 +190,12 @@
   min-height: 54vh;
   max-height: 54vh;
 }
+
 .closeButton {
   position: absolute;
   z-index: 100;
 }
+
 .text-heading {
   z-index: 5;
   position: relative;
