@@ -18,6 +18,19 @@ const Home = () => {
   let aboutMenuImage = "https://i.imgur.com/ZjdrIPQ.png"
   let premiumMenuImage = "https://i.imgur.com/UHet8Vq.png"
 
+  // Function to preload hover images
+  function preloadImage(url) {
+    var img = new Image();
+    img.src = url;
+  }
+
+  // Preload the hover images
+  preloadImage('https://i.imgur.com/f6gNmHR.png');
+  preloadImage('https://i.imgur.com/Hj4Ehh7.png');
+  preloadImage('https://i.imgur.com/M0NZyfJ.png');
+  preloadImage('https://i.imgur.com/xDGevDU.png');
+
+
   let navigate = useNavigate();
 
   const RouteChange = (pageUrl) =>{

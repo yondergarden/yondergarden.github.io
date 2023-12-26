@@ -113,7 +113,7 @@
   }
 
   .menu-container {
-    top: 50vh;
+    top: 50%;
     align-items: center;
     display: flex;
     flex-direction: row;
