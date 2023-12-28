@@ -31,10 +31,6 @@
   }
 }
 
-/* .yonder-title {
-  transform:translate(+25%, +25%) scale(1);
-} */
-
 .layer-0 {
   z-index: 0;
   pointer-events: none;
@@ -96,10 +92,10 @@
   flex-direction: row;
 }
 
-.test-bg-align {
+.bg-align {
   width: 100vh;
   height: 100vh;
-
+  z-index: 5;
 }
 
 .menu-container {
@@ -117,8 +113,6 @@
   z-index: 500;
 
 }
-
-
 
 .image-button-episodes {
   z-index: 2;
@@ -193,4 +187,61 @@
   letter-spacing: -1px;
   line-height: 1;
   text-align: center;
+}
+
+.side-menu {
+  position: fixed;
+  z-index: 55;
+  width: 54vh;   
+  height: 100vh;   
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+
+.side-menu:hover {
+  background-color: rgb(91, 114, 148);
+  border-right: 5px solid black;
+}
+
+/* .side-menu-button {
+  border: 5px solid black;
+  height: 10vh;
+  padding: 20px;
+
+} */
+
+.side-menu:hover > .side-menu-button {
+  border: 5px solid black;
+  height: 10vh;
+}
+
+.side-menu-button:hover {
+  background-color: rgb(67, 39, 100);
+  cursor: pointer;
+}
+
+.episodes-container {
+  z-index: 49;
+  min-width: 54vh;   
+  max-width: 54vh;   
+  min-height: 54vh;   
+  max-height: 54vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+
+.episode {
+  border: 5px solid black;
+  height: 10vh;
+  background-color: rgb(67, 39, 100);
+}
+
+.episode:hover {
+  cursor: pointer;
+  filter: grayscale(70%);
 }

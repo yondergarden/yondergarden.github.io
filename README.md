@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+#Steps to MVP
+purchase domain(s)
+Point it at glitch project
+Direct Urbit notebook/Studio site to it
+Landscape:
+grass and circles to display centered with width and height equal to the height of the viewport and repeat on left and right to fill screen
+Add buttons (Episodes, About, Merch, After Dark) -Cursor changes to pointer finger on hover -Clicking Episodes: load Urbit notebook -Clicking About: does not load a new page but instead hides buttons and instead shows a square or something with the About info, and an X or back button. -Clicking Merch: Merch button vibrates/shakes and it says "coming soon" -Clicking After Dark: Same as clicking the About button, but gives info on the Premium features and includes a link to Urbit page. Also should switch the circles/frame/grass images to the After Dark ones
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Load screen
 
-## Available Scripts
+Make About "page":
 
-In the project directory, you can run:
+legalese/ToS?
+comic description and mention of premium product (After Dark)
+social media
+Make After Dark "page":
+indicate pricing and what the customer can expect
+Set up Urbit Studio site
 
-### `npm start`
+have social media accounts live and ready to post
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+have friends/family test run
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Medium term tasks
+Clean up glitch files
 
-### `npm test`
+Field on home page to input email address. People signed up on the list will get emails when new episodes drop, when merch becomes available, etc.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+RSS Feed??
+Create marketing strats
+social media
+remix/collab with other web comics
+sticker slap
+Nice to have but not necessary for MVP
+Somehow set up separate dev environment where code can be tried out but it doesn't affect the site that a user would visit.
+Would then need a way to push to live site
+Current: make an official dev remix
+long term: migrate from glitch; use git
