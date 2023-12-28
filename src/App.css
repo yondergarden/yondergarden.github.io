@@ -86,8 +86,7 @@
   }
 
   .image-button:hover {
-    width: 55vh;
-    height: 13vh;
+    scale: 110%;
   }
 
   .image-button:active {
