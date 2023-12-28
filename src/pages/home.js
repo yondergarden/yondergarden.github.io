@@ -10,9 +10,24 @@ const Home = () => {
   const [aboutOpen, setAboutOpen] = useState(false);
 
   let episodesMenuImage = "https://i.imgur.com/tHMXkUr.png"
-  let premiumMenuImage = "https://i.imgur.com/UHet8Vq.png"
   let merchMenuImage = "https://i.imgur.com/EEKI1Td.png"
   let aboutMenuImage = "https://i.imgur.com/ZjdrIPQ.png"
+  let premiumMenuImage = "https://i.imgur.com/UHet8Vq.png"
+
+
+  // What does this do? behavior the same when removed
+  //
+  // Function to preload hover images
+  // function preloadImage(url) {
+  //   var img = new Image();
+  //   img.src = url;
+  // }
+
+  // // Preload the hover images
+  // preloadImage('https://i.imgur.com/f6gNmHR.png');
+  // preloadImage('https://i.imgur.com/Hj4Ehh7.png');
+  // preloadImage('https://i.imgur.com/M0NZyfJ.png');
+  // preloadImage('https://i.imgur.com/xDGevDU.png');
 
 
   let navigate = useNavigate();
@@ -52,43 +67,14 @@ const Home = () => {
     );
   };
 
-  // const DisplayBackground = () => {
-
-  //   return (
-  //     <div>
-  //       <img className="center-home layer-51" src={titleImage} alt="" />
-  //       <div className='bind-bg'>
-  //         <img className="bg-align" src={backgroundImage} alt="" />
-  //         <img className="bg-align" src={backgroundImage} alt="" />
-  //         <img className="bg-align" src={backgroundImage} alt="" />
-  //         <img className="bg-align" src={backgroundImage} alt="" />
-  //         <img className="bg-align" src={backgroundImage} alt="" />
-  //         <img className="bg-align" src={backgroundImage} alt="" />
-  //         <img className="bg-align" src={backgroundImage} alt="" />
-  //       </div>
-  //       <div className='bind-bg'>
-  //         <img className="bg-align" src={yonderGrassImage} alt="" />
-  //         <img className="bg-align" src={yonderGrassImage} alt="" />
-  //         <img className="bg-align" src={yonderGrassImage} alt="" /> 
-  //         <img className="bg-align" src={yonderGrassImage} alt="" />
-  //         <img className="bg-align" src={yonderGrassImage} alt="" /> 
-  //         <img className="bg-align" src={yonderGrassImage} alt="" />
-  //         <img className="bg-align" src={yonderGrassImage} alt="" /> 
-  //       </div>
-
-  //       <img className="center-home layer-50 " src={yonderFrameImage} alt="" />
-  //     </div>
-  //     );
-  // }
-
   const DisplayMenu = () => {
 
     return (
       <div className="menu-container center-home">
-        <img id = "episodes-button" className="image-button" onClick={() => { RouteChange("episodes"); console.log("episode onClick");}} src={episodesMenuImage} alt="" />
-        <img id = "premium-button" className="image-button" src={premiumMenuImage} alt="" />
-        <img id = "merch-button" className="image-button spin-hover" src={merchMenuImage} alt="" />
-        <img id = "about-button" className="image-button" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="" />
+        <img id="episodes-button" className="image-button" onClick={() => { RouteChange("episodes"); console.log("episode onClick");}} src={episodesMenuImage} alt="" />
+        <img id="premium-button" className="image-button" src={premiumMenuImage} alt="" />
+        <img id="merch-button" className="image-button spin-hover" src={merchMenuImage} alt="" />
+        <img id="about-button" className="image-button" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="" />
       </div>
     );
   }
