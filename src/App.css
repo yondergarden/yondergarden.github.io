@@ -87,7 +87,7 @@
 
   .image-button:hover {
     width: 55vh;
-    height: 14vh;
+    height: 13vh;
   }
 
   .image-button:active {
@@ -113,9 +113,9 @@
     align-items: center;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     flex-wrap: wrap;
-    align-content: space-evenly;
+    /* align-content: space-evenly; */
     /* min-width: 60vh;
     max-width: 100vw;
     min-height: 60vw;
@@ -159,9 +159,9 @@
   align-items: center;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   flex-wrap: wrap;
-  align-content: space-evenly;
+  /* align-content: space-evenly; */
   min-width: 60vh;
   max-width: 60vh;
   min-height: 60vh;
@@ -170,13 +170,13 @@
 
 }
 
-.image-button-episodes {
+.episodes-button {
   z-index: 2;
   width: 75vh;
   height: 15vh;
 }
 
-.image-button-episodes:hover {
+#episodes-button:hover {
   cursor: pointer;
   content: url('https://i.imgur.com/f6gNmHR.png');
 }
