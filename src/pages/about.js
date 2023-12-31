@@ -7,7 +7,7 @@ const About = () => {
     return (
         <div>
             <h1>
-                Yonder Garden about \n dave eats poop
+                Yonder Garden about \n nick eats poop
             </h1>
         </div>
     );

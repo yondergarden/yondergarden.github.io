@@ -84,16 +84,16 @@ const Home = () => {
             }
             .closeButton {
               position: fixed;
-              top: 10px;
-              left: 10px;
+              top: 1vh;
+              left: 1vh;
               background: #FF6666; /* Handle color */
               border: 'solid black';
               color: #5D2E8C; /* Track color */
-              padding: 10px;
+              padding: 1vh;
             }
             .closeButton:hover {
               cursor: pointer;
-              background: #CCFF66; /* Handle color on hover */
+              background: #FFFF00; /* Handle color on hover */
               transform: scale(1.1)
             }
             .closeButton:active {
@@ -106,13 +106,13 @@ const Home = () => {
               flex-wrap: wrap;
               justify-content: center;
               gap: 3vh;
-              margin-top: 3vh;
+              margin-top: 40vh;
             }
             .cat-image {
               width: 15vh;
               height: 15vh;
               object-fit: cover;
-              border: 2px solid black;
+              border: 0.5vh solid black;
             }
             .cat-image:hover {
               cursor: pointer;
@@ -132,7 +132,7 @@ const Home = () => {
               background: #FF6666; /* Handle color */
             }
             ::-webkit-scrollbar-thumb:hover {
-              background: #CCFF66; /* Handle color on hover */
+              background: #FFFF00; /* Handle color on hover */
             }
           </style>
         </head>
@@ -214,6 +214,11 @@ const Home = () => {
               left: '50%',
               top: '50%',
               transform: 'translate(-50%, -50%)',
+              // @media (orientation: portrait): {
+              //   // Styles for mobile (adjust the max-width as needed)
+              //   width: '6vw',
+              //   height: '60vh',
+              // },
             }}
             srcDoc={htmlContent}
           />
