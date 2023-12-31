@@ -8,6 +8,7 @@ const Home = () => {
 
 
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [episodesOpen, setEpisodesOpen] = useState(false);
 
   let backgroundImage = "https://i.imgur.com/qab6HoQ.mp4"
   let episodeVideo = "https://i.imgur.com/LRppOQ7.mp4"
@@ -58,19 +59,36 @@ const Home = () => {
   const DisplayBackground = () => {
 
     return (
-        <div className="center-home layer-51">
+        <div>
           <div className='bind-bg'>
-            <video className="center-home layer-50" autoPlay muted loop >
+            <video className="test-bg-align" autoPlay muted loop>
                 <source src={backgroundImage} type="video/mp4"/>
                 Your browser does not support the video tag.
             </video>
-            // <img className="test-bg-align" src={backgroundImage} alt="" />
-            // <img className="test-bg-align" src={backgroundImage} alt="" />
-            // <img className="test-bg-align" src={backgroundImage} alt="" />
-            // <img className="test-bg-align" src={backgroundImage} alt="" />
-            // <img className="test-bg-align" src={backgroundImage} alt="" />
-            // <img className="test-bg-align" src={backgroundImage} alt="" />
-            // <img className="test-bg-align" src={backgroundImage} alt="" />
+            <video className="test-bg-align" autoPlay muted loop>
+                <source src={backgroundImage} type="video/mp4"/>
+                Your browser does not support the video tag.
+            </video>
+            <video className="test-bg-align" autoPlay muted loop>
+                <source src={backgroundImage} type="video/mp4"/>
+                Your browser does not support the video tag.
+            </video>
+            <video className="test-bg-align" autoPlay muted loop>
+                <source src={backgroundImage} type="video/mp4"/>
+                Your browser does not support the video tag.
+            </video>
+            <video className="test-bg-align" autoPlay muted loop>
+                <source src={backgroundImage} type="video/mp4"/>
+                Your browser does not support the video tag.
+            </video>
+            <video className="test-bg-align" autoPlay muted loop>
+                <source src={backgroundImage} type="video/mp4"/>
+                Your browser does not support the video tag.
+            </video>
+            <video className="test-bg-align" autoPlay muted loop>
+                <source src={backgroundImage} type="video/mp4"/>
+                Your browser does not support the video tag.
+            </video>
           </div>
           <div className='bind-bg'>
             <img className="test-bg-align" src={yonderGrassImage} alt="" />
@@ -81,10 +99,10 @@ const Home = () => {
             <img className="test-bg-align" src={yonderGrassImage} alt="" />
             <img className="test-bg-align" src={yonderGrassImage} alt="" />
           </div>
-          <video className="center-home layer-50" autoPlay muted loop>
-              <source src={episodeVideo} type="video/mp4"/>
-              Your browser does not support the video tag.
-          </video>
+          // <video className="center-home layer-50" autoPlay muted loop>
+          //     <source src={episodeVideo} type="video/mp4"/>
+          //     Your browser does not support the video tag.
+          // </video>
           <img className="center-home layer-1 " src={yonderGrassImage} alt="" />
         </div>
       );
