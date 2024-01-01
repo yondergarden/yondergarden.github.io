@@ -1,4 +1,5 @@
-import React from "react";
+import Background from "../components/Background"
+import { Link } from 'react-router-dom';
 
 function Episodes() {
 
@@ -6,7 +7,22 @@ function Episodes() {
 
      return (
        <div>
-        <img className="circleBackground" src={backgroundImage} alt="logo" />
+        <Background/>
+        <div>
+        <div className="menu-container center-home">
+          <div className='episodes-container'>
+            {/* <h1 className="text-heading">Episodes:</h1>
+            <p> This is where the information for Yonder Garden would go... If there was any ^.^</p> */}
+            <Link to="http://youtube.com">
+              <div className="episode">Episode 1</div>
+            </Link>
+        <div className="episode">Episode 2</div>
+        <div className="episode">Episode 3</div>
+        <div className="episode">Episode 4</div>
+         
+         </div>
+        </div>
+      </div>
        </div>
      );
 
