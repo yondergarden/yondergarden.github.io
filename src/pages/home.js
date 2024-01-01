@@ -163,11 +163,7 @@ const Home = () => {
                 <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
                 <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
                 <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-                <img class="cat-image" src="https://placekitten.com/100/100" alt="Cat 1" />
-                <img class="cat-image" src="https://placekitten.com/100/101" alt="Cat 2" />
-                <img class="cat-image" src="https://placekitten.com/100/102" alt="Cat 3" />
-                <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-                <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
+
               </div>
             </div>
           </div>
