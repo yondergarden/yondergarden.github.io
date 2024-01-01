@@ -153,7 +153,21 @@
   z-index: 5;
 }
 
+.menu-container {
+  top: 20vh;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+  flex-wrap: wrap;
+  /* align-content: space-evenly; */
+  min-width: 60vh;
+  max-width: 60vh;
+  min-height: 60vh;
+  max-height: 60vh;
+  z-index: 500;
 
+}
 
 .episodes-button {
   z-index: 2;

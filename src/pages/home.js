@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import React from 'react';
 import Buttons from "./buttons";
 import '../App.css';
+import Background from "../components/Background"
 
 
 const Home = () => {
@@ -10,10 +11,6 @@ const Home = () => {
   const [aboutOpen, setAboutOpen] = useState(false);
   const [episodesOpen, setEpisodesOpen] = useState(false);
 
-  let backgroundImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/circles.gif?v=1702433383009"
-  let yonderFrameImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/yonderGardenFrameFg.png?v=1702515498646"
-  let yonderGrassImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/grassLandscape.png?v=1702081026940"
-  let titleImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/yonderGardenFrameBackgroundWords.png?v=1702515532263"
   let episodesMenuImage = "https://i.imgur.com/tHMXkUr.png"
   let merchMenuImage = "https://i.imgur.com/EEKI1Td.png"
   let aboutMenuImage = "https://i.imgur.com/ZjdrIPQ.png"
@@ -25,11 +22,19 @@ const Home = () => {
     img.src = url;
   }
 
-  // Preload the hover images
-  preloadImage('https://i.imgur.com/f6gNmHR.png');
-  preloadImage('https://i.imgur.com/Hj4Ehh7.png');
-  preloadImage('https://i.imgur.com/M0NZyfJ.png');
-  preloadImage('https://i.imgur.com/xDGevDU.png');
+  // What does this do? behavior the same when removed
+  //
+  // Function to preload hover images
+  // function preloadImage(url) {
+  //   var img = new Image();
+  //   img.src = url;
+  // }
+
+  // // Preload the hover images
+  // preloadImage('https://i.imgur.com/f6gNmHR.png');
+  // preloadImage('https://i.imgur.com/Hj4Ehh7.png');
+  // preloadImage('https://i.imgur.com/M0NZyfJ.png');
+  // preloadImage('https://i.imgur.com/xDGevDU.png');
 
 
   let navigate = useNavigate();
