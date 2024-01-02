@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import React from 'react';
-import Buttons from "./buttons";
+
 import '../App.css';
 import Background from "../components/Background"
 
@@ -15,6 +15,10 @@ const Home = () => {
   let merchMenuImage = "https://i.imgur.com/EEKI1Td.png"
   let aboutMenuImage = "https://i.imgur.com/ZjdrIPQ.png"
   let premiumMenuImage = "https://i.imgur.com/UHet8Vq.png"
+  let titleImage = "https://i.imgur.com/11iaWFH.png"
+  let backgroundImage = "https://i.imgur.com/jUZxv1T.gif"
+  let yonderGrassImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/grassLandscape.png?v=1702081026940"
+  let yonderFrameImage = "https://i.imgur.com/Sz5hzol.png"
 
   // Function to preload images
   function preloadImage(url) {
@@ -23,18 +27,18 @@ const Home = () => {
   }
 
   // What does this do? behavior the same when removed
-  //
-  // Function to preload hover images
-  // function preloadImage(url) {
-  //   var img = new Image();
-  //   img.src = url;
-  // }
+  // it preloads the hover images, otherwise there is a brief emptiness upon hover (could be another way to handle this)
+  //Function to preload hover images
+  function preloadImage(url) {
+    var img = new Image();
+    img.src = url;
+  }
 
-  // // Preload the hover images
-  // preloadImage('https://i.imgur.com/f6gNmHR.png');
-  // preloadImage('https://i.imgur.com/Hj4Ehh7.png');
-  // preloadImage('https://i.imgur.com/M0NZyfJ.png');
-  // preloadImage('https://i.imgur.com/xDGevDU.png');
+  // Preload the hover images
+  preloadImage('https://i.imgur.com/f6gNmHR.png');
+  preloadImage('https://i.imgur.com/Hj4Ehh7.png');
+  preloadImage('https://i.imgur.com/M0NZyfJ.png');
+  preloadImage('https://i.imgur.com/xDGevDU.png');
 
 
   let navigate = useNavigate();
@@ -111,7 +115,6 @@ const Home = () => {
               flex-wrap: wrap;
               justify-content: center;
               gap: 3vh;
-              margin-top: 40vh;
             }
             .cat-image {
               width: 15vh;
@@ -146,7 +149,9 @@ const Home = () => {
             <div>
               <button type="button" class="closeButton" onclick="handleCloseClick()">x</button>
               <div class="cat-container">
-                <img class="cat-image" src="https://placekitten.com/100/100" alt="Cat 1" />
+                <a href="https://yonder.garden">
+                  <img class="cat-image" src="https://placekitten.com/100/100" alt="Cat 1" />
+                </a>
                 <img class="cat-image" src="https://placekitten.com/100/101" alt="Cat 2" />
                 <img class="cat-image" src="https://placekitten.com/100/102" alt="Cat 3" />
                 <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
@@ -168,7 +173,18 @@ const Home = () => {
                 <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
                 <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
                 <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-
+                <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
+                <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
+                <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
+                <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
+                <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
+                <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
+                <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
+                <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
+                <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
+                <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
+                <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
+                <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
               </div>
             </div>
           </div>
