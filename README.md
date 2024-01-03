@@ -17,16 +17,15 @@ Portrait:
 
 -Make load screen
 
+-have social media accounts live and ready to post
+
+-have friends/family test run
+
 ##Make About "page":
 -legalese/ToS?
 -comic description and mention of premium product (After Dark)
 -social media
 
-
-
-have social media accounts live and ready to post
-
-have friends/family test run
 
 
 #Medium term tasks
