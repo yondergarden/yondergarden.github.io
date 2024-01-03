@@ -23,15 +23,17 @@ Portrait:
 
 ##Make About "page":
 -legalese/ToS?
--comic description and mention of premium product (After Dark)
+-comic description and mention of Premium
 -social media
 
 
 
 #Medium term tasks
 
-##Premium "page":
--[After MVP] indicate pricing and what the customer can expect and includes a link to Patreon page. Also should switch the circles/frame/grass images to the Premium ones
+##Premium "page" [After MVP achieved]:
+-This will show some marketing copy and indicate pricing and what the customer can expect. Includes a link to Patreon page. Also should switch the circles/frame/grass images to the Premium ones.
+-Set up Patreon API to prompt user to log in if trying to access Premium episode
+-[After above points completed] Certain episode icons will have some shiny/glittery/holographic effect, these are the premium ones. Upon clicking it will load the episode if the user is logged in via Patreon and subscribed, otherwise will prompt them to.
 
 -Create marketing strats
 -social media
