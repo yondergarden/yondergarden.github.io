@@ -13,7 +13,6 @@
   }
 }
 
-
 @media (prefers-reduced-motion: no-preference) {
   .Title-logo{
     animation: Title-logo-spin infinite 4s cubic-bezier(0.23, 1, 0.320, 1);
@@ -92,6 +91,10 @@
   .image-button:active {
     width: 50vh;
     height: 13vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 1.5vh; /* Width of the scrollbar */
   }
 }
 
@@ -200,18 +203,75 @@
 }
 
 .info-box {
-  border: 8px solid #000000;
-  background-color: white;
+  border: .5vh solid #000000;
+  background-color: pink;
   z-index: 49;
   min-width: 54vh;
   max-width: 54vh;
   min-height: 54vh;
   max-height: 54vh;
+  overflow-y: scroll;
+}
+
+.episodes-box {
+  border: .5vh solid #000000;
+  background-color: pink;
+  z-index: 49;
+  min-width: 54vh;
+  max-width: 54vh;
+  min-height: 54vh;
+  max-height: 54vh;
+  overflow-y: scroll;
 }
 
 .closeButton {
-  position: absolute;
-  z-index: 100;
+  position: fixed;
+  top: 5vh;
+  left: 5vh;
+  background: #FF6666; /* Handle color */
+  border: 'solid black';
+  color: #5D2E8C; /* Track color */
+  padding: 0.5vh;
+  width: auto;
+  height: auto;
+  text-align: center;
+}
+
+.closeButton:hover {
+  cursor: pointer;
+  background: #FFFF00; /* Handle color on hover */
+  transform: scale(1.1)
+}
+
+.closeButton:active {
+  cursor: pointer;
+  background: #CCFF66; /* Handle color on hover */
+  transform: scale(1)
+}
+
+.cat-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1vh;
+  margin: 3vh 3vh 3vh 6vh;
+}
+
+.cat-image {
+  width: 8vh;
+  height: 8vh;
+  object-fit: cover;
+  border: 0.3vh solid black;
+}
+
+.cat-image:hover {
+  cursor: pointer;
+  transform: rotate(3.5deg) scale(1.05);
+}
+
+.cat-image:active {
+  cursor: pointer;
+  transform: rotate(3.5deg) scale(1);
 }
 
 .text-heading {
@@ -274,4 +334,14 @@
 .episode:hover {
   cursor: pointer;
   filter: grayscale(70%);
+}
+
+::-webkit-scrollbar-track {
+  background: #5D2E8C; /* Track color */
+}
+::-webkit-scrollbar-thumb {
+  background: #FF6666; /* Handle color */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FFFF00; /* Handle color on hover */
 }

@@ -60,191 +60,61 @@ const Home = () => {
       <div>
         <div className="menu-container center-home">
           <div className='info-box'>
-            <button type="button" className="closeButton" onClick={() => {setAboutOpen(false); console.log(aboutOpen)}}>X</button>
+            <button type="button" className="closeButton" onClick={() => {setAboutOpen(false); console.log(aboutOpen)}}>x</button>
             <h1 className="text-heading">Yonder Garden:</h1>
-            <p> This is where the information for Yonder Garden would go... If there was any ^.^</p>
+            <p> This is where the information for Yonder Garden would go... If there was any ^.^This is where the information for Yonder Garden would go... If there was any ^.^</p>
           </div>
         </div>
       </div>
     );
   };
 
-
-
   const DisplayEpisodes = () => {
-    // Define a function to handle the close button click
-    const handleCloseClick = () => {
-      setEpisodesOpen(false);
-      console.log(episodesOpen);
-    };
-
-    // HTML content to be embedded
-    const htmlContent = `
-      <html>
-        <head>
-          <style>
-            body {
-              background-color: pink;
-              margin: 0;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              height: 100vh;
-            }
-            .closeButton {
-              position: fixed;
-              top: 1vh;
-              left: 1vh;
-              background: #FF6666; /* Handle color */
-              border: 'solid black';
-              color: #5D2E8C; /* Track color */
-              padding: 1vh;
-            }
-            .closeButton:hover {
-              cursor: pointer;
-              background: #FFFF00; /* Handle color on hover */
-              transform: scale(1.1)
-            }
-            .closeButton:active {
-              cursor: pointer;
-              background: #CCFF66; /* Handle color on hover */
-              transform: scale(1)
-            }
-            .cat-container {
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: center;
-              gap: 3vh;
-            }
-            .cat-image {
-              width: 15vh;
-              height: 15vh;
-              object-fit: cover;
-              border: 0.5vh solid black;
-            }
-            .cat-image:hover {
-              cursor: pointer;
-              transform: rotate(3.5deg) scale(1.05);
-            }
-            .cat-image:active {
-              cursor: pointer;
-              transform: rotate(3.5deg) scale(1);
-            }
-            ::-webkit-scrollbar {
-              width: 2vw; /* Width of the scrollbar */
-            }
-            ::-webkit-scrollbar-track {
-              background: #5D2E8C; /* Track color */
-            }
-            ::-webkit-scrollbar-thumb {
-              background: #FF6666; /* Handle color */
-            }
-            ::-webkit-scrollbar-thumb:hover {
-              background: #FFFF00; /* Handle color on hover */
-            }
-          </style>
-        </head>
-        <body>
-          <div class="menu-container center-home">
-            <div>
-              <button type="button" class="closeButton" onclick="handleCloseClick()">x</button>
-              <div class="cat-container">
-                <a href="https://yonder.garden">
-                  <img class="cat-image" src="https://placekitten.com/100/100" alt="Cat 1" />
-                </a>
-                <img class="cat-image" src="https://placekitten.com/100/101" alt="Cat 2" />
-                <img class="cat-image" src="https://placekitten.com/100/102" alt="Cat 3" />
-                <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-                <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-                <img class="cat-image" src="https://placekitten.com/100/100" alt="Cat 1" />
-                <img class="cat-image" src="https://placekitten.com/100/101" alt="Cat 2" />
-                <img class="cat-image" src="https://placekitten.com/100/102" alt="Cat 3" />
-                <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-                <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-                <img class="cat-image" src="https://placekitten.com/100/100" alt="Cat 1" />
-                <img class="cat-image" src="https://placekitten.com/100/101" alt="Cat 2" />
-                <img class="cat-image" src="https://placekitten.com/100/102" alt="Cat 3" />
-                <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-                <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-                <img class="cat-image" src="https://placekitten.com/100/100" alt="Cat 1" />
-                <img class="cat-image" src="https://placekitten.com/100/101" alt="Cat 2" />
-                <img class="cat-image" src="https://placekitten.com/100/102" alt="Cat 3" />
-                <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-                <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-                <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-                <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-                <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-                <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-                <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-                <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-                <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-                <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-                <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-                <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-                <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-                <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-                <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-                <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-              </div>
+    return (
+      <div>
+        <div className="menu-container center-home">
+          <div className='episodes-box'>
+            <button type="button" className="closeButton" onClick={() => {setEpisodesOpen(false); console.log(aboutOpen)}}>x</button>
+            <div class="cat-container">
+              <img class="cat-image" src="https://placekitten.com/100/101" alt="Cat 2" />
+              <img class="cat-image" src="https://placekitten.com/100/102" alt="Cat 3" />
+              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
+              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
+              <img class="cat-image" src="https://placekitten.com/100/100" alt="Cat 1" />
+              <img class="cat-image" src="https://placekitten.com/100/101" alt="Cat 2" />
+              <img class="cat-image" src="https://placekitten.com/100/102" alt="Cat 3" />
+              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
+              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
+              <img class="cat-image" src="https://placekitten.com/100/100" alt="Cat 1" />
+              <img class="cat-image" src="https://placekitten.com/100/101" alt="Cat 2" />
+              <img class="cat-image" src="https://placekitten.com/100/102" alt="Cat 3" />
+              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
+              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
+              <img class="cat-image" src="https://placekitten.com/100/100" alt="Cat 1" />
+              <img class="cat-image" src="https://placekitten.com/100/101" alt="Cat 2" />
+              <img class="cat-image" src="https://placekitten.com/100/102" alt="Cat 3" />
+              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
+              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
+              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
+              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
+              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
+              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
+              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
+              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
+              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
+              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
+              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
+              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
+              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
+              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
+              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
+              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
             </div>
           </div>
-          <script>
-            function handleCloseClick() {
-              // Send a message to the parent window to request closing the iframe
-              window.parent.postMessage('closeIframe', '*');
-            }
-          </script>
-        </body>
-      </html>
-    `;
-
-    useEffect(() => {
-      // Define a function to handle messages from the iframe
-      const handleMessage = (event) => {
-        // Check if the message is to close the iframe
-        if (event.data === 'closeIframe') {
-          setEpisodesOpen(false);
-          console.log(episodesOpen);
-        }
-      };
-
-      // Add an event listener for messages
-      window.addEventListener('message', handleMessage);
-
-      // Remove the event listener when the component is unmounted
-      return () => {
-        window.removeEventListener('message', handleMessage);
-      };
-    }, [episodesOpen]);
-
-    return (
-      <div style={{ position: 'absolute', zIndex: 49, width: '100%', height: '100%', left: 0, top: 0 }}>
-        {episodesOpen && (
-          <iframe
-            title="Episodes"
-            style={{
-              width: '55vh',
-              height: '60vh',
-              border: '.3vh solid black',
-              zIndex: 5000,
-              position: 'absolute',
-              left: '50%',
-              top: '50%',
-              transform: 'translate(-50%, -50%)',
-              // @media (orientation: portrait): {
-              //   // Styles for mobile (adjust the max-width as needed)
-              //   width: '6vw',
-              //   height: '60vh',
-              // },
-            }}
-            srcDoc={htmlContent}
-          />
-        )}
+        </div>
       </div>
     );
   };
-
-
 
   const DisplayBackground = () => {
     return (
