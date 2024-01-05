@@ -96,6 +96,31 @@
   ::-webkit-scrollbar {
     width: 1.5vh; /* Width of the scrollbar */
   }
+
+  .closeButton {
+    position: fixed;
+    top: 5vh;
+    left: 5vh;
+    background: #FF6666; /* Handle color */
+    border: 'solid black';
+    color: #5D2E8C; /* Track color */
+    padding: 0.5vh;
+    width: auto;
+    height: auto;
+    text-align: center;
+  }
+
+  .closeButton:hover {
+    cursor: pointer;
+    background: #FFFF00; /* Handle color on hover */
+    transform: scale(1.1)
+  }
+
+  .closeButton:active {
+    cursor: pointer;
+    background: #CCFF66; /* Handle color on hover */
+    transform: scale(1)
+  }
 }
 
 @media (orientation: portrait) {
@@ -123,7 +148,7 @@
     min-height: 60vw;
     max-height: 100vw; */
     width: 60vw;
-    height: 60vw;
+    height: 50vw;
     z-index: 500;
   }
 
@@ -131,6 +156,35 @@
     z-index: 2;
     width: 50vw;
     height: 13vw;
+  }
+
+  ::-webkit-scrollbar {
+    width: 1.5vh; /* Width of the scrollbar */
+  }
+
+  .closeButton {
+    position: relative;
+    top: .1vw;
+    left: .1vw;
+    background: #FF6666; /* Handle color */
+    border: 'solid black';
+    color: #5D2E8C; /* Track color */
+    padding: 0.5vh;
+    width: auto;
+    height: auto;
+    text-align: center;
+  }
+
+  .closeButton:hover {
+    cursor: pointer;
+    background: #FFFF00; /* Handle color on hover */
+    transform: scale(1.1)
+  }
+
+  .closeButton:active {
+    cursor: pointer;
+    background: #CCFF66; /* Handle color on hover */
+    transform: scale(1)
   }
 }
 
@@ -156,21 +210,7 @@
   z-index: 5;
 }
 
-.menu-container {
-  top: 20vh;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  /* justify-content: space-evenly; */
-  flex-wrap: wrap;
-  /* align-content: space-evenly; */
-  min-width: 60vh;
-  max-width: 60vh;
-  min-height: 60vh;
-  max-height: 60vh;
-  z-index: 500;
 
-}
 
 .episodes-button {
   z-index: 2;
@@ -224,30 +264,7 @@
   overflow-y: scroll;
 }
 
-.closeButton {
-  position: fixed;
-  top: 5vh;
-  left: 5vh;
-  background: #FF6666; /* Handle color */
-  border: 'solid black';
-  color: #5D2E8C; /* Track color */
-  padding: 0.5vh;
-  width: auto;
-  height: auto;
-  text-align: center;
-}
 
-.closeButton:hover {
-  cursor: pointer;
-  background: #FFFF00; /* Handle color on hover */
-  transform: scale(1.1)
-}
-
-.closeButton:active {
-  cursor: pointer;
-  background: #CCFF66; /* Handle color on hover */
-  transform: scale(1)
-}
 
 .cat-container {
   display: flex;
