@@ -75,40 +75,52 @@ const Home = () => {
         <div className="menu-container center-home">
           <div className='episodes-box'>
             <button type="button" className="closeButton" onClick={() => {setEpisodesOpen(false); console.log(aboutOpen)}}>x</button>
-            <div class="cat-container">
-              <img class="cat-image" src="https://placekitten.com/100/101" alt="Cat 2" />
-              <img class="cat-image" src="https://placekitten.com/100/102" alt="Cat 3" />
-              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-              <img class="cat-image" src="https://placekitten.com/100/100" alt="Cat 1" />
-              <img class="cat-image" src="https://placekitten.com/100/101" alt="Cat 2" />
-              <img class="cat-image" src="https://placekitten.com/100/102" alt="Cat 3" />
-              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-              <img class="cat-image" src="https://placekitten.com/100/100" alt="Cat 1" />
-              <img class="cat-image" src="https://placekitten.com/100/101" alt="Cat 2" />
-              <img class="cat-image" src="https://placekitten.com/100/102" alt="Cat 3" />
-              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-              <img class="cat-image" src="https://placekitten.com/100/100" alt="Cat 1" />
-              <img class="cat-image" src="https://placekitten.com/100/101" alt="Cat 2" />
-              <img class="cat-image" src="https://placekitten.com/100/102" alt="Cat 3" />
-              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
-              <img class="cat-image" src="https://placekitten.com/100/103" alt="Cat 4" />
-              <img class="cat-image" src="https://placekitten.com/100/104" alt="Cat 5" />
+            <div class="episodes-icon-container">
+              <video  class="episodes-icon-new" autoPlay muted loop>
+                <source src="https://i.imgur.com/Y7YYUkr.mp4" type="video/mp4"/>
+                  Your browser does not support the video tag.
+              </video>
+              <video class="episodes-icon" autoPlay muted loop>
+                <source src="https://i.imgur.com/u8Hq4Sp.mp4" type="video/mp4"/>
+                  Your browser does not support the video tag.
+              </video>
+              <video class="episodes-icon" autoPlay muted loop>
+                <source src="https://i.imgur.com/SEHtwdy.mp4" type="video/mp4"/>
+                  Your browser does not support the video tag.
+              </video>
+              <img class="episodes-icon" src="https://placekitten.com/100/102" alt="Cat 3" />
+              <img class="episodes-icon" src="https://placekitten.com/100/103" alt="Cat 4" />
+              <img class="episodes-icon" src="https://placekitten.com/100/104" alt="Cat 5" />
+              <img class="episodes-icon" src="https://placekitten.com/100/100" alt="Cat 1" />
+              <img class="episodes-icon" src="https://placekitten.com/100/101" alt="Cat 2" />
+              <img class="episodes-icon" src="https://placekitten.com/100/102" alt="Cat 3" />
+              <img class="episodes-icon" src="https://placekitten.com/100/103" alt="Cat 4" />
+              <img class="episodes-icon" src="https://placekitten.com/100/104" alt="Cat 5" />
+              <img class="episodes-icon" src="https://placekitten.com/100/100" alt="Cat 1" />
+              <img class="episodes-icon" src="https://placekitten.com/100/101" alt="Cat 2" />
+              <img class="episodes-icon" src="https://placekitten.com/100/102" alt="Cat 3" />
+              <img class="episodes-icon" src="https://placekitten.com/100/103" alt="Cat 4" />
+              <img class="episodes-icon" src="https://placekitten.com/100/104" alt="Cat 5" />
+              <img class="episodes-icon" src="https://placekitten.com/100/100" alt="Cat 1" />
+              <img class="episodes-icon" src="https://placekitten.com/100/101" alt="Cat 2" />
+              <img class="episodes-icon" src="https://placekitten.com/100/101" alt="Cat 2" />
+              <img class="episodes-icon" src="https://placekitten.com/100/102" alt="Cat 3" />
+              <img class="episodes-icon" src="https://placekitten.com/100/103" alt="Cat 4" />
+              <img class="episodes-icon" src="https://placekitten.com/100/104" alt="Cat 5" />
+              <img class="episodes-icon" src="https://placekitten.com/100/100" alt="Cat 1" />
+              <img class="episodes-icon" src="https://placekitten.com/100/101" alt="Cat 2" />
+              <img class="episodes-icon" src="https://placekitten.com/100/101" alt="Cat 2" />
+              <img class="episodes-icon" src="https://placekitten.com/100/102" alt="Cat 3" />
+              <img class="episodes-icon" src="https://placekitten.com/100/103" alt="Cat 4" />
+              <img class="episodes-icon" src="https://placekitten.com/100/104" alt="Cat 5" />
+              <img class="episodes-icon" src="https://placekitten.com/100/100" alt="Cat 1" />
+              <img class="episodes-icon" src="https://placekitten.com/100/101" alt="Cat 2" />
+              <img class="episodes-icon" src="https://placekitten.com/100/101" alt="Cat 2" />
+              <img class="episodes-icon" src="https://placekitten.com/100/102" alt="Cat 3" />
+              <img class="episodes-icon" src="https://placekitten.com/100/103" alt="Cat 4" />
+              <img class="episodes-icon" src="https://placekitten.com/100/104" alt="Cat 5" />
+              <img class="episodes-icon" src="https://placekitten.com/100/100" alt="Cat 1" />
+              <img class="episodes-icon" src="https://placekitten.com/100/101" alt="Cat 2" />
             </div>
           </div>
         </div>
