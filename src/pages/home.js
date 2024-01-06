@@ -46,7 +46,7 @@ const Home = () => {
       <div>
         <div className="menu-container center-home">
           <div className='info-box'>
-            <button type="button" className="closeButton" onClick={() => {setAboutOpen(false); console.log(aboutOpen)}}>x</button>
+            <button type="button" className="closeButton" onClick={() => {setAboutOpen(false); console.log(aboutOpen)}}>&#128942;</button>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@ const Home = () => {
       <div>
         <div className="menu-container center-home">
           <div className='episodes-box'>
-            <button type="button" className="closeButton" onClick={() => {setEpisodesOpen(false); console.log(aboutOpen)}}>x</button>
+            <button type="button" className="closeButton" onClick={() => {setEpisodesOpen(false); console.log(aboutOpen)}}>&#128942;</button>
             <div class="episodes-icon-container">
               <video  class="episodes-icon-new" autoPlay muted loop>
                 <source src="https://i.imgur.com/Y7YYUkr.mp4" type="video/mp4"/>
