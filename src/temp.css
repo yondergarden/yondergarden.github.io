@@ -1,0 +1,14 @@
+filter: hue-rotate(90deg);
+/* Animation definition */
+animation: rotateHue 5s linear infinite; /* Adjust the duration as needed */
+}
+
+/* Keyframes for the animation */
+@keyframes rotateHue {
+from {
+  filter: hue-rotate(0deg); /* Starting hue rotation value */
+}
+to {
+  filter: hue-rotate(360deg); /* Ending hue rotation value */
+}
+}

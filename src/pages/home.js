@@ -9,15 +9,18 @@ import Background from "../components/Background/Background"
 
 const Home = () => {
 
-  const [aboutOpen, setAboutOpen] = useState(false);
   const [episodesOpen, setEpisodesOpen] = useState(false);
+  const [premiumOpen, setPremiumOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+
 
   let episodesMenuImage = "https://i.imgur.com/tHMXkUr.png"
   let merchMenuImage = "https://i.imgur.com/EEKI1Td.png"
   let aboutMenuImage = "https://i.imgur.com/ZjdrIPQ.png"
   let premiumMenuImage = "https://i.imgur.com/UHet8Vq.png"
 
-  // preload the hover images, otherwise there is a brief emptiness upon hover (could be another way to handle this)
+
+  // Function to preload images
   function preloadImage(url) {
     var img = new Image();
     img.src = url;
@@ -28,6 +31,7 @@ const Home = () => {
   preloadImage('https://i.imgur.com/Hj4Ehh7.png');
   preloadImage('https://i.imgur.com/M0NZyfJ.png');
   preloadImage('https://i.imgur.com/xDGevDU.png');
+
 
 
   let navigate = useNavigate();
@@ -41,26 +45,22 @@ const Home = () => {
     console.log(episodesOpen)
   },[episodesOpen])
 
-  const DisplayInfo = () => {
-    return (
-      <div>
-        <div className="menu-container center-home">
-          <div className='info-box'>
-            <button type="button" className="closeButton" onClick={() => {setAboutOpen(false); console.log(aboutOpen)}}>x</button>
-          </div>
-        </div>
-      </div>
-    );
-  };
+  useEffect(() => {
+    console.log(premiumOpen)
+  },[premiumOpen])
+
+  useEffect(() => {
+    console.log(aboutOpen)
+  },[aboutOpen])
 
   const DisplayEpisodes = () => {
     return (
       <div>
         <div className="menu-container center-home">
           <div className='episodes-box'>
-            <button type="button" className="closeButton" onClick={() => {setEpisodesOpen(false); console.log(aboutOpen)}}>x</button>
+            <button type="button" className="closeButton" onClick={() => {setEpisodesOpen(false); console.log(aboutOpen)}}>&#128162;</button>
             <div class="episodes-icon-container">
-              <video  class="episodes-icon-new" autoPlay muted loop>
+              <video  class="episodes-icon" autoPlay muted loop>
                 <source src="https://i.imgur.com/Y7YYUkr.mp4" type="video/mp4"/>
                   Your browser does not support the video tag.
               </video>
@@ -112,13 +112,24 @@ const Home = () => {
     );
   };
 
+  const DisplayInfo = () => {
+    return (
+      <div>
+        <div className="menu-container center-home">
+          <div className='info-box'>
+            <button type="button" className="closeButton" onClick={() => {setAboutOpen(false); console.log(aboutOpen)}}>&#128162;</button>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   const DisplayMenu = () => {
 
     return (
       <div className="menu-container center-home">
         <img id="episodes-button" className="image-button" onClick={() => {setEpisodesOpen(true); console.log(episodesOpen)}} src={episodesMenuImage} alt="" />
-        <img id="premium-button" className="image-button" src={premiumMenuImage} alt="" />
+        <img id="premium-button" className="image-button" onClick={() => {setPremiumOpen(true); console.log(premiumOpen)}} src={premiumMenuImage} alt=""  />
         <img id="merch-button" className="image-button spin-hover" src={merchMenuImage} alt="" />
         <img id="about-button" className="image-button" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="" />
       </div>
