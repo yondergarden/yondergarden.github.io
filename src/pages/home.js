@@ -26,8 +26,6 @@ const Home = () => {
     img.src = url;
   }
 
-  // What does this do? behavior the same when removed
-  // it preloads the hover images, otherwise there is a brief emptiness upon hover (could be another way to handle this)
   //Function to preload hover images
   function preloadImage(url) {
     var img = new Image();
@@ -51,9 +49,9 @@ const Home = () => {
     console.log(aboutOpen)
   },[aboutOpen])
 
-  // useEffect(() => {
-  //   console.log(episodesOpen)
-  // },[episodesOpen])
+  useEffect(() => {
+    console.log(episodesOpen)
+  },[episodesOpen])
 
   const DisplayInfo = () => {
     return (
@@ -61,8 +59,6 @@ const Home = () => {
         <div className="menu-container center-home">
           <div className='info-box'>
             <button type="button" className="closeButton" onClick={() => {setAboutOpen(false); console.log(aboutOpen)}}>x</button>
-            <h1 className="text-heading">Yonder Garden:</h1>
-            <p> This is where the information for Yonder Garden would go... If there was any ^.^This is where the information for Yonder Garden would go... If there was any ^.^</p>
           </div>
         </div>
       </div>
@@ -136,22 +132,22 @@ const Home = () => {
           {/* <img className="center-home layer-50 " src={yonderFrameImage} alt="" /> */}
 
         <div className='bind-bg'>
-          <img className="test-bg-align" src={backgroundImage} alt="" />
-          <img className="test-bg-align" src={backgroundImage} alt="" />
-          <img className="test-bg-align" src={backgroundImage} alt="" />
-          <img className="test-bg-align" src={backgroundImage} alt="" />
-          <img className="test-bg-align" src={backgroundImage} alt="" />
-          <img className="test-bg-align" src={backgroundImage} alt="" />
-          <img className="test-bg-align" src={backgroundImage} alt="" />
+          <img className="bg-align" src={backgroundImage} alt="" />
+          <img className="bg-align" src={backgroundImage} alt="" />
+          <img className="bg-align" src={backgroundImage} alt="" />
+          <img className="bg-align" src={backgroundImage} alt="" />
+          <img className="bg-align" src={backgroundImage} alt="" />
+          <img className="bg-align" src={backgroundImage} alt="" />
+          <img className="bg-align" src={backgroundImage} alt="" />
         </div>
         <div className='bind-bg'>
-          <img className="test-bg-align" src={yonderGrassImage} alt="" />
-          <img className="test-bg-align" src={yonderGrassImage} alt="" />
-          <img className="test-bg-align" src={yonderGrassImage} alt="" />
-          <img className="test-bg-align" src={yonderGrassImage} alt="" />
-          <img className="test-bg-align" src={yonderGrassImage} alt="" />
-          <img className="test-bg-align" src={yonderGrassImage} alt="" />
-          <img className="test-bg-align" src={yonderGrassImage} alt="" />
+          <img className="bg-align" src={yonderGrassImage} alt="" />
+          <img className="bg-align" src={yonderGrassImage} alt="" />
+          <img className="bg-align" src={yonderGrassImage} alt="" />
+          <img className="bg-align" src={yonderGrassImage} alt="" />
+          <img className="bg-align" src={yonderGrassImage} alt="" />
+          <img className="bg-align" src={yonderGrassImage} alt="" />
+          <img className="bg-align" src={yonderGrassImage} alt="" />
         </div>
 
           <img className="center-home layer-50 " src={yonderFrameImage} alt="" />
