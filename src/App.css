@@ -212,12 +212,12 @@
 
 
 
-.episodes-button {
+/* .episodes-button {
   z-index: 2;
   width: 75vh;
   height: 15vh;
-}
-
+} */
+/*
 #episodes-button:hover {
   cursor: pointer;
   content: url('https://i.imgur.com/f6gNmHR.png');
@@ -231,12 +231,13 @@
 #merch-button:hover {
   cursor: pointer;
   content: url('https://i.imgur.com/M0NZyfJ.png');
+  z-index: 1000;
 }
 
 #about-button:hover {
   cursor: pointer;
   content: url('https://i.imgur.com/xDGevDU.png');
-}
+} */
 
 .spin-hover:hover {
   transform: rotate(3.5deg);
