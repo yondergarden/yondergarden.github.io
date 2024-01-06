@@ -2,8 +2,9 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import React from 'react';
 
-import '../App.css';
-import Background from "../components/Background"
+import '../styles/Home.css'
+import '../styles/Yonder.css'
+import Background from "../components/Background/Background"
 
 
 const Home = () => {
@@ -15,18 +16,8 @@ const Home = () => {
   let merchMenuImage = "https://i.imgur.com/EEKI1Td.png"
   let aboutMenuImage = "https://i.imgur.com/ZjdrIPQ.png"
   let premiumMenuImage = "https://i.imgur.com/UHet8Vq.png"
-  let titleImage = "https://i.imgur.com/11iaWFH.png"
-  let backgroundImage = "https://i.imgur.com/jUZxv1T.gif"
-  let yonderGrassImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/grassLandscape.png?v=1702081026940"
-  let yonderFrameImage = "https://i.imgur.com/Sz5hzol.png"
 
-  // Function to preload images
-  function preloadImage(url) {
-    var img = new Image();
-    img.src = url;
-  }
-
-  //Function to preload hover images
+  // preload the hover images, otherwise there is a brief emptiness upon hover (could be another way to handle this)
   function preloadImage(url) {
     var img = new Image();
     img.src = url;
@@ -41,13 +32,10 @@ const Home = () => {
 
   let navigate = useNavigate();
 
+  // Used to navigate to pages
   const RouteChange = (pageUrl) =>{
     navigate(pageUrl);
   }
-
-  useEffect(() => {
-    console.log(aboutOpen)
-  },[aboutOpen])
 
   useEffect(() => {
     console.log(episodesOpen)
@@ -124,49 +112,6 @@ const Home = () => {
     );
   };
 
-  const DisplayBackground = () => {
-    return (
-      <div>
-          <img className="center-home layer-2" src={titleImage} alt="" />
-
-          {/* <img className="center-home layer-50 " src={yonderFrameImage} alt="" /> */}
-
-        <div className='bind-bg'>
-          <img className="bg-align" src={backgroundImage} alt="" />
-          <img className="bg-align" src={backgroundImage} alt="" />
-          <img className="bg-align" src={backgroundImage} alt="" />
-          <img className="bg-align" src={backgroundImage} alt="" />
-          <img className="bg-align" src={backgroundImage} alt="" />
-          <img className="bg-align" src={backgroundImage} alt="" />
-          <img className="bg-align" src={backgroundImage} alt="" />
-        </div>
-        <div className='bind-bg'>
-          <img className="bg-align" src={yonderGrassImage} alt="" />
-          <img className="bg-align" src={yonderGrassImage} alt="" />
-          <img className="bg-align" src={yonderGrassImage} alt="" />
-          <img className="bg-align" src={yonderGrassImage} alt="" />
-          <img className="bg-align" src={yonderGrassImage} alt="" />
-          <img className="bg-align" src={yonderGrassImage} alt="" />
-          <img className="bg-align" src={yonderGrassImage} alt="" />
-        </div>
-
-          <img className="center-home layer-50 " src={yonderFrameImage} alt="" />
-
-          {/* <img className="center-home layer-1 offset-bg-right" src={yonderGrassImage} alt="" /> */}
-          {/* <img className="center-home layer-1 offset-bg-right" src={yonderGrassImage} alt="" /> */}
-
-
-          <img className="center-home layer-1 " src={yonderGrassImage} alt="" />
-          {/* <img className="center-home layer-1" src={backgroundImage} alt="" /> */}
-
-          {/* <img className="center-home layer-0 offset-bg-right" src={backgroundImage} alt="" /> */}
-          {/* <img className="center-home layer-1 offset-bg-right" src={yonderGrassImage} alt="" /> */}
-
-          {/* <img className="center-home layer-0 offset-bg-left" src={backgroundImage} alt="" />
-          <img className="center-home layer-1 offset-bg-left" src={yonderGrassImage} alt="" /> */}
-      </div>
-      );
-  }
 
   const DisplayMenu = () => {
 
@@ -183,8 +128,7 @@ const Home = () => {
   return (
       <header>
         <body>
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
-        <DisplayBackground />
+        <Background />
         {(episodesOpen || aboutOpen) ? null : <DisplayMenu />}
         {episodesOpen ? <DisplayEpisodes/> : null}
         {aboutOpen ? <DisplayInfo/> : null}

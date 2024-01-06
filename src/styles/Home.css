@@ -1,0 +1,58 @@
+.image-button {
+    z-index: 2;
+    width: 50vh;
+    height: 13vh;
+  }
+
+.image-button:hover {
+scale: 110%;
+}
+
+.image-button:active {
+width: 50vh;
+height: 13vh;
+}
+
+#episodes-button:hover {
+    cursor: pointer;
+    content: url('https://i.imgur.com/f6gNmHR.png');
+  }
+  
+  #premium-button:hover {
+    cursor: pointer;
+    content: url('https://i.imgur.com/Hj4Ehh7.png');
+  }
+  
+  #merch-button:hover {
+    cursor: pointer;
+    content: url('https://i.imgur.com/M0NZyfJ.png');
+  }
+  
+  #about-button:hover {
+    cursor: pointer;
+    content: url('https://i.imgur.com/xDGevDU.png');
+  }
+  
+  .spin-hover:hover {
+    transform: rotate(3.5deg);
+  }
+
+  .center-home {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin-left: auto;
+    margin-right: auto;
+    width: 100vh;
+    height: 100vh;
+  }
+
+  .info-box {
+    border: 8px solid #000000;
+    background-color: white;
+    z-index: 49;
+    min-width: 54vh;
+    max-width: 54vh;
+    min-height: 54vh;
+    max-height: 54vh;
+  }
