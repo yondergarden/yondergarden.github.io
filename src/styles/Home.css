@@ -5,54 +5,166 @@
   }
 
 .image-button:hover {
-scale: 110%;
+  scale: 110%;
 }
 
 .image-button:active {
-width: 50vh;
-height: 13vh;
+  width: 50vh;
+  height: 13vh;
 }
 
 #episodes-button:hover {
     cursor: pointer;
     content: url('https://i.imgur.com/f6gNmHR.png');
   }
-  
-  #premium-button:hover {
-    cursor: pointer;
-    content: url('https://i.imgur.com/Hj4Ehh7.png');
-  }
-  
-  #merch-button:hover {
-    cursor: pointer;
-    content: url('https://i.imgur.com/M0NZyfJ.png');
-  }
-  
-  #about-button:hover {
-    cursor: pointer;
-    content: url('https://i.imgur.com/xDGevDU.png');
-  }
-  
-  .spin-hover:hover {
-    transform: rotate(3.5deg);
-  }
 
-  .center-home {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    margin-left: auto;
-    margin-right: auto;
-    width: 100vh;
-    height: 100vh;
-  }
+#premium-button:hover {
+  cursor: pointer;
+  content: url('https://i.imgur.com/Hj4Ehh7.png');
+}
 
-  .info-box {
-    border: 8px solid #000000;
-    background-color: white;
-    z-index: 49;
-    min-width: 54vh;
-    max-width: 54vh;
-    min-height: 54vh;
-    max-height: 54vh;
-  }
+#merch-button:hover {
+  cursor: pointer;
+  content: url('https://i.imgur.com/M0NZyfJ.png');
+}
+
+#about-button:hover {
+  cursor: pointer;
+  content: url('https://i.imgur.com/xDGevDU.png');
+}
+
+.spin-hover:hover {
+  transform: rotate(3.5deg);
+}
+
+.center-home {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100vh;
+  height: 100vh;
+}
+
+.info-box {
+  border: 8px solid #000000;
+  background-color: white;
+  z-index: 49;
+  min-width: 54vh;
+  max-width: 54vh;
+  min-height: 54vh;
+  max-height: 54vh;
+}
+
+/*======================
+      Episodes Pop-up
+========================*/
+
+.episodes-box {
+  border: .5vh solid #000000;
+  background-color: pink;
+  z-index: 49;
+  min-width: 54vh;
+  max-width: 54vh;
+  min-height: 54vh;
+  max-height: 54vh;
+  overflow-y: scroll;
+}
+
+.episodes-icon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1vh;
+  margin: 3vh 3vh 3vh 6vh;
+}
+
+.episodes-icon {
+  width: 8vh;
+  height: 8vh;
+  object-fit: cover;
+  border: 0.3vh solid black;
+
+  display:inline-block;
+  color: white;
+  -webkit-mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
+  background-repeat: no-repeat;
+  animation: episodes-icon 2.5s infinite;
+  font-size: 50px;
+  max-width:200px;
+}
+
+.episodes-icon:hover {
+  cursor: pointer;
+  transform: rotate(3.5deg) scale(1.05);
+}
+
+.episodes-icon:active {
+  cursor: pointer;
+  transform: rotate(3.5deg) scale(1);
+}
+
+.episodes-icon-new {
+  width: 8vh;
+  height: 8vh;
+  object-fit: cover;
+  border: 0.3vh solid black;
+}
+
+.episodes-icon-new:hover {
+  cursor: pointer;
+  transform: rotate(3.5deg) scale(1.05);
+}
+
+.episodes-icon-new:active {
+  cursor: pointer;
+  transform: rotate(3.5deg) scale(1);
+}
+
+/*======================
+        Premium
+========================*/
+
+.closeButton {
+  position: fixed;
+  top: 5vh;
+  left: 5vh;
+  background: #FF6666; /* Handle color */
+  border: 'solid black';
+  color: #5D2E8C; /* Track color */
+  padding: 0.5vh;
+  width: auto;
+  height: auto;
+  text-align: center;
+}
+
+.closeButton:hover {
+  cursor: pointer;
+  background: #FFFF00; /* Handle color on hover */
+  transform: scale(1.1)
+}
+
+.closeButton:active {
+  cursor: pointer;
+  background: #CCFF66; /* Handle color on hover */
+  transform: scale(1)
+}
+
+::-webkit-scrollbar-track {
+  background: #5D2E8C; /* Track color */
+  box-shadow: inset 0 0 5px black;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #FF6666; /* Handle color */
+  box-shadow: inset 0 0 5px red;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FFFF00; /* Handle color on hover */
+}
+
+::-webkit-scrollbar {
+  width: 1.5vh; /* Width of the scrollbar */
+}

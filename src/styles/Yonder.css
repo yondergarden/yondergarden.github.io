@@ -33,8 +33,3 @@ pointer-events: none;
     max-height: 60vh;
     z-index: 500;
   }
-
-  .closeButton {
-    position: absolute;
-    z-index: 100;
-  }
