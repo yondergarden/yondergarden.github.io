@@ -44,12 +44,48 @@ const Home = () => {
     console.log(premiumOpen)
   },[episodesOpen, aboutOpen, premiumOpen])
 
+  const EmailForm = () => {
+    const [emailText, setEmailText] = useState('');
+
+    const handleEmailSend = () => {
+      // need to implement the logic to send the email here, for now just logging submission.
+      console.log('Email sent:', emailText);
+
+      // Clear the input field after sending the email
+      setEmailText('');
+    };
+
+    const handleKeyPress = (e) => {
+      // Check if the Enter key is pressed
+      if (e.key === 'Enter') {
+        handleEmailSend();
+      }
+    };
+
+    return (
+      <div style={{ textAlign: 'center', marginTop: '50px' }}>
+        <input
+          type="text"
+          placeholder="Enter email address"
+          value={emailText}
+          onChange={(e) => setEmailText(e.target.value)}
+          onKeyPress={handleKeyPress}
+          style={{ padding: '8px', marginRight: '8px' }}
+        />
+        <button onClick={handleEmailSend} style={{ padding: '8px' }}>
+          + 𝓢𝓾𝓫𝓶𝓲𝓽  ~
+        </button>
+      </div>
+    );
+  };
+
   const DisplayEpisodes = () => {
     return (
       <div>
         <div className="menu-container center-home">
           <div className='episodes-box'>
             <button type="button" className="closeButton" onClick={() => {setEpisodesOpen(false); console.log(aboutOpen)}}>&#128942;</button>
+            <h1 className="simple-centered">☆ 𝖊𝖕𝖎𝖘𝖔𝖉𝖊𝖘 ☆</h1>
             <div class="episodes-icon-container">
               <video  class="episodes-icon-new" autoPlay muted loop>
                 <source src="https://i.imgur.com/Y7YYUkr.mp4" type="video/mp4"/>
@@ -103,13 +139,15 @@ const Home = () => {
     );
   };
 
-
   const DisplayPremium = () => {
     return (
       <div>
         <div className="menu-container center-home">
           <div className='premium-box'>
             <button type="button" className="closeButton" onClick={() => {setPremiumOpen(false); console.log(premiumOpen)}}>&#128942;</button>
+            <h1 className="simple-centered">♡ 𝖏𝖔𝖎𝖓 𝖜𝖆𝖎𝖙𝖑𝖎𝖘𝖙! ♡</h1>
+            <EmailForm />
+            <h1 className="simple-centered">&#127804;</h1>
           </div>
         </div>
       </div>
@@ -122,6 +160,7 @@ const Home = () => {
         <div className="menu-container center-home">
           <div className='info-box'>
             <button type="button" className="closeButton" onClick={() => {setAboutOpen(false); console.log(aboutOpen)}}>&#128942;</button>
+            <h1 className="simple-centered">🕮 𝖆𝖇𝖔𝖚𝖙 🕮</h1>
           </div>
         </div>
       </div>
