@@ -1,21 +1,40 @@
 .offset-bg-right {
     padding-left:80vw;
   }
-  
-  .offset-bg-left {
-    padding-right:80vw;
+
+.offset-bg-left {
+  padding-right:80vw;
+}
+
+.bind-bg {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  display: flex;
+  flex-direction: row;
+}
+
+.bind-bg-premium {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  display: flex;
+  flex-direction: row;
+  filter: hue-rotate(0deg);
+  animation: hueRotate 3s linear infinite;
+}
+
+@keyframes hueRotate {
+  0% {
+    filter: hue-rotate(0deg);
   }
-  
-  .bind-bg {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    display: flex;
-    flex-direction: row;
+  100% {
+    filter: hue-rotate(360deg);
   }
-  
-  .bg-align {
-    width: 100vh;
-    height: 100vh;
-    z-index: 5;
-  }
+}
+
+.bg-align {
+  width: 100vh;
+  height: 100vh;
+  z-index: 5;
+}

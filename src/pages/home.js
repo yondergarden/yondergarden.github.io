@@ -9,8 +9,9 @@ import Background from "../components/Background/Background"
 
 const Home = () => {
 
-  const [aboutOpen, setAboutOpen] = useState(false);
   const [episodesOpen, setEpisodesOpen] = useState(false);
+  const [premiumOpen, setPremiumOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
 
   let episodesMenuImage = "https://i.imgur.com/tHMXkUr.png"
   let merchMenuImage = "https://i.imgur.com/EEKI1Td.png"
@@ -39,19 +40,9 @@ const Home = () => {
 
   useEffect(() => {
     console.log(episodesOpen)
-  },[episodesOpen])
-
-  const DisplayInfo = () => {
-    return (
-      <div>
-        <div className="menu-container center-home">
-          <div className='info-box'>
-            <button type="button" className="closeButton" onClick={() => {setAboutOpen(false); console.log(aboutOpen)}}>&#128942;</button>
-          </div>
-        </div>
-      </div>
-    );
-  };
+    console.log(aboutOpen)
+    console.log(premiumOpen)
+  },[episodesOpen, aboutOpen, premiumOpen])
 
   const DisplayEpisodes = () => {
     return (
@@ -113,12 +104,36 @@ const Home = () => {
   };
 
 
+  const DisplayPremium = () => {
+    return (
+      <div>
+        <div className="menu-container center-home">
+          <div className='premium-box'>
+            <button type="button" className="closeButton" onClick={() => {setPremiumOpen(false); console.log(premiumOpen)}}>&#128942;</button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const DisplayInfo = () => {
+    return (
+      <div>
+        <div className="menu-container center-home">
+          <div className='info-box'>
+            <button type="button" className="closeButton" onClick={() => {setAboutOpen(false); console.log(aboutOpen)}}>&#128942;</button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const DisplayMenu = () => {
 
     return (
       <div className="menu-container center-home">
         <img id="episodes-button" className="image-button" onClick={() => {setEpisodesOpen(true); console.log(episodesOpen)}} src={episodesMenuImage} alt="" />
-        <img id="premium-button" className="image-button" src={premiumMenuImage} alt="" />
+        <img id="premium-button" className="image-button" onClick={() => {setPremiumOpen(true); console.log(premiumOpen)}} src={premiumMenuImage} alt=""/>
         <img id="merch-button" className="image-button spin-hover" src={merchMenuImage} alt="" />
         <img id="about-button" className="image-button" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="" />
       </div>
@@ -128,9 +143,10 @@ const Home = () => {
   return (
       <header>
         <body>
-        <Background />
-        {(episodesOpen || aboutOpen) ? null : <DisplayMenu />}
+        <Background premiumOpen={premiumOpen}  />
+        {(episodesOpen || premiumOpen || aboutOpen) ? null : <DisplayMenu />}
         {episodesOpen ? <DisplayEpisodes/> : null}
+        {premiumOpen ? <DisplayPremium/> : null}
         {aboutOpen ? <DisplayInfo/> : null}
         </body>
       </header>
