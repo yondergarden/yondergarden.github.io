@@ -139,7 +139,7 @@ const Home = () => {
   return (
       <header>
         <body>
-        <Background />
+        <Background openPremium="True"/>
         {(episodesOpen || aboutOpen) ? null : <DisplayMenu />}
         {episodesOpen ? <DisplayEpisodes/> : null}
         {aboutOpen ? <DisplayInfo/> : null}

@@ -1,0 +1,20 @@
+[
+    { 
+      "id": 1, 
+      "title": "Episode 1", 
+      "content": "Content for Episode 1",
+      "mp4": "https://i.imgur.com/LRppOQ7.mp4" 
+    },
+    { 
+      "id": 2, 
+      "title": "Episode 2", 
+      "content": "Content for Episode 2",
+      "mp4": "https://i.imgur.com/QjjVfsy.mp4"
+    },
+    { 
+      "id": 3, 
+      "title": "Episode 3", 
+      "content": "Content for Episode 3",
+      "mp4": "https://i.imgur.com/wgdtjg5.mp4"
+    }
+]
