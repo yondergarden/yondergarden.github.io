@@ -14,7 +14,7 @@ const Background = (props) => {
 
         return (
           <div>
-            <img className="center-home layer-51" src={titleImage} alt="" />
+            <img className="center-home layer-1" src={titleImage} alt="" />
             <div className='bind-bg'>
               <img className="bg-align" src={backgroundImage} alt="" />
               <img className="bg-align" src={backgroundImage} alt="" />
