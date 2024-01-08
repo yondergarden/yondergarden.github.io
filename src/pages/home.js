@@ -53,26 +53,30 @@ const Home = () => {
   const DisplayEpisodes = () => {
     const thumbnailList = episodesData.map((episode) => ({
       id: episode.id,
+      title: episode.title,
       thumbnail: episode.thumbnail
     }));
     
 
     return (
       <div>
-        <div className="menu-container center-home">
-          <div className='episodes-box'>
-            <button type="button" className="closeButton" onClick={() => {setEpisodesOpen(false); console.log(aboutOpen)}}>&#128162;</button>
-            <div class="episodes-icon-container">
-              {thumbnailList.map(({id, thumbnail}, index) => (
-              <video class="episodes-icon" id={id} autoPlay muted loop onClick={() => {EpisodeSelect(id)}}>
-                <source src={thumbnail} type="video/mp4"/>
+      <div className="menu-container center-home">
+        <div className='episodes-box'>
+          <button type="button" className="closeButton" onClick={() => {setEpisodesOpen(false); console.log(aboutOpen)}}>&#128162;</button>
+          <div className="episodes-icon-container">
+            {thumbnailList.map(({id, title, thumbnail}) => (
+              <div className="episodes-icon-wrapper" key={id}>
+                <video className="episodes-icon" id={id} autoPlay muted loop onClick={() => {EpisodeSelect(id)}}>
+                  <source src={thumbnail} type="video/mp4"/>
                   Your browser does not support the video tag.
-              </video> 
-              ))}
-            </div>
+                </video>
+                <div className="episode-tooltip">{title}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
+    </div>
     );
   };
 

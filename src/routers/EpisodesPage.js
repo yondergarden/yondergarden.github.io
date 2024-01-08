@@ -48,7 +48,7 @@ const EpisodesPage = (props) => {
             <img className="episode-nav-button" onClick={() => {EpisodeDeltaChange(1)}} src={nextEpisodeImage} alt=""/>
             <img className="episode-nav-button" onClick={() => {RouteChange("/episodes/".concat(lastEpisodeNum))}} src={lastButtonImage} alt=""/>
           </div>
-          <img className="episode-nav center-nav-home" onClick={() => {RouteChange("/")}} src={homeImage} alt=""/>
+          <img className="episode-nav-button center-nav-home" onClick={() => {RouteChange("/")}} src={homeImage} alt=""/>
         </div>
       </div>
     );
