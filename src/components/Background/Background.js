@@ -1,8 +1,9 @@
 
-import '../App.css';
+import './Background.css';
 
 
-const Background = () => {
+const Background = (props) => {
+    console.log(props)
     let yonderFrameImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/yonderGardenFrameFg.png?v=1702515498646"
     let titleImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/yonderGardenFrameBackgroundWords.png?v=1702515532263"
 
@@ -13,7 +14,7 @@ const Background = () => {
 
         return (
           <div>
-            <img className="center-home layer-51" src={titleImage} alt="" />
+            <img className="center-home layer-1" src={titleImage} alt="" />
             <div className='bind-bg'>
               <img className="bg-align" src={backgroundImage} alt="" />
               <img className="bg-align" src={backgroundImage} alt="" />

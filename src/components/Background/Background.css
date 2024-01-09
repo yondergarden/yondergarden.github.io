@@ -1,0 +1,21 @@
+.offset-bg-right {
+    padding-left:80vw;
+  }
+  
+  .offset-bg-left {
+    padding-right:80vw;
+  }
+  
+  .bind-bg {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .bg-align {
+    width: 100vh;
+    height: 100vh;
+    z-index: 5;
+  }

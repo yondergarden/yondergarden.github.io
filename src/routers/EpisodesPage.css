@@ -1,0 +1,23 @@
+.episode-nav-button:hover {
+    cursor: pointer;
+  }
+  
+  .move-nav-left{
+    position: absolute;
+    left: -150px;
+  }
+  
+  .move-nav-right{
+    position: absolute;
+    right: -150px;
+  }
+  
+  .center-nav-home {
+    position: absolute;
+    bottom: -190px;
+  }
+  
+  .episode-nav-stack {
+    display: flex;
+    flex-direction: column;
+  }
