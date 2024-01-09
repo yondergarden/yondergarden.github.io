@@ -3,7 +3,7 @@ import './Background.css';
 
 
 const Background = (props) => {
-
+    console.log(props)
     let yonderFrameImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/yonderGardenFrameFg.png?v=1702515498646"
     let titleImage = "https://i.imgur.com/11iaWFH.png"
 

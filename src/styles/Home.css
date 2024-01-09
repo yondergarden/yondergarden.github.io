@@ -9,7 +9,8 @@
 }
 
 .image-button:active {
-  scale: 90%;
+  width: 50vh;
+  height: 13vh;
 }
 
 #episodes-button:hover {
@@ -105,19 +106,44 @@
   margin: 3vh 3vh 3vh 6vh;
 }
 
+.episodes-icon-wrapper {
+  position: relative;
+}
+
+.episodes-icon-wrapper:hover .episode-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.episode-tooltip {
+  position: absolute;
+  bottom: 100%; /* Position above the image */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px;
+  z-index: 1000;
+}
+
 .episodes-icon {
   width: 8vh;
   height: 8vh;
   object-fit: cover;
   border: 0.3vh solid black;
-
-  display:inline-block;
+  display: inline-block;
   color: white;
-  -webkit-mask:linear-gradient(-60deg,#000 30%,#0005,#000 70%) right/300% 100%;
+  -webkit-mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/300% 100%;
   background-repeat: no-repeat;
   animation: episodes-icon 2.5s infinite;
   font-size: 50px;
-  max-width:200px;
+  max-width: 200px;
+  position: relative;
 }
 
 .episodes-icon:hover {
@@ -130,42 +156,21 @@
   transform: rotate(3.5deg) scale(1);
 }
 
-.episodes-icon-new {
-  width: 8vh;
-  height: 8vh;
-  object-fit: cover;
-  border: 0.3vh solid black;
-}
-
-.episodes-icon-new:hover {
-  cursor: pointer;
-  transform: rotate(3.5deg) scale(1.05);
-}
-
-.episodes-icon-new:active {
-  cursor: pointer;
-  transform: rotate(3.5deg) scale(1);
-}
-
 /*======================
-      Premium Pop-up
+        Premium
 ========================*/
 
 .premium-box {
-  border: .5vh solid #000000;
-  background-color: pink;
-  z-index: 49;
-  min-width: 54vh;
-  max-width: 54vh;
-  min-height: 54vh;
-  max-height: 54vh;
   filter: hue-rotate(0deg);
   animation: hueRotate 3s linear infinite;
 }
 
+
+
 /*======================
       Close Button
-========================*/
+====================*/
+
 
 .closeButton {
   position: fixed;
@@ -209,6 +214,7 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #FFFF00; /* Handle color on hover */
 }
+
 ::-webkit-scrollbar {
   width: 1.5vh; /* Width of the scrollbar */
 }

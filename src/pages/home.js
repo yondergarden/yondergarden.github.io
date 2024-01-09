@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import React from 'react';
 
@@ -13,12 +12,15 @@ const Home = () => {
   const [premiumOpen, setPremiumOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
 
+  const episodesData = require('../episodes.json');
+
   let episodesMenuImage = "https://i.imgur.com/tHMXkUr.png"
   let merchMenuImage = "https://i.imgur.com/EEKI1Td.png"
   let aboutMenuImage = "https://i.imgur.com/ZjdrIPQ.png"
   let premiumMenuImage = "https://i.imgur.com/UHet8Vq.png"
 
-  // preload the hover images, otherwise there is a brief emptiness upon hover (could be another way to handle this)
+
+  // Function to preload images
   function preloadImage(url) {
     var img = new Image();
     img.src = url;
@@ -31,11 +33,9 @@ const Home = () => {
   preloadImage('https://i.imgur.com/xDGevDU.png');
 
 
-  let navigate = useNavigate();
-
-  // Used to navigate to pages
-  const RouteChange = (pageUrl) =>{
-    navigate(pageUrl);
+  const EpisodeSelect = (episodeNumber) =>{
+    const episodesUrl = "/episodes/"
+    window.location.href = episodesUrl.concat(episodeNumber);
   }
 
   useEffect(() => {
@@ -79,59 +79,38 @@ const Home = () => {
     );
   };
 
+  useEffect(() => {
+    console.log(premiumOpen)
+  },[premiumOpen])
+
+  useEffect(() => {
+    console.log(aboutOpen)
+  },[aboutOpen])
+
   const DisplayEpisodes = () => {
+    const thumbnailList = episodesData.map((episode) => ({
+      id: episode.id,
+      title: episode.title,
+      thumbnail: episode.thumbnail
+    }));
+
+
     return (
       <div>
         <div className="menu-container center-home">
           <div className='episodes-box'>
             <button type="button" className="closeButton" onClick={() => {setEpisodesOpen(false); console.log(aboutOpen)}}>&#128942;</button>
             <h1 className="simple-centered">☆ 𝖊𝖕𝖎𝖘𝖔𝖉𝖊𝖘 ☆</h1>
-            <div class="episodes-icon-container">
-              <video  class="episodes-icon-new" autoPlay muted loop>
-                <source src="https://i.imgur.com/Y7YYUkr.mp4" type="video/mp4"/>
-                  Your browser does not support the video tag.
-              </video>
-              <video class="episodes-icon" autoPlay muted loop>
-                <source src="https://i.imgur.com/u8Hq4Sp.mp4" type="video/mp4"/>
-                  Your browser does not support the video tag.
-              </video>
-              <video class="episodes-icon" autoPlay muted loop>
-                <source src="https://i.imgur.com/SEHtwdy.mp4" type="video/mp4"/>
-                  Your browser does not support the video tag.
-              </video>
-              <img class="episodes-icon" src="https://placekitten.com/100/102" alt="Cat 3" />
-              <img class="episodes-icon" src="https://placekitten.com/100/103" alt="Cat 4" />
-              <img class="episodes-icon" src="https://placekitten.com/100/104" alt="Cat 5" />
-              <img class="episodes-icon" src="https://placekitten.com/100/100" alt="Cat 1" />
-              <img class="episodes-icon" src="https://placekitten.com/100/101" alt="Cat 2" />
-              <img class="episodes-icon" src="https://placekitten.com/100/102" alt="Cat 3" />
-              <img class="episodes-icon" src="https://placekitten.com/100/103" alt="Cat 4" />
-              <img class="episodes-icon" src="https://placekitten.com/100/104" alt="Cat 5" />
-              <img class="episodes-icon" src="https://placekitten.com/100/100" alt="Cat 1" />
-              <img class="episodes-icon" src="https://placekitten.com/100/101" alt="Cat 2" />
-              <img class="episodes-icon" src="https://placekitten.com/100/102" alt="Cat 3" />
-              <img class="episodes-icon" src="https://placekitten.com/100/103" alt="Cat 4" />
-              <img class="episodes-icon" src="https://placekitten.com/100/104" alt="Cat 5" />
-              <img class="episodes-icon" src="https://placekitten.com/100/100" alt="Cat 1" />
-              <img class="episodes-icon" src="https://placekitten.com/100/101" alt="Cat 2" />
-              <img class="episodes-icon" src="https://placekitten.com/100/101" alt="Cat 2" />
-              <img class="episodes-icon" src="https://placekitten.com/100/102" alt="Cat 3" />
-              <img class="episodes-icon" src="https://placekitten.com/100/103" alt="Cat 4" />
-              <img class="episodes-icon" src="https://placekitten.com/100/104" alt="Cat 5" />
-              <img class="episodes-icon" src="https://placekitten.com/100/100" alt="Cat 1" />
-              <img class="episodes-icon" src="https://placekitten.com/100/101" alt="Cat 2" />
-              <img class="episodes-icon" src="https://placekitten.com/100/101" alt="Cat 2" />
-              <img class="episodes-icon" src="https://placekitten.com/100/102" alt="Cat 3" />
-              <img class="episodes-icon" src="https://placekitten.com/100/103" alt="Cat 4" />
-              <img class="episodes-icon" src="https://placekitten.com/100/104" alt="Cat 5" />
-              <img class="episodes-icon" src="https://placekitten.com/100/100" alt="Cat 1" />
-              <img class="episodes-icon" src="https://placekitten.com/100/101" alt="Cat 2" />
-              <img class="episodes-icon" src="https://placekitten.com/100/101" alt="Cat 2" />
-              <img class="episodes-icon" src="https://placekitten.com/100/102" alt="Cat 3" />
-              <img class="episodes-icon" src="https://placekitten.com/100/103" alt="Cat 4" />
-              <img class="episodes-icon" src="https://placekitten.com/100/104" alt="Cat 5" />
-              <img class="episodes-icon" src="https://placekitten.com/100/100" alt="Cat 1" />
-              <img class="episodes-icon" src="https://placekitten.com/100/101" alt="Cat 2" />
+            <div className="episodes-icon-container">
+              {thumbnailList.map(({id, title, thumbnail}) => (
+                <div className="episodes-icon-wrapper" key={id}>
+                  <video className="episodes-icon" id={id} autoPlay muted loop onClick={() => {EpisodeSelect(id)}}>
+                    <source src={thumbnail} type="video/mp4"/>
+                    Your browser does not support the video tag.
+                  </video>
+                  <div className="episode-tooltip">{title}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -142,8 +121,8 @@ const Home = () => {
   const DisplayPremium = () => {
     return (
       <div>
-        <div className="menu-container center-home">
-          <div className='premium-box'>
+        <div className="menu-container center-home premium-box">
+          <div className='info-box'>
             <button type="button" className="closeButton" onClick={() => {setPremiumOpen(false); console.log(premiumOpen)}}>&#128942;</button>
             <h1 className="simple-centered">♡ 𝖏𝖔𝖎𝖓 𝖜𝖆𝖎𝖙𝖑𝖎𝖘𝖙! ♡</h1>
             <EmailForm />

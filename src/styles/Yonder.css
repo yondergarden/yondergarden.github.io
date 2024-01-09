@@ -10,6 +10,9 @@ pointer-events: none;
 z-index: 2;
 pointer-events: none;
 }
+.interactive-layer-50{
+z-index: 50;
+}
 .layer-50 {
 z-index: 50;
 pointer-events: none;
