@@ -48,11 +48,16 @@ const Home = () => {
     const [emailText, setEmailText] = useState('');
 
     const handleEmailSend = () => {
-      // need to implement the logic to send the email here, for now just logging submission.
-      console.log('Email sent:', emailText);
+        fetch("https://wakeful-intriguing-channel.glitch.me/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ text: emailText }), // Use the key "text"
+        });
 
-      // Clear the input field after sending the email
-      setEmailText('');
+        // Clear the input field after sending the email
+        setEmailText('');
     };
 
     const handleKeyPress = (e) => {
