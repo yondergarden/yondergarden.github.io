@@ -40,7 +40,49 @@ const Home = () => {
 
   useEffect(() => {
     console.log(episodesOpen)
-  },[episodesOpen])
+    console.log(aboutOpen)
+    console.log(premiumOpen)
+  },[episodesOpen, aboutOpen, premiumOpen])
+
+  const EmailForm = () => {
+    const [emailText, setEmailText] = useState('');
+
+    const handleEmailSend = () => {
+        fetch("https://wakeful-intriguing-channel.glitch.me/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ text: emailText }), // Use the key "text"
+        });
+
+        // Clear the input field after sending the email
+        setEmailText('');
+    };
+
+    const handleKeyPress = (e) => {
+      // Check if the Enter key is pressed
+      if (e.key === 'Enter') {
+        handleEmailSend();
+      }
+    };
+
+    return (
+      <div style={{ textAlign: 'center', marginTop: '50px' }}>
+        <input
+          type="text"
+          placeholder="Enter email address"
+          value={emailText}
+          onChange={(e) => setEmailText(e.target.value)}
+          onKeyPress={handleKeyPress}
+          style={{ padding: '8px', marginRight: '8px' }}
+        />
+        <button onClick={handleEmailSend} style={{ padding: '8px' }}>
+          + 𝓢𝓾𝓫𝓶𝓲𝓽  ~
+        </button>
+      </div>
+    );
+  };
 
   useEffect(() => {
     console.log(premiumOpen)
@@ -56,27 +98,43 @@ const Home = () => {
       title: episode.title,
       thumbnail: episode.thumbnail
     }));
-    
+
 
     return (
       <div>
-      <div className="menu-container center-home">
-        <div className='episodes-box'>
-          <button type="button" className="closeButton" onClick={() => {setEpisodesOpen(false); console.log(aboutOpen)}}>&#128162;</button>
-          <div className="episodes-icon-container">
-            {thumbnailList.map(({id, title, thumbnail}) => (
-              <div className="episodes-icon-wrapper" key={id}>
-                <video className="episodes-icon" id={id} autoPlay muted loop onClick={() => {EpisodeSelect(id)}}>
-                  <source src={thumbnail} type="video/mp4"/>
-                  Your browser does not support the video tag.
-                </video>
-                <div className="episode-tooltip">{title}</div>
-              </div>
-            ))}
+        <div className="menu-container center-home">
+          <div className='episodes-box'>
+            <button type="button" className="closeButton" onClick={() => {setEpisodesOpen(false); console.log(aboutOpen)}}>&#128942;</button>
+            <h1 className="simple-centered">☆ 𝖊𝖕𝖎𝖘𝖔𝖉𝖊𝖘 ☆</h1>
+            <div className="episodes-icon-container">
+              {thumbnailList.map(({id, title, thumbnail}) => (
+                <div className="episodes-icon-wrapper" key={id}>
+                  <video className="episodes-icon" id={id} autoPlay muted loop onClick={() => {EpisodeSelect(id)}}>
+                    <source src={thumbnail} type="video/mp4"/>
+                    Your browser does not support the video tag.
+                  </video>
+                  <div className="episode-tooltip">{title}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    );
+  };
+
+  const DisplayPremium = () => {
+    return (
+      <div>
+        <div className="menu-container center-home premium-box">
+          <div className='info-box'>
+            <button type="button" className="closeButton" onClick={() => {setPremiumOpen(false); console.log(premiumOpen)}}>&#128942;</button>
+            <h1 className="simple-centered">♡ 𝖏𝖔𝖎𝖓 𝖜𝖆𝖎𝖙𝖑𝖎𝖘𝖙! ♡</h1>
+            <EmailForm />
+            <h1 className="simple-centered">&#127804;</h1>
+          </div>
+        </div>
+      </div>
     );
   };
 
@@ -85,7 +143,8 @@ const Home = () => {
       <div>
         <div className="menu-container center-home">
           <div className='info-box'>
-            <button type="button" className="closeButton" onClick={() => {setAboutOpen(false); console.log(aboutOpen)}}>&#128162;</button>
+            <button type="button" className="closeButton" onClick={() => {setAboutOpen(false); console.log(aboutOpen)}}>&#128942;</button>
+            <h1 className="simple-centered">🕮 𝖆𝖇𝖔𝖚𝖙 🕮</h1>
           </div>
         </div>
       </div>
@@ -97,7 +156,7 @@ const Home = () => {
     return (
       <div className="menu-container center-home">
         <img id="episodes-button" className="image-button" onClick={() => {setEpisodesOpen(true); console.log(episodesOpen)}} src={episodesMenuImage} alt="" />
-        <img id="premium-button" className="image-button" onClick={() => {setPremiumOpen(true); console.log(premiumOpen)}} src={premiumMenuImage} alt=""  />
+        <img id="premium-button" className="image-button" onClick={() => {setPremiumOpen(true); console.log(premiumOpen)}} src={premiumMenuImage} alt=""/>
         <img id="merch-button" className="image-button spin-hover" src={merchMenuImage} alt="" />
         <img id="about-button" className="image-button" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="" />
       </div>
@@ -107,9 +166,10 @@ const Home = () => {
   return (
       <header>
         <body>
-        <Background openPremium="True"/>
-        {(episodesOpen || aboutOpen) ? null : <DisplayMenu />}
+        <Background premiumOpen={premiumOpen}  />
+        {(episodesOpen || premiumOpen || aboutOpen) ? null : <DisplayMenu />}
         {episodesOpen ? <DisplayEpisodes/> : null}
+        {premiumOpen ? <DisplayPremium/> : null}
         {aboutOpen ? <DisplayInfo/> : null}
         </body>
       </header>

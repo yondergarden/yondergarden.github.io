@@ -22,6 +22,11 @@ z-index: 51;
 pointer-events: none;
 }
 
+.simple-centered {
+  text-align: center;
+  font-size: 4vh;
+}
+
 .menu-container {
     top: 20vh;
     align-items: center;
@@ -35,9 +40,4 @@ pointer-events: none;
     min-height: 60vh;
     max-height: 60vh;
     z-index: 500;
-  }
-
-  .closeButton {
-    position: absolute;
-    z-index: 100;
   }
