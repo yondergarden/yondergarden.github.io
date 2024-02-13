@@ -144,7 +144,7 @@ const Home = () => {
         <div className="menu-container center-home">
           <div className='info-box'>
             <button type="button" className="closeButton" onClick={() => {setAboutOpen(false); console.log(aboutOpen)}}>&#128942;</button>
-            <h1 className="simple-centered">🕮 𝖆𝖇𝖔𝖚𝖙 🕮</h1>
+            <img className='about-info' src="https://i.imgur.com/bg2lizU.png"/>
           </div>
         </div>
       </div>
