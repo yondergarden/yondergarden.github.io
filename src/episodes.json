@@ -3,7 +3,7 @@
       "id": 1,
       "title": "Episode 1",
       "content": "Content for Episode 1",
-      "mp4": "https://i.imgur.com/LRppOQ7.mp4",
+      "mp4": "https://cdn.glitch.global/7992739c-ee27-4d90-bcf4-fa82c0c89316/painTree.mp4?v=1708195735101",
       "thumbnail": "https://i.imgur.com/SEHtwdy.mp4"
     },
     {
@@ -13,7 +13,7 @@
       "mp4": "https://i.imgur.com/QjjVfsy.mp4",
       "thumbnail": "https://i.imgur.com/u8Hq4Sp.mp4"
     },
-    { 
+    {
       "id": 3,
       "title": "Episode 3",
       "content": "Content for Episode 3",

@@ -1,5 +1,5 @@
 import React from 'react';
-import Background from '../components/Background/Background';
+import Background from '../components/Background/EpisodeBackground';
 import "./EpisodesPage.css"
 
 
@@ -30,25 +30,23 @@ const EpisodesPage = (props) => {
   };
 
   const EpisodeNavOverlay = () => {
-    
-    const prevEpisodeImage = "https://i.imgur.com/hnZvKUT.png"
-    const nextEpisodeImage = "https://i.imgur.com/z1zWO61.png"
-    const homeImage = "https://i.imgur.com/YdaGrnF.png"
-    const firstButtonImage = "https://i.imgur.com/SEHUER9.png"
-    const lastButtonImage = "https://i.imgur.com/zBJHJpv.png"
+
+    const prevEpisodeImage = "https://i.imgur.com/406r8SJ.png"
+    const nextEpisodeImage = "https://i.imgur.com/Hr3ksRH.png"
+    const homeImage = "https://i.imgur.com/aVb7ICI.png"
+    const firstButtonImage = "https://i.imgur.com/bFI6htT.png"
+    const lastButtonImage = "https://i.imgur.com/fVw0T7Z.png"
 
     return (
       <div>
-        <div className="center-home menu-container interactive-layer-50">
-          <div className="episode-nav-stack move-nav-left">
-            <img className="episode-nav-button" onClick={() => {EpisodeDeltaChange(-1)}} src={prevEpisodeImage} alt=""/>
+        <div className="center-home interactive-layer-50">
+          <div className="episode-nav-stack">
             <img className="episode-nav-button" onClick={() => {RouteChange("/episodes/1")}} src={firstButtonImage} alt=""/>
-          </div>
-          <div className="episode-nav-stack move-nav-right">
+            <img className="episode-nav-button" onClick={() => {EpisodeDeltaChange(-1)}} src={prevEpisodeImage} alt=""/>
+            <img className="episode-nav-button" onClick={() => {RouteChange("/")}} src={homeImage} alt=""/>
             <img className="episode-nav-button" onClick={() => {EpisodeDeltaChange(1)}} src={nextEpisodeImage} alt=""/>
             <img className="episode-nav-button" onClick={() => {RouteChange("/episodes/".concat(lastEpisodeNum))}} src={lastButtonImage} alt=""/>
           </div>
-          <img className="episode-nav-button center-nav-home" onClick={() => {RouteChange("/")}} src={homeImage} alt=""/>
         </div>
       </div>
     );
