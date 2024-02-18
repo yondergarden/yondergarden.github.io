@@ -1,23 +1,24 @@
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
 .episode-nav-button:hover {
     cursor: pointer;
+    filter: hue-rotate(250deg);
   }
-  
-  .move-nav-left{
-    position: absolute;
-    left: -150px;
-  }
-  
-  .move-nav-right{
-    position: absolute;
-    right: -150px;
-  }
-  
-  .center-nav-home {
-    position: absolute;
-    bottom: -190px;
-  }
-  
-  .episode-nav-stack {
-    display: flex;
-    flex-direction: column;
-  }
+
+.episode-nav-button {
+  width: 10vh;
+  height: 10vh;
+}
+
+.episode-nav-stack {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  transform: translate(23.5%, 40%);
+  width: 100vh;
+  height: 100vh;
+}
