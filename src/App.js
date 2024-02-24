@@ -9,7 +9,7 @@ const episodesData = require('./episodes.json');
 
 function App() {
   return (
-    <Router basename="/">
+    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
