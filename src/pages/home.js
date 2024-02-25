@@ -33,10 +33,10 @@ const Home = () => {
   preloadImage('https://i.imgur.com/xDGevDU.png');
 
 
-  const EpisodeSelect = (episodeNumber) =>{
-    const episodesUrl = "/episodes/"
-    window.location.href = episodesUrl.concat(episodeNumber);
-  }
+  const EpisodeSelect = (episodeNumber) => {
+    const episodesUrl = `#/episodes/${episodeNumber}`;
+    window.location.href = episodesUrl;
+  };
 
   useEffect(() => {
     console.log(episodesOpen)

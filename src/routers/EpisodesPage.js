@@ -1,51 +1,43 @@
 import React from 'react';
 import Background from '../components/Background/EpisodeBackground';
-import "./EpisodesPage.css"
-
+import { Link } from 'react-router-dom';
+import "./EpisodesPage.css";
 
 const EpisodesPage = (props) => {
   const episodesData = require('../episodes.json');
   const lastEpisodeNum = episodesData.length > 0 ? episodesData[episodesData.length - 1].id : null;
 
-  const EpisodeDeltaChange = (delta) =>{
-
+  const EpisodeDeltaChange = (delta) => {
     const episodeNumber = extractNumberFromPath();
-    const newEpisodeNumber = episodeNumber + delta
+    const newEpisodeNumber = episodeNumber + delta;
 
-    if(newEpisodeNumber!==0 && newEpisodeNumber <= lastEpisodeNum){
-      const pageUrl = "../episodes/".concat(newEpisodeNumber);
-      window.location.href = pageUrl;
+    if (newEpisodeNumber !== 0 && newEpisodeNumber <= lastEpisodeNum) {
+      window.location.hash = `#/episodes/${newEpisodeNumber}`;
     }
-  }
+  };
 
-  const RouteChange = (pageUrl) =>{
-    window.location.href = pageUrl;
-  }
-
-  // Extract the final number from the path
   const extractNumberFromPath = () => {
-    const path = window.location.pathname;
-    const match = path.match(/\/(\d+)$/);
+    const hash = window.location.hash;
+    const match = hash.match(/#\/episodes\/(\d+)$/);
     return match ? parseInt(match[1], 10) : null;
   };
 
   const EpisodeNavOverlay = () => {
-
-    const prevEpisodeImage = "https://i.imgur.com/406r8SJ.png"
-    const nextEpisodeImage = "https://i.imgur.com/Hr3ksRH.png"
-    const homeImage = "https://i.imgur.com/aVb7ICI.png"
-    const firstButtonImage = "https://i.imgur.com/bFI6htT.png"
-    const lastButtonImage = "https://i.imgur.com/fVw0T7Z.png"
+    const prevEpisodeImage = "https://i.imgur.com/406r8SJ.png";
+    const nextEpisodeImage = "https://i.imgur.com/Hr3ksRH.png";
+    const homeImage = "https://i.imgur.com/aVb7ICI.png";
+    const firstButtonImage = "https://i.imgur.com/bFI6htT.png";
+    const lastButtonImage = "https://i.imgur.com/fVw0T7Z.png";
 
     return (
       <div>
         <div className="center-home interactive-layer-50">
           <div className="episode-nav-stack">
-            <img className="episode-nav-button" onClick={() => {RouteChange("/episodes/1")}} src={firstButtonImage} alt=""/>
+            <img className="episode-nav-button" onClick={() => {window.location.href = "#/episodes/1"}} src={firstButtonImage} alt=""/>
             <img className="episode-nav-button" onClick={() => {EpisodeDeltaChange(-1)}} src={prevEpisodeImage} alt=""/>
-            <img className="episode-nav-button" onClick={() => {RouteChange("/")}} src={homeImage} alt=""/>
+            <img className="episode-nav-button" onClick={() => {window.location.href = "#/"}} src={homeImage} alt=""/>
             <img className="episode-nav-button" onClick={() => {EpisodeDeltaChange(1)}} src={nextEpisodeImage} alt=""/>
-            <img className="episode-nav-button" onClick={() => {RouteChange("/episodes/".concat(lastEpisodeNum))}} src={lastButtonImage} alt=""/>
+            <img className="episode-nav-button" onClick={() => {window.location.href = `#/episodes/${lastEpisodeNum}`}} src={lastButtonImage} alt=""/>
           </div>
         </div>
       </div>
