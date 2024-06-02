@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import React from 'react';
-
 import '../styles/Home.css'
 import '../styles/Yonder.css'
 import Background from "../components/Background/Background"
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {

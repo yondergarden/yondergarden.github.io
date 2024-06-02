@@ -1,0 +1,228 @@
+.lock-component {
+  background-color: rgba(255, 0, 0, 0);
+  position: absolute;
+  width: 100vh;
+  height: 100vh;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 500; /* Adjust as needed, higher values will position it on top of elements with lower z-index values */
+}
+
+.lock-image {
+  position: absolute;
+  width: 100vh;
+  height: 100vh;
+}
+
+.invisible-button-container {
+  background-color: rgba(255, 0, 0, 0);
+  position: absolute;
+  display: grid; /* Change to grid */
+  grid-template-columns: auto auto;
+  grid-auto-rows: auto;
+  justify-content: center;
+  z-index: 1001;
+  top: 63%;
+  left: 50%;
+  transform: translate(-105%, -50%);  /* Center the container */
+}
+
+.invisible-button {
+  background-color: rgba(255, 0, 0, 0);
+  /*border: 1px solid black;  1px width solid black border */
+  cursor: pointer;
+  width: 12.5vh;
+  height: 12.5vh;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+  padding: 0; /* Reset padding */
+  margin: 0; /* Reset margin */
+}
+
+.invisible-button:hover {
+
+}
+
+.lockCombo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  font-size: 20vh; /* Adjust the font size as needed */
+  color: yellow;
+  text-align: center;
+  -webkit-text-stroke: 2px black; /* Outline effect */
+  text-stroke: 2px black; /* Outline effect */
+  font-weight: bold; /* Make the text bold */
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+  z-index: 1003;
+}
+
+@keyframes invert-colors-animation {
+  0%, 11%, 13%, 45%, 60%, 100% {
+    filter: invert(0);
+  }
+  10%, 12%, 14%, 55% {
+    filter: invert(1);
+  }
+}
+
+/* Brightness animation */
+@keyframes brightness-animation {
+  0%, 50%, 64%, 68% {
+    filter: brightness(100%);
+  }
+  5%, 62%, 66%, 70% {
+    filter: brightness(200%);
+  }
+  72%, 100% {
+    filter: brightness(2000%);
+  }
+}
+
+@keyframes brighten-lock-animation {
+  0% {
+    filter: brightness(100%);
+  }
+  20% {
+    filter: brightness(2000%);
+  }
+  100% {
+    filter: brightness(100%);
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.invert-colors {
+  animation: invert-colors-animation 2s ease-in-out 1;
+}
+
+.brightness-effect {
+  animation: brightness-animation 2s ease-in-out 1;
+}
+
+.brighten-lock {
+  animation: brighten-lock-animation 2s linear 1;
+}
+
+.wizard-container {
+  position: relative;
+  z-index: 1002;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.wizard {
+  width: 100vh;
+  height: 100vh;
+  animation: fadeInOut 4.5s forwards; /* 4.5 seconds total: 0.5s fade-in, 4s visible, 0.5s fade-out */
+}
+
+.wizard-sprite {
+  width: 100vh;
+  height: 100vh;
+  animation: fadeInOut 4.5s forwards; /* 4.5 seconds total: 0.5s fade-in, 4s visible, 0.5s fade-out */
+}
+
+
+
+/*======================
+    Mobile Formatting
+========================*/
+
+@media (orientation: portrait) {
+  .lock-component {
+    background-color: rgba(255, 0, 0, 0);
+    position: absolute;
+    width: 100vw;
+    height: 100vw;
+    left: -50%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    z-index: 500; /* Adjust as needed, higher values will position it on top of elements with lower z-index values */
+  }
+
+  .lock-image {
+    position: absolute;
+    width: 100vw;
+    height: 100vw;
+  }
+
+  .invisible-button-container {
+    background-color: rgba(255, 0, 0, 0);
+    position: absolute;
+    display: grid; /* Change to grid */
+    grid-template-columns: auto auto;
+    grid-auto-rows: auto;
+    justify-content: center;
+    z-index: 1001;
+    top: 50%;
+    left: 36%;
+    transform: translate(-50%, 1%);  /* Center the container */
+  }
+
+  .invisible-button {
+    background-color: rgba(255, 0, 0, 0);
+    cursor: pointer;
+    width: 12.5vw;
+    height: 12.5vw;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    padding: 0; /* Reset padding */
+    margin: 0; /* Reset margin */
+  }
+
+  .invisible-button:hover {
+
+  }
+
+  .lockCombo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    font-size: 20vw; /* Adjust the font size as needed */
+    color: yellow;
+    text-align: center;
+    -webkit-text-stroke: 2px black; /* Outline effect */
+    text-stroke: 2px black; /* Outline effect */
+    font-weight: bold; /* Make the text bold */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    z-index: 1003;
+  }
+
+  .wizard-container {
+    position: relative;
+    z-index: 1002;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .wizard {
+    position: absolute;
+    width: 100vw;
+    height: 100vw;
+    animation: fadeInOut 4.5s forwards; /* 4.5 seconds total: 0.5s fade-in, 4s visible, 0.5s fade-out */
+    top: calc(var(--vh, 1vh) * 50);
+    transform: translate(0%, -50%)
+  }
+}

@@ -27,6 +27,10 @@
   pointer-events: none;
 }
 
+.interactive-layer-1000 {
+  z-index: 1000;
+}
+
 .simple-centered {
   text-align: center;
   font-size: 4vh;
@@ -45,4 +49,25 @@
   min-height: 60vh;
   max-height: 60vh;
   z-index: 500;
+}
+
+/*======================
+    Mobile Formatting
+========================*/
+
+@media (orientation: portrait) {
+  .menu-container {
+    top: 50%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    min-width: 60vw;
+    max-width: 60vw;
+    min-height: 60vw;
+    max-height: 60vw;
+    z-index: 500;
+  }
 }
