@@ -2,10 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Lock.css';
 import { useSpring, animated } from 'react-spring';
 
-
 const baseUrl = 'https://yondergardenwizard.s3.amazonaws.com/';
 const versionSuffix = '.png';
 const frameCount = 120;
+
+
 
 const spriteUrls = Array.from({ length: frameCount }, (_, index) => {
   return `${baseUrl}wizardUnlock.0.${index + 1}${versionSuffix}`;
@@ -238,7 +239,16 @@ const LockComponent = () => {
         </>
       )}
       <div className="lockCombo">{concatenatedString}</div>
-      {showWizard && (
+      <div className="wizard-container">
+        <animated.div
+          className="wizard-sprite" // Adjust class name based on your CSS
+          style={{
+            backgroundImage: `url(${images[currentFrame]?.src})`,
+            ...animateSprite,
+          }}
+        />
+      </div>
+      {/* }{showWizard && (
         <div className="wizard-container">
           <animated.div
             className="wizard-sprite" // Adjust class name based on your CSS
@@ -250,7 +260,7 @@ const LockComponent = () => {
             }}
           />
         </div>
-      )}
+      )} */}
     </>
   );
 };
