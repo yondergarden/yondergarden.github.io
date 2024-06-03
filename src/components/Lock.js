@@ -3,12 +3,12 @@ import './Lock.css';
 import { useSpring, animated } from 'react-spring';
 
 
-const baseUrl = 'https://cdn.glitch.global/7090e318-2f18-421d-a082-1848387275b2/';
-const versionSuffix = '.png?v=1716852226859';
-const frameCount = 120; // Number of frames in your sprite animation
+const baseUrl = 'https://yondergardenwizard.s3.amazonaws.com/';
+const versionSuffix = '.png';
+const frameCount = 120;
 
 const spriteUrls = Array.from({ length: frameCount }, (_, index) => {
-  return `${baseUrl}wizardUnlock.${index}.0${versionSuffix}`;
+  return `${baseUrl}wizardUnlock.0.${index + 1}${versionSuffix}`;
 });
 
 const loadImage = (url) => {
