@@ -55,7 +55,6 @@ const LockComponent = () => {
       try {
         const loadedImages = await loadAllImages();
         setImages(loadedImages);
-        setShowWizard(true);
       } catch (error) {
         console.error(error);
       }
@@ -69,7 +68,7 @@ const LockComponent = () => {
     if (showWizard) {
       frameInterval = setInterval(() => {
         setCurrentFrame(prevFrame => (prevFrame + 1) % frameCount);
-      }, 1000 / 12); // 12 frames per second
+      }, 1000 / 30); // 12 frames per second
     }
     return () => clearInterval(frameInterval);
   }, [showWizard]);
