@@ -6,8 +6,6 @@ const baseUrl = 'https://yondergardenwizard.s3.amazonaws.com/';
 const versionSuffix = '.png';
 const frameCount = 120;
 
-
-
 const spriteUrls = Array.from({ length: frameCount }, (_, index) => {
   return `${baseUrl}wizardUnlock.0.${index + 1}${versionSuffix}`;
 });
@@ -26,7 +24,6 @@ const loadAllImages = async () => {
   return images;
 };
 
-
 const LockComponent = () => {
   useEffect(() => {
     const setVhProperty = () => {
@@ -34,25 +31,21 @@ const LockComponent = () => {
       document.documentElement.style.setProperty('--vh', `${vh}px`);
     };
 
-    // Initial call to set the height
     setVhProperty();
-
-    // Update the value on resize
     window.addEventListener('resize', setVhProperty);
 
     return () => {
       window.removeEventListener('resize', setVhProperty);
     };
-  }, []); // Empty dependency array means this effect runs only once, on component mount
+  }, []);
 
-
-  const [showLock, setShowLock] = useState(true); // Initially true to show the lock components
+  const [showLock, setShowLock] = useState(true);
   const [lockNumber, setLockNumber] = useState(0);
-  const [hoveredButton, setHoveredButton] = useState(0); // Initialize with 0
+  const [hoveredButton, setHoveredButton] = useState(0);
   const [concatenatedString, setConcatenatedString] = useState("");
-  const [numValues, setNumValues] = useState(0); // Initialize the number of values
-  const monthlyPasscode = "0123"; // Define monthly passcode
-  const [isTouch, setIsTouch] = useState(false); // Flag to track touch events
+  const [numValues, setNumValues] = useState(0);
+  const monthlyPasscode = "0123";
+  const [isTouch, setIsTouch] = useState(false);
   const [showWizard, setShowWizard] = useState(false);
   const [images, setImages] = useState([]);
   const [currentFrame, setCurrentFrame] = useState(0);
@@ -62,7 +55,7 @@ const LockComponent = () => {
       try {
         const loadedImages = await loadAllImages();
         setImages(loadedImages);
-        setShowWizard(true); // Show the wizard container once images are loaded
+        setShowWizard(true);
       } catch (error) {
         console.error(error);
       }
@@ -71,36 +64,42 @@ const LockComponent = () => {
     fetchImages();
   }, []);
 
+  useEffect(() => {
+    let frameInterval;
+    if (showWizard) {
+      frameInterval = setInterval(() => {
+        setCurrentFrame(prevFrame => (prevFrame + 1) % frameCount);
+      }, 1000 / 12); // 12 frames per second
+    }
+    return () => clearInterval(frameInterval);
+  }, [showWizard]);
+
   const animateSprite = useSpring({
-    loop: false,
-    from: { backgroundPosition: '0px' },
-    to: { backgroundPosition: `-${currentFrame * 128}px` }, // Assuming each frame has a width of 128 pixels
-    config: { duration: 1000 }, // Adjust animation speed as needed
+    from: { frame: 0 },
+    frame: currentFrame,
+    reset: true,
+    reverse: currentFrame === frameCount - 1,
+    config: { duration: 1000 / 12 }, // 12 frames per second
     onRest: () => {
-      // Reset animation once it completes
-      if (currentFrame < frameCount - 1) {
-        setCurrentFrame(currentFrame + 1);
-      } else {
-        setCurrentFrame(0);
-      }
+      setCurrentFrame(prevFrame => (prevFrame + 1) % frameCount);
     },
   });
 
-
   const invertPageColors = () => {
-    document.body.classList.add("invert-colors"); // Apply invert colors class to body
-    document.body.classList.add("brightness-effect"); // Apply brightness effect class to body
+    document.body.classList.add("invert-colors");
+    document.body.classList.add("brightness-effect");
 
     const lockImage = document.querySelector('.lock-image');
-    lockImage.classList.add('brighten-lock'); // Apply brightness effect class to LockImage
-
+    if (lockImage) {
+      lockImage.classList.add('brighten-lock');
+    }
   };
 
   const resetLockNumber = () => {
-    setLockNumber(0); // Reset lock number to 0
+    setLockNumber(0);
     setTimeout(() => {
-      setLockNumber(hoveredButton); // Revert to hovered button's index after a short delay
-    }, 100); // Adjust delay as needed
+      setLockNumber(hoveredButton);
+    }, 100);
   };
 
   const handleMouseEnter = (num) => {
@@ -124,7 +123,7 @@ const LockComponent = () => {
       }, 100);
 
       if (concatenatedString !== ":(" && concatenatedString !== ":)") {
-        setConcatenatedString(concatenatedString + (num-1).toString());
+        setConcatenatedString(concatenatedString + (num - 1).toString());
       }
     }
   };
@@ -135,10 +134,10 @@ const LockComponent = () => {
         if (concatenatedString === monthlyPasscode) {
           setTimeout(() => {
             invertPageColors();
-          }, 2000); // Delay invertPageColors by 2 seconds
+          }, 2000);
           setShowWizard(true);
           setConcatenatedString(":)");
-          setTimeout(() => setShowLock(false), 4000); // Hide lock after 4 seconds
+          setTimeout(() => setShowLock(false), 4000);
         } else {
           setConcatenatedString(":(");
         }
@@ -150,7 +149,7 @@ const LockComponent = () => {
           document.body.classList.remove("brightness-effect");
           const lockImage = document.querySelector('.lock-image');
           if (lockImage) {
-            lockImage.classList.remove('brighten-lock'); // Remove brightness effect class from LockImage
+            lockImage.classList.remove('brighten-lock');
           }
           setShowWizard(false);
         }, 4000);
@@ -162,39 +161,39 @@ const LockComponent = () => {
   };
 
   const handleTouchStart = (num) => {
-    setIsTouch(true); // Set touch flag to true
-    setLockNumber(num); // Set lock number to the touched button's index
+    setIsTouch(true);
+    setLockNumber(num);
     setTimeout(() => {
-      setLockNumber(0); // Revert to 0th index after a short delay
-    }, 100); // Adjust delay as needed
+      setLockNumber(0);
+    }, 100);
 
     if (concatenatedString !== ":(" && concatenatedString !== ":)") {
-      setConcatenatedString(concatenatedString + (num-1).toString());
+      setConcatenatedString(concatenatedString + (num - 1).toString());
     }
   };
 
   const handleTouchEnd = () => {
-    setIsTouch(false); // Reset touch flag to false
+    setIsTouch(false);
     if (concatenatedString.length === 4) {
       if (concatenatedString === monthlyPasscode) {
         setTimeout(() => {
           invertPageColors();
-        }, 2000); // Delay invertPageColors by 2 seconds
+        }, 2000);
         setShowWizard(true);
         setConcatenatedString(":)");
-        setTimeout(() => setShowLock(false), 4000); // Hide lock components after 6 seconds
+        setTimeout(() => setShowLock(false), 4000);
       } else {
         setConcatenatedString(":(");
       }
       setTimeout(() => {
         setConcatenatedString("");
-      }, 2000); // Reset concatenated string after 2 seconds
+      }, 2000);
       setTimeout(() => {
         document.body.classList.remove("invert-colors");
         document.body.classList.remove("brightness-effect");
         const lockImage = document.querySelector('.lock-image');
         if (lockImage) {
-          lockImage.classList.remove('brighten-lock'); // Remove brightness effect class from LockImage
+          lockImage.classList.remove('brighten-lock');
         }
         setShowWizard(false);
       }, 4000);
@@ -227,40 +226,31 @@ const LockComponent = () => {
               <div
                 key={num}
                 className="invisible-button"
-                onTouchStart={(e) => { e.preventDefault(); handleTouchStart(num); }} // Handle touch start (for mobile)
-                onTouchEnd={(e) => { e.preventDefault(); handleTouchEnd(); }} // Handle touch end (for mobile)
+                onTouchStart={(e) => { e.preventDefault(); handleTouchStart(num); }}
+                onTouchEnd={(e) => { e.preventDefault(); handleTouchEnd(); }}
                 onMouseEnter={() => handleMouseEnter(num)}
                 onMouseLeave={handleMouseLeave}
-                onMouseDown={() => handleMouseClick(num)} // Handle mouse click
-                onMouseUp={handleMouseUp} // Handle mouse up
+                onMouseDown={() => handleMouseClick(num)}
+                onMouseUp={handleMouseUp}
               />
             ))}
           </div>
         </>
       )}
       <div className="lockCombo">{concatenatedString}</div>
-      <div className="wizard-container">
-        <animated.div
-          className="wizard-sprite" // Adjust class name based on your CSS
-          style={{
-            backgroundImage: `url(${images[currentFrame]?.src})`,
-            ...animateSprite,
-          }}
-        />
-      </div>
-      {/* }{showWizard && (
+      {showWizard && (
         <div className="wizard-container">
           <animated.div
-            className="wizard-sprite" // Adjust class name based on your CSS
+            className="wizard-sprite"
             style={{
               backgroundImage: `url(${images[currentFrame]?.src})`,
-              width: '128px', // Assuming each frame has a width of 128 pixels
-              height: '128px', // Assuming each frame has a height of 128 pixels
-              ...animateSprite,
+              width: '100vh',
+              height: '100vh',
+              backgroundPosition: `0px 0px`,
             }}
           />
         </div>
-      )} */}
+      )}
     </>
   );
 };
