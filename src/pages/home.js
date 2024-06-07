@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import React from 'react';
-
 import '../styles/Home.css'
 import '../styles/Yonder.css'
 import Background from "../components/Background/Background"
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
@@ -156,7 +156,9 @@ const Home = () => {
     return (
       <div className="menu-container center-home">
         <img id="episodes-button" className="image-button" onClick={() => {setEpisodesOpen(true); console.log(episodesOpen)}} src={episodesMenuImage} alt="" />
-        <img id="premium-button" className="image-button" onClick={() => {setPremiumOpen(true); console.log(premiumOpen)}} src={premiumMenuImage} alt=""/>
+        <a href="https://www.patreon.com/YonderGarden" target="_blank" rel="noopener noreferrer">
+          <img id="premium-button" className="image-button" onClick={() => {setPremiumOpen(true); console.log(premiumOpen)}} src={premiumMenuImage} alt=""/>
+        </a>
         <img id="merch-button" className="image-button spin-hover" src={merchMenuImage} alt="" />
         <img id="about-button" className="image-button" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="" />
       </div>

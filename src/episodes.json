@@ -1,23 +1,26 @@
 [
-    {
-      "id": 1,
-      "title": "Episode 1",
-      "content": "Content for Episode 1",
-      "mp4": "https://cdn.glitch.global/7992739c-ee27-4d90-bcf4-fa82c0c89316/painTree.webm?v=1708293664328",
-      "thumbnail": "https://i.imgur.com/SEHtwdy.mp4"
-    },
-    {
-      "id": 2,
-      "title": "Episode 2",
-      "content": "Content for Episode 2",
-      "mp4": "https://i.imgur.com/QjjVfsy.mp4",
-      "thumbnail": "https://i.imgur.com/u8Hq4Sp.mp4"
-    },
-    {
-      "id": 3,
-      "title": "Episode 3",
-      "content": "Content for Episode 3",
-      "mp4": "https://i.imgur.com/wgdtjg5.mp4",
-      "thumbnail": "https://i.imgur.com/Y7YYUkr.mp4"
-    }
+  {
+    "id": 1,
+    "title": "Cold Bird",
+    "content": "Content for Episode 1",
+    "mp4": "https://cdn.glitch.global/7090e318-2f18-421d-a082-1848387275b2/painTree.mp4?v=1716657481087",
+    "thumbnail": "https://i.imgur.com/SEHtwdy.mp4",
+    "premium" : true
+  },
+  {
+    "id": 2,
+    "title": "The Primordial Will",
+    "content": "Content for Episode 2",
+    "mp4": "https://i.imgur.com/QjjVfsy.mp4",
+    "thumbnail": "https://i.imgur.com/SEHtwdy.mp4",
+    "premium" : false
+  },
+  {
+    "id": 3,
+    "title": "Hexahedron'd",
+    "content": "Content for Episode 3",
+    "mp4": "https://i.imgur.com/wgdtjg5.mp4",
+    "thumbnail": "https://i.imgur.com/SEHtwdy.mp4",
+    "premium" : false
+  }
 ]

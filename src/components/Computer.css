@@ -1,0 +1,56 @@
+/* Container to ensure image is positioned relative to the viewport */
+.computer-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Makes the container itself non-interactive */
+  z-index: 5000;
+}
+
+/* Ensure the link inside the container is interactive */
+.computer-container a {
+  pointer-events: auto; /* Ensures the link is still interactive */
+}
+
+/* Computer image styling */
+.computer-image {
+  position: fixed;
+  max-width: 100%;
+  width: 20vh;
+  height: auto;
+  z-index: 5000;
+  left: calc(50vw + 50vh);
+  top: 100vh; /* Using var(--vh) for consistent height */
+  transform: translate(-100%, -100%);
+  filter: hue-rotate(225deg);
+}
+
+.computer-image:hover {
+  filter: hue-rotate(180deg) saturate(5); /* Apply hue rotation on hover */
+  cursor: pointer;
+}
+
+/* Keyframes for hue rotation animation */
+@keyframes hue-rotate-animation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/*======================
+    Mobile Formatting
+========================*/
+
+@media (orientation: portrait) {
+  .computer-image {
+    width: 20vw;
+    left: 100vw;
+    top: calc(var(--vh, 1vh) * 50 + 50vw);
+    filter: hue-rotate(225deg);
+  }
+}

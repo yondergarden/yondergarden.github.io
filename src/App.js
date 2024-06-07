@@ -1,27 +1,55 @@
-// App.js
-import React from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import './App.css';
+import { Routes, Route } from 'react-router-dom';
 import Home from "./pages/home.js";
-import About from "./pages/about.js";
 import EpisodesPage from "./routers/EpisodesPage";
+import PreLoader1 from "./components/PreLoader1";
 
 const episodesData = require('./episodes.json');
 
 function App() {
+  const [loading, setLoading] = useState(true); // Initialize loading state
+
+  useEffect(() => {
+    // Simulate loading with a timeout
+    setTimeout(() => {
+      setLoading(false); // Set loading to false after 2 seconds
+    }, 5000);
+  }, []); // Run this effect only once after the component mounts
+
+  useEffect(() => {
+    const handleResize = () => {
+      document.body.style.height = window.innerHeight + 'px';
+    };
+
+    // Initial call to set the height
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []); // Empty dependency array means this effect runs only once, on component mount
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        {episodesData.map(episode => (
-          <Route
-            key={episode.id}
-            path={`/episodes/${episode.id}`}
-            element={<EpisodesPage episode={episode}/>}
-          />
-        ))}
-      </Routes>
-    </Router>
+    <>
+      {/* Render the PreLoader1 component if loading state is true */}
+      {loading ? (
+        <PreLoader1 />
+      ) : (
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {episodesData.map(episode => (
+            <Route
+              key={episode.id}
+              path={`/episodes/${episode.id}`}
+              element={<EpisodesPage episode={episode}/>}
+            />
+          ))}
+        </Routes>
+      )}
+    </>
   );
 }
 
