@@ -123,21 +123,24 @@
 
 .wizard-container {
   position: relative;
+  width: 100vh;
+  height: 100vh;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
   z-index: 1002;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.wizard {
-  width: 100vh;
-  height: 100vh;
-  animation: fadeInOut 4.5s forwards; /* 4.5 seconds total: 0.5s fade-in, 4s visible, 0.5s fade-out */
-}
-
 .wizard-sprite {
   width: 100vh;
   height: 100vh;
+  max-width: 100%; /* Ensure it doesn't exceed the container's width */
+  max-height: 100%; /* Ensure it doesn't exceed the container's height */
+  background-size: contain; /* Ensure the image fits within the container */
+  background-repeat: no-repeat; /* Prevent repeating of the background image */
   animation: fadeInOut 4.5s forwards; /* 4.5 seconds total: 0.5s fade-in, 4s visible, 0.5s fade-out */
 }
 
@@ -211,18 +214,24 @@
 
   .wizard-container {
     position: relative;
+    width: 100vw;
+    height: 100vw;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
     z-index: 1002;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  .wizard {
-    position: absolute;
+  .wizard-sprite {
     width: 100vw;
     height: 100vw;
+    max-width: 100%; /* Ensure it doesn't exceed the container's width */
+    max-height: 100%; /* Ensure it doesn't exceed the container's height */
+    background-size: contain; /* Ensure the image fits within the container */
+    background-repeat: no-repeat; /* Prevent repeating of the background image */
     animation: fadeInOut 4.5s forwards; /* 4.5 seconds total: 0.5s fade-in, 4s visible, 0.5s fade-out */
-    top: calc(var(--vh, 1vh) * 50);
-    transform: translate(0%, -50%)
   }
 }

@@ -243,9 +243,6 @@ const LockComponent = () => {
             className="wizard-sprite"
             style={{
               backgroundImage: `url(${images[currentFrame]?.src})`,
-              width: '70vh',
-              height: '70vh',
-              backgroundPosition: `0px 0px`,
             }}
           />
         </div>
