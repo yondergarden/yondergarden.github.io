@@ -87,7 +87,7 @@
     filter: brightness(100%);
   }
   20% {
-    filter: brightness(2000%);
+    filter: brightness(5000%);
   }
   100% {
     filter: brightness(100%);
@@ -141,7 +141,7 @@
   max-height: 100%; /* Ensure it doesn't exceed the container's height */
   background-size: contain; /* Ensure the image fits within the container */
   background-repeat: no-repeat; /* Prevent repeating of the background image */
-  animation: fadeInOut 4.5s forwards; /* 4.5 seconds total: 0.5s fade-in, 4s visible, 0.5s fade-out */
+  animation: fadeInOut 5s forwards; /* 4.5 seconds total: 0.5s fade-in, 4s visible, 0.5s fade-out */
 }
 
 
@@ -232,6 +232,6 @@
     max-height: 100%; /* Ensure it doesn't exceed the container's height */
     background-size: contain; /* Ensure the image fits within the container */
     background-repeat: no-repeat; /* Prevent repeating of the background image */
-    animation: fadeInOut 4.5s forwards; /* 4.5 seconds total: 0.5s fade-in, 4s visible, 0.5s fade-out */
+    animation: fadeInOut 5s forwards; /* 4.5 seconds total: 0.5s fade-in, 4s visible, 0.5s fade-out */
   }
 }

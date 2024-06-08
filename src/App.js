@@ -13,8 +13,8 @@ function App() {
   useEffect(() => {
     // Simulate loading with a timeout
     setTimeout(() => {
-      setLoading(false); // Set loading to false after 2 seconds
-    }, 5000);
+      setLoading(false); // Set loading to false after a number of milliseconds
+    }, 2000);
   }, []); // Run this effect only once after the component mounts
 
   useEffect(() => {

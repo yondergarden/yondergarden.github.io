@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Lock.css';
-import { useSpring, animated } from 'react-spring';
 
 const baseUrl = 'https://yondergardenwizard.s3.amazonaws.com/';
 const versionSuffix = '.png';
-const frameCount = 120;
+const frameCount = 149;
 
 const spriteUrls = Array.from({ length: frameCount }, (_, index) => {
   return `${baseUrl}wizardUnlock.0.${index + 1}${versionSuffix}`;
@@ -67,22 +66,19 @@ const LockComponent = () => {
     let frameInterval;
     if (showWizard) {
       frameInterval = setInterval(() => {
-        setCurrentFrame(prevFrame => (prevFrame + 1) % frameCount);
-      }, 1000 / 30); // 12 frames per second
+        setCurrentFrame(prevFrame => {
+          const newFrame = prevFrame + 1;
+          if (newFrame >= frameCount - 1) {
+            clearInterval(frameInterval);
+            setShowWizard(false);
+            return frameCount - 1; // Stay on the last frame
+          }
+          return newFrame;
+        });
+      }, 1000 / 30); // 30 frames per second
     }
     return () => clearInterval(frameInterval);
   }, [showWizard]);
-
-  const animateSprite = useSpring({
-    from: { frame: 0 },
-    frame: currentFrame,
-    reset: true,
-    reverse: currentFrame === frameCount - 1,
-    config: { duration: 1000 / 12 }, // 12 frames per second
-    onRest: () => {
-      setCurrentFrame(prevFrame => (prevFrame + 1) % frameCount);
-    },
-  });
 
   const invertPageColors = () => {
     document.body.classList.add("invert-colors");
@@ -150,7 +146,6 @@ const LockComponent = () => {
           if (lockImage) {
             lockImage.classList.remove('brighten-lock');
           }
-          setShowWizard(false);
         }, 4000);
         setNumValues(0);
       } else {
@@ -194,7 +189,6 @@ const LockComponent = () => {
         if (lockImage) {
           lockImage.classList.remove('brighten-lock');
         }
-        setShowWizard(false);
       }, 4000);
     } else {
       setNumValues(numValues + 1);
@@ -239,7 +233,7 @@ const LockComponent = () => {
       <div className="lockCombo">{concatenatedString}</div>
       {showWizard && (
         <div className="wizard-container">
-          <animated.div
+          <div
             className="wizard-sprite"
             style={{
               backgroundImage: `url(${images[currentFrame]?.src})`,
