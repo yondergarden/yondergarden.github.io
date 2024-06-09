@@ -9,15 +9,16 @@ import { Link } from 'react-router-dom';
 const Home = () => {
 
   const [episodesOpen, setEpisodesOpen] = useState(false);
+  const [subscribeOpen, setSubscribeOpen] = useState(false);
   const [premiumOpen, setPremiumOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
 
   const episodesData = require('../episodes.json');
 
-  let episodesMenuImage = "https://i.imgur.com/tHMXkUr.png"
-  let merchMenuImage = "https://i.imgur.com/EEKI1Td.png"
-  let aboutMenuImage = "https://i.imgur.com/ZjdrIPQ.png"
-  let premiumMenuImage = "https://i.imgur.com/UHet8Vq.png"
+  let episodesMenuImage = "https://homepagebuttons.s3.us-east-2.amazonaws.com/_0004_episodesButton.png"
+  let subscribeMenuImage = "https://homepagebuttons.s3.us-east-2.amazonaws.com/_0005_subscribeButton.png"
+  let aboutMenuImage = "https://homepagebuttons.s3.us-east-2.amazonaws.com/_0007_aboutButton.png"
+  let premiumMenuImage = "https://homepagebuttons.s3.us-east-2.amazonaws.com/_0006_premiumButton.png"
 
 
   // Function to preload images
@@ -27,10 +28,10 @@ const Home = () => {
   }
 
   // Preload the hover images
-  preloadImage('https://i.imgur.com/f6gNmHR.png');
-  preloadImage('https://i.imgur.com/Hj4Ehh7.png');
-  preloadImage('https://i.imgur.com/M0NZyfJ.png');
-  preloadImage('https://i.imgur.com/xDGevDU.png');
+  preloadImage('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0000_episodesButtonHover.png');
+  preloadImage('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0001_subscribeButtonHover.png');
+  preloadImage('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0002_premiumButtonHover.png');
+  preloadImage('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0003_aboutButtonHover.png');
 
 
   const EpisodeSelect = (episodeNumber) => {
@@ -42,7 +43,8 @@ const Home = () => {
     console.log(episodesOpen)
     console.log(aboutOpen)
     console.log(premiumOpen)
-  },[episodesOpen, aboutOpen, premiumOpen])
+    console.log(subscribeOpen)
+  },[episodesOpen, aboutOpen, premiumOpen, subscribeOpen])
 
   const EmailForm = () => {
     const [emailText, setEmailText] = useState('');
@@ -78,7 +80,7 @@ const Home = () => {
           style={{ padding: '8px', marginRight: '8px' }}
         />
         <button onClick={handleEmailSend} style={{ padding: '8px' }}>
-          + 𝓢𝓾𝓫𝓶𝓲𝓽  ~
+          submit
         </button>
       </div>
     );
@@ -123,16 +125,26 @@ const Home = () => {
     );
   };
 
-  const DisplayPremium = () => {
+  const DisplaySubscribe = () => {
     return (
       <div>
         <div className="menu-container center-home premium-box">
           <div className='info-box'>
-            <button type="button" className="closeButton" onClick={() => {setPremiumOpen(false); console.log(premiumOpen)}}>&#128942;</button>
-            <h1 className="simple-centered">♡ 𝖏𝖔𝖎𝖓 𝖜𝖆𝖎𝖙𝖑𝖎𝖘𝖙! ♡</h1>
-            <EmailForm />
-            <h1 className="simple-centered">&#127804;</h1>
+            <button type="button" className="closeButton" onClick={() => {setSubscribeOpen(false); console.log(subscribeOpen)}}>&#128942;</button>
+            <h1 className="simple-centered unifrakturFont">relinquish thy email address.</h1>
+            <h1 className="simple-centered">🤍</h1>
+            <EmailForm/>
+            <h1 className="simple-centered">\(🌸^.^)/</h1>
           </div>
+        </div>
+      </div>
+    )
+  }
+
+  const DisplayPremium = () => {
+    return (
+      <div>
+        <div className="menu-container center-home premium-box">
         </div>
       </div>
     );
@@ -156,10 +168,10 @@ const Home = () => {
     return (
       <div className="menu-container center-home">
         <img id="episodes-button" className="image-button" onClick={() => {setEpisodesOpen(true); console.log(episodesOpen)}} src={episodesMenuImage} alt="" />
+        <img id="subscribe-button" className="image-button spin-hover" onClick={() => {setSubscribeOpen(true); console.log(subscribeOpen)}} src={subscribeMenuImage} alt="" />
         <a href="https://www.patreon.com/YonderGarden" target="_blank" rel="noopener noreferrer">
-          <img id="premium-button" className="image-button" onClick={() => {setPremiumOpen(true); console.log(premiumOpen)}} src={premiumMenuImage} alt=""/>
+        <img id="premium-button" className="image-button" onClick={() => {setPremiumOpen(true); console.log(premiumOpen)}} src={premiumMenuImage} alt=""/>
         </a>
-        <img id="merch-button" className="image-button spin-hover" src={merchMenuImage} alt="" />
         <img id="about-button" className="image-button" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="" />
       </div>
     );
@@ -168,10 +180,10 @@ const Home = () => {
   return (
       <header>
         <body>
-        <Background premiumOpen={premiumOpen}  />
-        {(episodesOpen || premiumOpen || aboutOpen) ? null : <DisplayMenu />}
+        <Background/>
+        {(episodesOpen || subscribeOpen || aboutOpen) ? null : <DisplayMenu />}
         {episodesOpen ? <DisplayEpisodes/> : null}
-        {premiumOpen ? <DisplayPremium/> : null}
+        {subscribeOpen ? <DisplaySubscribe/> : null}
         {aboutOpen ? <DisplayInfo/> : null}
         </body>
       </header>

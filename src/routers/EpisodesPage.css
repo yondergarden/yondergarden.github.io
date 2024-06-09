@@ -15,6 +15,7 @@ body {
 .episode-nav-button {
   width: 10vh;
   height: 10vh;
+  z-index: 1005;
 }
 
 .episode-nav-button:hover {
@@ -23,13 +24,14 @@ body {
 }
 
 .episode-nav-stack {
+  position: fixed;
   align-items: center;
   display: flex;
   flex-direction: row;
-  position: absolute;
   transform: translate(23.5%, 43%);
   width: 100vh;
   height: 100vh;
+  z-index: 1005;
 }
 
 /*======================
@@ -40,15 +42,17 @@ body {
   .episode-nav-button {
     width: 10vw;
     height: 10vw;
+    z-index: 1005;
   }
 
   .episode-nav-stack {
+    position: fixed;
     align-items: center;
     display: flex;
     flex-direction: row;
-    position: absolute;
     transform: translate(45%, 135%);
     width: 50vw;
     height: 50vw;
+    z-index: 1005;
   }
 }

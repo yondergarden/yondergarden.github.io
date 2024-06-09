@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'Unifraktur';
+  src: url('../fonts/UnifrakturCook-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.unifrakturFont {
+  font-family: 'Unifraktur', sans-serif;
+}
+
 .layer-0 {
   z-index: 0;
   pointer-events: none;

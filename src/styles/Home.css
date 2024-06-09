@@ -15,23 +15,23 @@
 
 #episodes-button:hover {
     cursor: pointer;
-    content: url('https://i.imgur.com/f6gNmHR.png');
+    content: url('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0000_episodesButtonHover.png');
   }
 
 #premium-button:hover {
   cursor: pointer;
-  content: url('https://i.imgur.com/Hj4Ehh7.png');
+  content: url('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0002_premiumButtonHover.png');
 }
 
-#merch-button:hover {
+#subscribe-button:hover {
   cursor: pointer;
-  content: url('https://i.imgur.com/M0NZyfJ.png');
+  content: url('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0001_subscribeButtonHover.png');
   z-index: 100;
 }
 
 #about-button:hover {
   cursor: pointer;
-  content: url('https://i.imgur.com/xDGevDU.png');
+  content: url('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0003_aboutButtonHover.png');
 }
 
 .spin-hover:hover {
