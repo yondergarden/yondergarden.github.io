@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Lock.css';
+import JSZip from 'jszip';
+
 
 const baseUrl = 'https://yondergardenwizard.s3.amazonaws.com/';
 const versionSuffix = '.png';
