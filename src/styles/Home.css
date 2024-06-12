@@ -87,8 +87,74 @@
 .about-info {
   width: 100%;
   height: 100%;
+  text-align: center;
   object-fit: cover; /* Adjusts the size of the image to cover the div, possibly cropping it */
 }
+
+h1 {
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin: 2vh;
+}
+
+.boxes {
+    display: flex;
+    justify-content: space-around;
+}
+
+.rectangle {
+    background-color: #ffffe0; /* Light yellow */
+    margin: 1vh;
+    padding: 20px;
+    border: 2px solid black; /* Black border */
+    border-radius: 10px;
+    box-shadow: 0 0 10px yellow; /* Yellow glow */
+    flex: 1;
+    max-width: 45%;
+}
+
+.rectangle h3 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+}
+
+.rectangle p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 1vh;
+    margin-right: 1vh;
+}
+
+.progress-bar {
+    width: 50vh;
+    height: 2vh;
+    background-color: #ddd;
+    border: 2px solid black; /* Black border */
+    border-radius: 10vh;
+    overflow: hidden;
+    box-shadow: 0 0 10px blue; /* Yellow glow */
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    background-color: yellow;
+}
+
+.progress-text {
+  margin-right: 1vh;
+}
+
 
 /*======================
     Episodes Pop-up and Icons
@@ -326,4 +392,6 @@
     transform: translate(-50%, -50%);
     object-fit: cover; /* Adjusts the size of the image to cover the div, possibly cropping it */
   }
+
+
 }

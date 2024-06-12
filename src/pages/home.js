@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import React from 'react';
 import '../styles/Home.css'
 import '../styles/Yonder.css'
-import Background from "../components/Background/Background"
 import { Link } from 'react-router-dom';
 
 
@@ -38,13 +37,6 @@ const Home = () => {
     const episodesUrl = `#/episodes/${episodeNumber}`;
     window.location.href = episodesUrl;
   };
-
-  useEffect(() => {
-    console.log(episodesOpen)
-    console.log(aboutOpen)
-    console.log(premiumOpen)
-    console.log(subscribeOpen)
-  },[episodesOpen, aboutOpen, premiumOpen, subscribeOpen])
 
   const EmailForm = () => {
     const [emailText, setEmailText] = useState('');
@@ -86,14 +78,6 @@ const Home = () => {
     );
   };
 
-  useEffect(() => {
-    console.log(premiumOpen)
-  },[premiumOpen])
-
-  useEffect(() => {
-    console.log(aboutOpen)
-  },[aboutOpen])
-
   const DisplayEpisodes = () => {
     const thumbnailList = episodesData.map((episode) => ({
       id: episode.id,
@@ -106,7 +90,7 @@ const Home = () => {
       <div>
         <div className="menu-container center-home">
           <div className='episodes-box'>
-            <button type="button" className="closeButton" onClick={() => {setEpisodesOpen(false); console.log(aboutOpen)}}>&#128942;</button>
+            <button type="button" className="closeButton" onClick={() => {setEpisodesOpen(false)}}>&#128942;</button>
             <h1 className="simple-centered">☆ 𝖊𝖕𝖎𝖘𝖔𝖉𝖊𝖘 ☆</h1>
             <div className="episodes-icon-container">
               {thumbnailList.map(({id, title, thumbnail}) => (
@@ -130,7 +114,7 @@ const Home = () => {
       <div>
         <div className="menu-container center-home premium-box">
           <div className='info-box'>
-            <button type="button" className="closeButton" onClick={() => {setSubscribeOpen(false); console.log(subscribeOpen)}}>&#128942;</button>
+            <button type="button" className="closeButton" onClick={() => {setSubscribeOpen(false)}}>&#128942;</button>
             <h1 className="simple-centered unifrakturFont">relinquish thy email address.</h1>
             <h1 className="simple-centered">🤍</h1>
             <EmailForm/>
@@ -155,8 +139,27 @@ const Home = () => {
       <div>
         <div className="menu-container center-home">
           <div className='info-box'>
-            <button type="button" className="closeButton" onClick={() => {setAboutOpen(false); console.log(aboutOpen)}}>&#128942;</button>
-            <img className='about-info' src="https://i.imgur.com/77B1oJY.jpeg"/>
+            <button type="button" className="closeButton" onClick={() => {setAboutOpen(false)}}>&#128942;</button>
+            <div className="about-info">
+                <h1 className="simple-centered unifrakturFont">📖About📖</h1>
+                <h2>Yonder Garden is an animated webcomic that comes in 2 flavors.</h2>
+                <div className="boxes">
+                  <div className="rectangle">
+                    <h3 className="simple-centered unifrakturFont">Ephemeralia</h3>
+                    <p>Comic strips unimportant or irrelevant to the main storyline. These can be read in any order.</p>
+                  </div>
+                  <div className="rectangle">
+                    <h3 className="simple-centered unifrakturFont">The Main Quest</h3>
+                    <p>These are long-form episodes and tell the main story over time. <b>The Main Quest is currently locked!</b></p>
+                  </div>
+                </div>
+                <div className="progress-container">
+                  <span className="progress-text"><b>Unlock the Main Quest!</b> 0/1000 Patrons</span>
+                  <div className="progress-bar">
+                    <div className="progress" style={{ width: '1%' }}></div>
+                  </div>
+                </div>
+            </div>
           </div>
         </div>
       </div>
@@ -167,27 +170,25 @@ const Home = () => {
 
     return (
       <div className="menu-container center-home">
-        <img id="episodes-button" className="image-button" onClick={() => {setEpisodesOpen(true); console.log(episodesOpen)}} src={episodesMenuImage} alt="" />
-        <img id="subscribe-button" className="image-button spin-hover" onClick={() => {setSubscribeOpen(true); console.log(subscribeOpen)}} src={subscribeMenuImage} alt="" />
+        <img id="episodes-button" className="image-button" onClick={() => {setEpisodesOpen(true)}} src={episodesMenuImage} alt="" />
+        <img id="subscribe-button" className="image-button spin-hover" onClick={() => {setSubscribeOpen(true)}} src={subscribeMenuImage} alt="" />
         <a href="https://www.patreon.com/YonderGarden" target="_blank" rel="noopener noreferrer">
-        <img id="premium-button" className="image-button" onClick={() => {setPremiumOpen(true); console.log(premiumOpen)}} src={premiumMenuImage} alt=""/>
+          <img id="premium-button" className="image-button" onClick={() => {setPremiumOpen(true)}} src={premiumMenuImage} alt=""/>
         </a>
-        <img id="about-button" className="image-button" onClick={() => {setAboutOpen(true); console.log(aboutOpen)}} src={aboutMenuImage} alt="" />
+        <img id="about-button" className="image-button" onClick={() => {setAboutOpen(true)}} src={aboutMenuImage} alt="" />
       </div>
     );
   }
 
   return (
-      <header>
-        <body>
-        <Background/>
-        {(episodesOpen || subscribeOpen || aboutOpen) ? null : <DisplayMenu />}
-        {episodesOpen ? <DisplayEpisodes/> : null}
-        {subscribeOpen ? <DisplaySubscribe/> : null}
-        {aboutOpen ? <DisplayInfo/> : null}
-        </body>
-      </header>
-
+    <>
+    <div>
+      {episodesOpen && <DisplayEpisodes />}
+      {subscribeOpen && <DisplaySubscribe />}
+      {aboutOpen && <DisplayInfo />}
+      {!episodesOpen && !subscribeOpen && !aboutOpen && <DisplayMenu />}
+    </div>
+    </>
   );
 }
 

@@ -3,6 +3,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Home from "./pages/home.js";
 import EpisodesPage from "./routers/EpisodesPage";
+import Background from "./components/Background/Background"
 import PreLoader1 from "./components/PreLoader1";
 
 const episodesData = require('./episodes.json');
@@ -38,6 +39,8 @@ function App() {
       {loading ? (
         <PreLoader1 />
       ) : (
+        <>
+        <Background />
         <Routes>
           <Route path="/" element={<Home />} />
           {episodesData.map(episode => (
@@ -48,6 +51,7 @@ function App() {
             />
           ))}
         </Routes>
+        </>
       )}
     </>
   );
