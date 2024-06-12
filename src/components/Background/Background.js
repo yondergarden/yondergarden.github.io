@@ -7,7 +7,7 @@ const Background = (props) => {
     let yonderFrameImage = "https://i.imgur.com/9imLhpu.png"
     let titleImage = "https://i.imgur.com/11iaWFH.png"
 
-    let backgroundImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/circles.gif?v=1702433383009"
+    let backgroundImage = "https://homescreenbg.s3.us-east-2.amazonaws.com/homeScreenBg.mp4"
     let yonderGrassImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/grassLandscape.png?v=1702081026940"
 
     const [isPortrait, setIsPortrait] = useState(window.innerHeight > window.innerWidth);
@@ -28,7 +28,11 @@ const Background = (props) => {
         console.log(props)
         return (
           <div>
-            <img className={props.premiumOpen ? "center-home-premium layer-51" : "center-home layer-51"} src={titleImage} alt="" />
+            <video className="home-bg-video" autoPlay muted loop>
+                <source src={backgroundImage} type="video/mp4"/>
+                Your browser does not support the video tag.
+            </video>
+            {/*<img className={props.premiumOpen ? "center-home-premium layer-51" : "center-home layer-51"} src={titleImage} alt="" />
             <div className={props.premiumOpen ? 'bind-bg-premium' : 'bind-bg'}>
               {isPortrait ? (
                 <>
@@ -93,7 +97,7 @@ const Background = (props) => {
                 </>
               )}
             </div>
-            <img className={props.premiumOpen ? "center-home-premium layer-51" : "center-home layer-51"} src={yonderFrameImage} alt="" />
+            <img className={props.premiumOpen ? "center-home-premium layer-51" : "center-home layer-51"} src={yonderFrameImage} alt="" /> */}
           </div>
         );
       }
