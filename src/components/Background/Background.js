@@ -3,11 +3,11 @@ import './Background.css';
 
 
 const Background = () => {
-    console.log('Background component mounted'); // Log when the component is mounted
     let yonderFrameImage = "https://i.imgur.com/9imLhpu.png"
     let titleImage = "https://i.imgur.com/11iaWFH.png"
 
     let backgroundImage = "https://homescreenbg.s3.us-east-2.amazonaws.com/homeScreenBg.mp4"
+    let backgroundImageMobile = "https://homescreenbg.s3.us-east-2.amazonaws.com/homeScreenBgMobile.mp4";
     let yonderGrassImage = "https://cdn.glitch.global/4a3253fe-3104-44d3-8a31-8f43e023369d/grassLandscape.png?v=1702081026940"
 
     const [isPortrait, setIsPortrait] = useState(window.innerHeight > window.innerWidth);
@@ -27,10 +27,14 @@ const Background = () => {
     const DisplayBackground = () => {
         return (
           <div>
-            <video className="home-bg-video" autoPlay muted loop>
-                <source src={backgroundImage} type="video/mp4"/>
-                Your browser does not support the video tag.
-            </video>
+              <video className={`home-bg-video ${isPortrait ? 'hidden' : ''}`} autoPlay muted loop>
+                  <source src={backgroundImage} type="video/mp4"/>
+                  Your browser does not support the video tag.
+              </video>
+              <video className={`home-bg-video ${isPortrait ? '' : 'hidden'}`} autoPlay muted loop>
+                  <source src={backgroundImageMobile} type="video/mp4"/>
+                  Your browser does not support the video tag.
+              </video>
           </div>
         );
       }

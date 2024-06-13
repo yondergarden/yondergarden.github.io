@@ -90,7 +90,7 @@ const Home = () => {
       <div>
         <div className="menu-container center-home">
           <div className='episodes-box'>
-            <button type="button" className="closeButton" onClick={() => {setEpisodesOpen(false)}}>&#128942;</button>
+            <button type="button" className="closeButton" onClick={() => {setEpisodesOpen(false)}}>x</button>
             <h1 className="simple-centered">☆ 𝖊𝖕𝖎𝖘𝖔𝖉𝖊𝖘 ☆</h1>
             <div className="episodes-icon-container">
               {thumbnailList.map(({id, title, thumbnail}) => (
@@ -114,7 +114,7 @@ const Home = () => {
       <div>
         <div className="menu-container center-home premium-box">
           <div className='info-box'>
-            <button type="button" className="closeButton" onClick={() => {setSubscribeOpen(false)}}>&#128942;</button>
+            <button type="button" className="closeButton" onClick={() => {setSubscribeOpen(false)}}>x</button>
             <h1 className="simple-centered unifrakturFont">relinquish thy email address.</h1>
             <h1 className="simple-centered">🤍</h1>
             <EmailForm/>
@@ -139,10 +139,10 @@ const Home = () => {
       <div>
         <div className="menu-container center-home">
           <div className='info-box'>
-            <button type="button" className="closeButton" onClick={() => {setAboutOpen(false)}}>&#128942;</button>
+            <button type="button" className="closeButton" onClick={() => {setAboutOpen(false)}}>x</button>
             <div className="about-info">
-                <h1 className="simple-centered unifrakturFont">📖About📖</h1>
-                <h2>Yonder Garden is an animated webcomic that comes in 2 flavors.</h2>
+                <h1 className="unifrakturFont">* about *</h1>
+                <h2><i>Yonder Garden is an animated webcomic that comes in 2 flavors.</i></h2>
                 <div className="boxes">
                   <div className="rectangle">
                     <h3 className="simple-centered unifrakturFont">Ephemeralia</h3>
@@ -154,7 +154,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="progress-container">
-                  <span className="progress-text"><b>Unlock the Main Quest!</b> 0/1000 Patrons</span>
+                  <span className="progress-text"><b>Help unlock the Main Quest!</b> 0/1000 Patrons</span>
                   <div className="progress-bar">
                     <div className="progress" style={{ width: '1%' }}></div>
                   </div>
