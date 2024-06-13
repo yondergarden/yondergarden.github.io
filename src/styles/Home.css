@@ -93,7 +93,7 @@
 
 h1 {
     font-size: 2em;
-    margin: 20px 0;
+    margin: 2vh 0;
 }
 
 h2 {
@@ -109,16 +109,16 @@ h2 {
 .rectangle {
     background-color: #ffffe0; /* Light yellow */
     margin: 1vh;
-    padding: 20px;
-    border: 2px solid black; /* Black border */
-    border-radius: 10px;
-    box-shadow: 0 0 10px yellow; /* Yellow glow */
+    padding: 2vh;
+    border: 0.3vh solid black; /* Black border */
+    border-radius: 2vh;
+    box-shadow: 0 0 1vh yellow; /* Yellow glow */
     flex: 1;
     max-width: 45%;
 }
 
 .rectangle h3 {
-    margin: 0 0 10px;
+    margin: 0 0 1vh;
     font-size: 1.5em;
 }
 
@@ -130,7 +130,7 @@ h2 {
 .progress-container {
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 2vh;
     margin-left: 1vh;
     margin-right: 1vh;
 }
@@ -139,10 +139,10 @@ h2 {
     width: 50vh;
     height: 2vh;
     background-color: #ddd;
-    border: 2px solid black; /* Black border */
+    border: 0.3vh solid black; /* Black border */
     border-radius: 10vh;
     overflow: hidden;
-    box-shadow: 0 0 10px blue; /* Yellow glow */
+    box-shadow: 0 0 1vh blue;
     position: relative;
 }
 
@@ -393,5 +393,68 @@ h2 {
     object-fit: cover; /* Adjusts the size of the image to cover the div, possibly cropping it */
   }
 
+  h1 {
+      font-size: 2em;
+      margin: 2vw 0;
+  }
+
+  h2 {
+      font-size: 4vw;
+      margin-left: 5vw;
+  }
+
+  .boxes {
+      display: flex;
+      justify-content: space-around;
+  }
+
+  .rectangle {
+      background-color: #ffffe0; /* Light yellow */
+      margin: 1vw;
+      padding: 2vw;
+      border: 0.3vw solid black; /* Black border */
+      border-radius: 2vw;
+      box-shadow: 0 0 1vw yellow; /* Yellow glow */
+      flex: 1;
+      max-width: 45%;
+  }
+
+  .rectangle h3 {
+      margin: 0 0 1vw;
+      font-size: 6vw;
+  }
+
+  .rectangle p {
+      margin: 0;
+      font-size: 3.5vw;
+  }
+
+  .progress-container {
+      display: flex;
+      align-items: center;
+      margin-top: 2vw;
+      margin-left: 1vw;
+      margin-right: 1vw;
+  }
+
+  .progress-bar {
+      width: 75vw;
+      height: 3vw;
+      background-color: #ddd;
+      border: 0.3vw solid black; /* Black border */
+      border-radius: 10vw;
+      overflow: hidden;
+      box-shadow: 0 0 1vw blue;
+      position: relative;
+  }
+
+  .progress {
+      height: 100%;
+      background-color: yellow;
+  }
+
+  .progress-text {
+    margin-right: 1vw;
+  }
 
 }

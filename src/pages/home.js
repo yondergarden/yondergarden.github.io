@@ -150,7 +150,7 @@ const Home = () => {
                   </div>
                   <div className="rectangle">
                     <h3 className="simple-centered unifrakturFont">The Main Quest</h3>
-                    <p>These are long-form episodes and tell the main story over time. <b>The Main Quest is currently locked!</b></p>
+                    <p>Long-form episodes that tell the main story over time. <b>The Main Quest is currently locked!</b></p>
                   </div>
                 </div>
                 <div className="progress-container">
