@@ -1,24 +1,21 @@
 import { useState, useEffect } from "react";
 import React from 'react';
-import '../styles/Home.css'
-import '../styles/Yonder.css'
+import '../styles/Home.css';
+import '../styles/Yonder.css';
 import { Link } from 'react-router-dom';
 
-
 const Home = () => {
-
   const [episodesOpen, setEpisodesOpen] = useState(false);
   const [subscribeOpen, setSubscribeOpen] = useState(false);
   const [premiumOpen, setPremiumOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
-
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
   const episodesData = require('../episodes.json');
 
-  let episodesMenuImage = "https://homepagebuttons.s3.us-east-2.amazonaws.com/_0004_episodesButton.png"
-  let subscribeMenuImage = "https://homepagebuttons.s3.us-east-2.amazonaws.com/_0005_subscribeButton.png"
-  let aboutMenuImage = "https://homepagebuttons.s3.us-east-2.amazonaws.com/_0007_aboutButton.png"
-  let premiumMenuImage = "https://homepagebuttons.s3.us-east-2.amazonaws.com/_0006_premiumButton.png"
-
+  let episodesMenuImage = "https://homepagebuttons.s3.us-east-2.amazonaws.com/_0004_episodesButton.png";
+  let subscribeMenuImage = "https://homepagebuttons.s3.us-east-2.amazonaws.com/_0005_subscribeButton.png";
+  let aboutMenuImage = "https://homepagebuttons.s3.us-east-2.amazonaws.com/_0007_aboutButton.png";
+  let premiumMenuImage = "https://homepagebuttons.s3.us-east-2.amazonaws.com/_0006_premiumButton.png";
 
   // Function to preload images
   function preloadImage(url) {
@@ -32,7 +29,6 @@ const Home = () => {
   preloadImage('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0002_premiumButtonHover.png');
   preloadImage('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0003_aboutButtonHover.png');
 
-
   const EpisodeSelect = (episodeNumber) => {
     const episodesUrl = `#/episodes/${episodeNumber}`;
     window.location.href = episodesUrl;
@@ -42,16 +38,16 @@ const Home = () => {
     const [emailText, setEmailText] = useState('');
 
     const handleEmailSend = () => {
-        fetch("https://wakeful-intriguing-channel.glitch.me/submit", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ text: emailText }), // Use the key "text"
-        });
+      fetch("https://wakeful-intriguing-channel.glitch.me/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text: emailText }), // Use the key "text"
+      });
 
-        // Clear the input field after sending the email
-        setEmailText('');
+      // Clear the input field after sending the email
+      setEmailText('');
     };
 
     const handleKeyPress = (e) => {
@@ -85,18 +81,17 @@ const Home = () => {
       thumbnail: episode.thumbnail
     }));
 
-
     return (
       <div>
         <div className="menu-container center-home">
           <div className='episodes-box'>
-            <button type="button" className="closeButton" onClick={() => {setEpisodesOpen(false)}}>x</button>
+            <button type="button" className="closeButton" onClick={() => { setEpisodesOpen(false) }}>x</button>
             <h1 className="simple-centered">☆ 𝖊𝖕𝖎𝖘𝖔𝖉𝖊𝖘 ☆</h1>
             <div className="episodes-icon-container">
-              {thumbnailList.map(({id, title, thumbnail}) => (
+              {thumbnailList.map(({ id, title, thumbnail }) => (
                 <div className="episodes-icon-wrapper" key={id}>
-                  <video className="episodes-icon" id={id} autoPlay muted loop onClick={() => {EpisodeSelect(id)}}>
-                    <source src={thumbnail} type="video/mp4"/>
+                  <video className="episodes-icon" id={id} autoPlay muted loop playsInline onClick={() => { EpisodeSelect(id) }}>
+                    <source src={thumbnail} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                   <div className="episode-tooltip">{title}</div>
@@ -114,10 +109,10 @@ const Home = () => {
       <div>
         <div className="menu-container center-home premium-box">
           <div className='info-box'>
-            <button type="button" className="closeButton" onClick={() => {setSubscribeOpen(false)}}>x</button>
+            <button type="button" className="closeButton" onClick={() => { setSubscribeOpen(false) }}>x</button>
             <h1 className="simple-centered unifrakturFont">relinquish thy email address.</h1>
             <h1 className="simple-centered">🤍</h1>
-            <EmailForm/>
+            <EmailForm />
             <h1 className="simple-centered">\(🌸^.^)/</h1>
           </div>
         </div>
@@ -139,26 +134,26 @@ const Home = () => {
       <div>
         <div className="menu-container center-home">
           <div className='info-box'>
-            <button type="button" className="closeButton" onClick={() => {setAboutOpen(false)}}>x</button>
+            <button type="button" className="closeButton" onClick={() => { setAboutOpen(false) }}>x</button>
             <div className="about-info">
-                <h1 className="unifrakturFont">* about *</h1>
-                <h2><i>Yonder Garden is an animated webcomic that comes in 2 flavors.</i></h2>
-                <div className="boxes">
-                  <div className="rectangle">
-                    <h3 className="simple-centered unifrakturFont">Ephemeralia</h3>
-                    <p>Comic strips unimportant or irrelevant to the main storyline. These can be read in any order.</p>
-                  </div>
-                  <div className="rectangle">
-                    <h3 className="simple-centered unifrakturFont">The Main Quest</h3>
-                    <p>Long-form episodes that tell the main story over time. <b>The Main Quest is currently locked!</b></p>
-                  </div>
+              <h1 className="unifrakturFont">* about *</h1>
+              <h2><i>Yonder Garden is an animated webcomic that comes in 2 flavors.</i></h2>
+              <div className="boxes">
+                <div className="rectangle">
+                  <h3 className="simple-centered unifrakturFont">Ephemeralia</h3>
+                  <p>Comic strips unimportant or irrelevant to the main storyline. These can be read in any order.</p>
                 </div>
-                <div className="progress-container">
-                  <span className="progress-text"><b>Help unlock the Main Quest!</b> 0/1000 Patrons</span>
-                  <div className="progress-bar">
-                    <div className="progress" style={{ width: '1%' }}></div>
-                  </div>
+                <div className="rectangle">
+                  <h3 className="simple-centered unifrakturFont">The Main Quest</h3>
+                  <p>Long-form episodes that tell the main story over time. <b>The Main Quest is currently locked!</b></p>
                 </div>
+              </div>
+              <div className="progress-container">
+                <span className="progress-text"><b>Help unlock the Main Quest!</b> 0/1000 Patrons</span>
+                <div className="progress-bar">
+                  <div className="progress" style={{ width: '1%' }}></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -168,26 +163,41 @@ const Home = () => {
 
   const DisplayMenu = () => {
 
+    const handleClick = (setter) => {
+      if (isTouchDevice) {
+        setTimeout(() => {
+          setter(true);
+        }, 250);
+      } else {
+        setter(true);
+      }
+    }
+
     return (
       <div className="menu-container center-home">
-        <img id="episodes-button" className="image-button" onClick={() => {setEpisodesOpen(true)}} src={episodesMenuImage} alt="" />
-        <img id="subscribe-button" className="image-button spin-hover" onClick={() => {setSubscribeOpen(true)}} src={subscribeMenuImage} alt="" />
+        <img id="episodes-button" className="image-button" onClick={() => handleClick(setEpisodesOpen)} src={episodesMenuImage} alt="" />
+        <img id="subscribe-button" className="image-button spin-hover" onClick={() => handleClick(setSubscribeOpen)} src={subscribeMenuImage} alt="" />
         <a href="https://www.patreon.com/YonderGarden" target="_blank" rel="noopener noreferrer">
-          <img id="premium-button" className="image-button" onClick={() => {setPremiumOpen(true)}} src={premiumMenuImage} alt=""/>
+          <img id="premium-button" className="image-button" onClick={() => handleClick(setPremiumOpen)} src={premiumMenuImage} alt="" />
         </a>
-        <img id="about-button" className="image-button" onClick={() => {setAboutOpen(true)}} src={aboutMenuImage} alt="" />
+        <img id="about-button" className="image-button" onClick={() => handleClick(setAboutOpen)} src={aboutMenuImage} alt="" />
       </div>
     );
   }
 
+  useEffect(() => {
+    const hasTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    setIsTouchDevice(hasTouchScreen);
+  }, []);
+
   return (
     <>
-    <div>
-      {episodesOpen && <DisplayEpisodes />}
-      {subscribeOpen && <DisplaySubscribe />}
-      {aboutOpen && <DisplayInfo />}
-      {!episodesOpen && !subscribeOpen && !aboutOpen && <DisplayMenu />}
-    </div>
+      <div>
+        {episodesOpen && <DisplayEpisodes />}
+        {subscribeOpen && <DisplaySubscribe />}
+        {aboutOpen && <DisplayInfo />}
+        {!episodesOpen && !subscribeOpen && !aboutOpen && <DisplayMenu />}
+      </div>
     </>
   );
 }

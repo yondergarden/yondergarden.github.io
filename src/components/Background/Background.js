@@ -27,11 +27,11 @@ const Background = () => {
     const DisplayBackground = () => {
         return (
           <div>
-              <video className={`home-bg-video ${isPortrait ? 'hidden' : ''}`} autoPlay muted loop>
+              <video className={`home-bg-video ${isPortrait ? 'hidden' : ''}`} autoPlay muted loop playsInline>
                   <source src={backgroundImage} type="video/mp4"/>
                   Your browser does not support the video tag.
               </video>
-              <video className={`home-bg-video ${isPortrait ? '' : 'hidden'}`} autoPlay muted loop>
+              <video className={`home-bg-video ${isPortrait ? '' : 'hidden'}`} autoPlay muted loop playsInline>
                   <source src={backgroundImageMobile} type="video/mp4"/>
                   Your browser does not support the video tag.
               </video>
