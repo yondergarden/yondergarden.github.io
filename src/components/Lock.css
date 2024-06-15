@@ -6,7 +6,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 500; /* Adjust as needed, higher values will position it on top of elements with lower z-index values */
+  z-index: 500;
 }
 
 .lock-image {
@@ -18,14 +18,14 @@
 .invisible-button-container {
   background-color: rgba(255, 0, 0, 0);
   position: absolute;
-  display: grid; /* Change to grid */
+  display: grid;
   grid-template-columns: auto auto;
   grid-auto-rows: auto;
   justify-content: center;
   z-index: 1001;
   top: 63%;
   left: 50%;
-  transform: translate(-105%, -50%);  /* Center the container */
+  transform: translate(-105%, -50%);
 }
 
 .invisible-button {
@@ -87,7 +87,7 @@
     filter: brightness(100%);
   }
   20% {
-    filter: brightness(2000%);
+    filter: brightness(5000%);
   }
   100% {
     filter: brightness(100%);
@@ -122,7 +122,7 @@
 }
 
 .wizard-container {
-  position: relative;
+  position: fixed;
   width: 100vh;
   height: 100vh;
   top: 50vh;
@@ -141,7 +141,7 @@
   max-height: 100%; /* Ensure it doesn't exceed the container's height */
   background-size: contain; /* Ensure the image fits within the container */
   background-repeat: no-repeat; /* Prevent repeating of the background image */
-  animation: fadeInOut 4.5s forwards; /* 4.5 seconds total: 0.5s fade-in, 4s visible, 0.5s fade-out */
+  animation: fadeInOut 5s forwards; /* 4.5 seconds total: 0.5s fade-in, 4s visible, 0.5s fade-out */
 }
 
 
@@ -159,7 +159,7 @@
     left: -50%;
     top: 50%;
     transform: translate(50%, -50%);
-    z-index: 500; /* Adjust as needed, higher values will position it on top of elements with lower z-index values */
+    z-index: 500;
   }
 
   .lock-image {
@@ -232,6 +232,6 @@
     max-height: 100%; /* Ensure it doesn't exceed the container's height */
     background-size: contain; /* Ensure the image fits within the container */
     background-repeat: no-repeat; /* Prevent repeating of the background image */
-    animation: fadeInOut 4.5s forwards; /* 4.5 seconds total: 0.5s fade-in, 4s visible, 0.5s fade-out */
+    animation: fadeInOut 5s forwards; /* 4.5 seconds total: 0.5s fade-in, 4s visible, 0.5s fade-out */
   }
 }

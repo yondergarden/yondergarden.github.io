@@ -3,6 +3,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Home from "./pages/home.js";
 import EpisodesPage from "./routers/EpisodesPage";
+import Background from "./components/Background/Background"
 import PreLoader1 from "./components/PreLoader1";
 
 const episodesData = require('./episodes.json');
@@ -13,8 +14,8 @@ function App() {
   useEffect(() => {
     // Simulate loading with a timeout
     setTimeout(() => {
-      setLoading(false); // Set loading to false after 2 seconds
-    }, 5000);
+      setLoading(false); // Set loading to false after a number of milliseconds
+    }, 2000);
   }, []); // Run this effect only once after the component mounts
 
   useEffect(() => {
@@ -38,6 +39,8 @@ function App() {
       {loading ? (
         <PreLoader1 />
       ) : (
+        <>
+        <Background />
         <Routes>
           <Route path="/" element={<Home />} />
           {episodesData.map(episode => (
@@ -48,6 +51,7 @@ function App() {
             />
           ))}
         </Routes>
+        </>
       )}
     </>
   );

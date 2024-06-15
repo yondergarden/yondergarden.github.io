@@ -15,23 +15,23 @@
 
 #episodes-button:hover {
     cursor: pointer;
-    content: url('https://i.imgur.com/f6gNmHR.png');
+    content: url('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0000_episodesButtonHover.png');
   }
 
 #premium-button:hover {
   cursor: pointer;
-  content: url('https://i.imgur.com/Hj4Ehh7.png');
+  content: url('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0002_premiumButtonHover.png');
 }
 
-#merch-button:hover {
+#subscribe-button:hover {
   cursor: pointer;
-  content: url('https://i.imgur.com/M0NZyfJ.png');
+  content: url('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0001_subscribeButtonHover.png');
   z-index: 100;
 }
 
 #about-button:hover {
   cursor: pointer;
-  content: url('https://i.imgur.com/xDGevDU.png');
+  content: url('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0003_aboutButtonHover.png');
 }
 
 .spin-hover:hover {
@@ -87,7 +87,80 @@
 .about-info {
   width: 100%;
   height: 100%;
+  text-align: center;
   object-fit: cover; /* Adjusts the size of the image to cover the div, possibly cropping it */
+}
+
+h1 {
+    font-size: 6vh;
+    margin: 2vh 0;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin: 2vh;
+}
+
+.boxes {
+    display: flex;
+    justify-content: space-around;
+}
+
+.rectangle {
+    background-color: #ffffe0; /* Light yellow */
+    margin: 1vh;
+    padding: 2vh;
+    border: 0.3vh solid black; /* Black border */
+    border-radius: 2vh;
+    box-shadow: 0 0 1vh yellow; /* Yellow glow */
+    flex: 1;
+    max-width: 45%;
+}
+
+.rectangle h3 {
+    margin: 0 0 1vh;
+    font-size: 1.5em;
+}
+
+.rectangle p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    margin-top: 2vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+}
+
+.progress-bar {
+    width: 50vh;
+    height: 2vh;
+    background-color: #ddd;
+    border: 0.3vh solid black; /* Black border */
+    border-radius: 10vh;
+    overflow: hidden;
+    box-shadow: 0 0 1vh blue;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    background-color: yellow;
+}
+
+.progress-text {
+  margin-right: 1vh;
+}
+
+/*======================
+    Subscribe Pop-up and Icons
+========================*/
+
+.subscribeHeader {
+  margin-top: 10vh;
 }
 
 /*======================
@@ -185,6 +258,7 @@
   width: auto;
   height: auto;
   text-align: center;
+  z-index: 10000;
 }
 
 .closeButton:hover {
@@ -326,4 +400,69 @@
     transform: translate(-50%, -50%);
     object-fit: cover; /* Adjusts the size of the image to cover the div, possibly cropping it */
   }
+
+  h1 {
+      font-size: 10vw;
+      margin: 2vw 0;
+  }
+
+  h2 {
+      font-size: 4vw;
+      margin-left: 5vw;
+  }
+
+  .boxes {
+      display: flex;
+      justify-content: space-around;
+  }
+
+  .rectangle {
+      background-color: #ffffe0; /* Light yellow */
+      margin: 1vw;
+      padding: 2vw;
+      border: 0.3vw solid black; /* Black border */
+      border-radius: 2vw;
+      box-shadow: 0 0 1vw yellow; /* Yellow glow */
+      flex: 1;
+      max-width: 45%;
+  }
+
+  .rectangle h3 {
+      margin: 0 0 1vw;
+      font-size: 6vw;
+  }
+
+  .rectangle p {
+      margin: 0;
+      font-size: 3.5vw;
+  }
+
+  .progress-container {
+      display: flex;
+      align-items: center;
+      margin-top: 2vw;
+      margin-left: 1vw;
+      margin-right: 1vw;
+  }
+
+  .progress-bar {
+      width: 75vw;
+      height: 3vw;
+      background-color: #ddd;
+      border: 0.3vw solid black; /* Black border */
+      border-radius: 10vw;
+      overflow: hidden;
+      box-shadow: 0 0 1vw blue;
+      position: relative;
+  }
+
+  .progress {
+      height: 100%;
+      background-color: yellow;
+  }
+
+  .progress-text {
+    margin-right: 1vw;
+  }
+
 }

@@ -57,6 +57,19 @@
   z-index: 5;
 }
 
+.home-bg-video {
+  position: fixed;
+  min-height: 100vh;
+  max-height: 100vh;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hidden {
+    display: none;
+}
+
 /*======================
     Mobile Formatting
 ========================*/
@@ -326,5 +339,15 @@
     transform: translate(-50%, -50%);
     filter: hue-rotate(0deg);
     animation: hueRotate 3s linear infinite;
+  }
+
+  .home-bg-video {
+    position: fixed;
+    min-width: 100vw;
+    max-width: 100vw;
+    max-height: 1000vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }

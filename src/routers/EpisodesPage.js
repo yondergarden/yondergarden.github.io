@@ -72,7 +72,7 @@ const EpisodesPage = ({ episode }) => {
     <>
       <div>
         {/* <Background/> */}
-        <video className="center-home layer-50" autoPlay muted loop>
+        <video className="center-home layer-50" autoPlay muted loop playsInline>
             <source className="" src={episode.mp4} type="video/mp4"/>
             Your browser does not support the video tag.
         </video>
