@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Exclude debugger frontend emulated devices avif files
+node_modules/@react-native/debugger-frontend/dist/third-party/front_end/emulated_devices/optimized/*.avif
