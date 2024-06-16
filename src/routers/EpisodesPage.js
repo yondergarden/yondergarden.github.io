@@ -1,16 +1,35 @@
-import React from 'react';
-import Background from '../components/Background/EpisodeBackground';
-import "./EpisodesPage.css"
-import { useNavigate  } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import LockComponent from '../components/Lock';
 import Computer from '../components/Computer';
+import episodesData from '../episodes.json'; // Assuming episodes.json exports an array of episodes
+import "./EpisodesPage.css";
 
-
-
-const EpisodesPage = ({ episode }) => {
-  const episodesData = require('../episodes.json');
-  const lastEpisodeNum = episodesData.length > 0 ? episodesData[episodesData.length - 1].id : null;
+const EpisodesPage = () => {
   const navigate = useNavigate();
+  const lastEpisodeNum = episodesData.length > 0 ? episodesData[episodesData.length - 1].id : null;
+  const [orientation, setOrientation] = useState(
+    window.innerWidth > window.innerHeight ? 'landscape' : 'portrait'
+  );
+
+  useEffect(() => {
+    const handleOrientationChange = () => {
+      const newOrientation = window.innerWidth > window.innerHeight ? 'landscape' : 'portrait';
+      if (newOrientation !== orientation) {
+        setOrientation(newOrientation);
+      }
+    };
+
+    // Set initial orientation on component mount
+    setOrientation(window.innerWidth > window.innerHeight ? 'landscape' : 'portrait');
+
+    window.addEventListener('resize', handleOrientationChange);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleOrientationChange);
+    };
+  }, [orientation]); // Ensure to include 'orientation' in the dependencies array
 
   const EpisodeDeltaChange = (delta) => {
     const episodeNumber = extractNumberFromPath();
@@ -50,15 +69,13 @@ const EpisodesPage = ({ episode }) => {
     const lastButtonImage = "https://i.imgur.com/fVw0T7Z.png";
 
     return (
-      <div>
-        <div className="center-home interactive-layer-1000">
-          <div className="episode-nav-stack">
-            <img className="episode-nav-button" onClick={() => GoToFirstEpisode()} src={firstButtonImage} alt="" />
-            <img className="episode-nav-button" onClick={() => EpisodeDeltaChange(-1)} src={prevEpisodeImage} alt="" />
-            <img className="episode-nav-button" onClick={() => navigate('/')} src={homeImage} alt="" />
-            <img className="episode-nav-button" onClick={() => EpisodeDeltaChange(1)} src={nextEpisodeImage} alt="" />
-            <img className="episode-nav-button" onClick={() => GoToLastEpisode()} src={lastButtonImage} alt="" />
-          </div>
+      <div className="center-home interactive-layer-1000">
+        <div className="episode-nav-stack">
+          <img className="episode-nav-button" onClick={() => GoToFirstEpisode()} src={firstButtonImage} alt="" />
+          <img className="episode-nav-button" onClick={() => EpisodeDeltaChange(-1)} src={prevEpisodeImage} alt="" />
+          <img className="episode-nav-button" onClick={() => navigate('/')} src={homeImage} alt="" />
+          <img className="episode-nav-button" onClick={() => EpisodeDeltaChange(1)} src={nextEpisodeImage} alt="" />
+          <img className="episode-nav-button" onClick={() => GoToLastEpisode()} src={lastButtonImage} alt="" />
         </div>
       </div>
     );
@@ -67,20 +84,18 @@ const EpisodesPage = ({ episode }) => {
   const episodeNumber = extractNumberFromPath();
   const currentEpisode = episodesData.find(episode => episode.id === episodeNumber);
   const isPremium = currentEpisode ? currentEpisode.premium : false;
+  const videoSrc = currentEpisode ? (orientation === 'landscape' ? currentEpisode.mp4landscape : currentEpisode.mp4portrait) : '';
 
   return (
-    <>
-      <div>
-        {/* <Background/> */}
-        <video className="center-home layer-50" autoPlay muted loop playsInline>
-            <source className="" src={episode.mp4} type="video/mp4"/>
-            Your browser does not support the video tag.
-        </video>
-        {isPremium && <LockComponent />}
-        {isPremium && <Computer />}
-        <EpisodeNavOverlay />
-      </div>
-    </>
+    <div>
+      <video className="center-home layer-50 episodeVideo" autoPlay muted loop playsInline>
+        <source className="" src={videoSrc} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      {isPremium && <LockComponent />}
+      {isPremium && <Computer />}
+      <EpisodeNavOverlay />
+    </div>
   );
 };
 

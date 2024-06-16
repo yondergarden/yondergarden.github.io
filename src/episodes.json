@@ -3,9 +3,10 @@
     "id": 1,
     "title": "Cold Bird",
     "content": "Content for Episode 1",
-    "mp4": "https://cdn.glitch.global/7090e318-2f18-421d-a082-1848387275b2/painTree.mp4?v=1716657481087",
+    "mp4landscape": "https://episodevideos.s3.us-east-2.amazonaws.com/e1BrutalWinter_landscape.mp4",
+    "mp4portrait": "https://episodevideos.s3.us-east-2.amazonaws.com/e1BrutalWinter_portrait.mp4",
     "thumbnail": "https://i.imgur.com/SEHtwdy.mp4",
-    "premium" : true
+    "premium" : false
   },
   {
     "id": 2,
