@@ -6,7 +6,7 @@
     "mp4landscape": "https://episodevideos.s3.us-east-2.amazonaws.com/e1BrutalWinter_landscape.mp4",
     "mp4portrait": "https://episodevideos.s3.us-east-2.amazonaws.com/e1BrutalWinter_portrait.mp4",
     "thumbnail": "https://i.imgur.com/SEHtwdy.mp4",
-    "premium" : false
+    "premium" : true
   },
   {
     "id": 2,
