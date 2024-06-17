@@ -12,16 +12,22 @@ const EpisodesPage = () => {
     window.innerWidth > window.innerHeight ? 'landscape' : 'portrait'
   );
 
+  // Extract the final number from the path
+  const extractNumberFromPath = () => {
+    const path = window.location.hash;
+    const match = path.match(/\/(\d+)$/);
+    return match ? parseInt(match[1], 10) : null;
+  };
+
+  const episodeNumber = extractNumberFromPath();
+  const currentEpisode = episodesData.find(episode => episode.id === episodeNumber);
+  const [videoSrc, setVideoSrc] = useState(orientation === 'landscape' ? currentEpisode.mp4landscape : currentEpisode.mp4portrait);
+
   useEffect(() => {
     const handleOrientationChange = () => {
       const newOrientation = window.innerWidth > window.innerHeight ? 'landscape' : 'portrait';
-      if (newOrientation !== orientation) {
-        setOrientation(newOrientation);
-      }
+      setOrientation(newOrientation);
     };
-
-    // Set initial orientation on component mount
-    setOrientation(window.innerWidth > window.innerHeight ? 'landscape' : 'portrait');
 
     window.addEventListener('resize', handleOrientationChange);
 
@@ -29,7 +35,13 @@ const EpisodesPage = () => {
     return () => {
       window.removeEventListener('resize', handleOrientationChange);
     };
-  }, [orientation]); // Ensure to include 'orientation' in the dependencies array
+  }, []);
+
+  useEffect(() => {
+    if (currentEpisode) {
+      setVideoSrc(orientation === 'landscape' ? currentEpisode.mp4landscape : currentEpisode.mp4portrait);
+    }
+  }, [orientation, currentEpisode]);
 
   const EpisodeDeltaChange = (delta) => {
     const episodeNumber = extractNumberFromPath();
@@ -54,13 +66,6 @@ const EpisodesPage = () => {
     window.location.reload(); // Force a page reload after navigation
   };
 
-  // Extract the final number from the path
-  const extractNumberFromPath = () => {
-    const path = window.location.hash;
-    const match = path.match(/\/(\d+)$/);
-    return match ? parseInt(match[1], 10) : null;
-  };
-
   const EpisodeNavOverlay = () => {
     const prevEpisodeImage = "https://i.imgur.com/406r8SJ.png";
     const nextEpisodeImage = "https://i.imgur.com/Hr3ksRH.png";
@@ -81,15 +86,12 @@ const EpisodesPage = () => {
     );
   };
 
-  const episodeNumber = extractNumberFromPath();
-  const currentEpisode = episodesData.find(episode => episode.id === episodeNumber);
   const isPremium = currentEpisode ? currentEpisode.premium : false;
-  const videoSrc = currentEpisode ? (orientation === 'landscape' ? currentEpisode.mp4landscape : currentEpisode.mp4portrait) : '';
 
   return (
     <div>
-      <video className="center-home layer-50 episodeVideo" autoPlay muted loop playsInline>
-        <source className="" src={videoSrc} type="video/mp4" />
+      <video key={videoSrc} className="center-home layer-50 episodeVideo" autoPlay muted loop playsInline>
+        <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       {isPremium && <LockComponent />}
