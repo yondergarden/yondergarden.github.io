@@ -5,7 +5,7 @@ import JSZip from 'jszip';
 
 const baseUrl = 'https://yondergardenwizard.s3.amazonaws.com/';
 const versionSuffix = '.png';
-const frameCount = 149;
+const frameCount = 120;
 
 const spriteUrls = Array.from({ length: frameCount }, (_, index) => {
   return `${baseUrl}wizardUnlock.0.${index + 1}${versionSuffix}`;
@@ -77,7 +77,7 @@ const LockComponent = () => {
           }
           return newFrame;
         });
-      }, 1000 / 30); // 30 frames per second
+      }, 1000 / 24); // 24 frames per second
     }
     return () => clearInterval(frameInterval);
   }, [showWizard]);
