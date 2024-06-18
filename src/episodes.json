@@ -3,8 +3,7 @@
     "id": 1,
     "title": "Cold Bird",
     "content": "Content for Episode 1",
-    "mp4landscape": "https://episodevideos.s3.us-east-2.amazonaws.com/e1BrutalWinter_landscape.mp4",
-    "mp4portrait": "https://episodevideos.s3.us-east-2.amazonaws.com/e1BrutalWinter_portrait.mp4",
+    "mp4": "https://episodevideos.s3.us-east-2.amazonaws.com/e1BrutalWinter/painTreePanel1.mp4",
     "thumbnail": "https://i.imgur.com/SEHtwdy.mp4",
     "premium" : true
   },
