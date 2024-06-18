@@ -11,7 +11,7 @@
     "id": 2,
     "title": "The Primordial Will",
     "content": "Content for Episode 2",
-    "mp4": "https://i.imgur.com/QjjVfsy.mp4",
+    "mp4": "https://episodevideos.s3.us-east-2.amazonaws.com/e1BrutalWinter/painTreePanel2.mp4",
     "thumbnail": "https://i.imgur.com/SEHtwdy.mp4",
     "premium" : false
   },
