@@ -15,23 +15,23 @@
 
 #episodes-button:hover {
     cursor: pointer;
-    content: url('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0000_episodesButtonHover.png');
+    content: url('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0000_episodesButtonHover.png');
   }
 
 #premium-button:hover {
   cursor: pointer;
-  content: url('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0002_premiumButtonHover.png');
+  content: url('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0002_premiumButtonHover.png');
 }
 
 #subscribe-button:hover {
   cursor: pointer;
-  content: url('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0001_subscribeButtonHover.png');
+  content: url('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0001_subscribeButtonHover.png');
   z-index: 100;
 }
 
 #about-button:hover {
   cursor: pointer;
-  content: url('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0003_aboutButtonHover.png');
+  content: url('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0003_aboutButtonHover.png');
 }
 
 .spin-hover:hover {
