@@ -35,9 +35,29 @@ body {
 }
 
 .episodeVideo {
-  height: 100vh;
-  width: auto;
+  /* border: solid; */
+  width: 30vh;
+  height: 30vh;
+  padding: 0.000001%;
 }
+
+.episode-container {
+  border: solid;
+  top: 20vh;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  min-width: 63vh;
+  max-width: 63vh;
+  min-height: 63vh;
+  max-height: 63vh;
+  z-index: 1;
+}
+
+
 
 /*======================
     Mobile Formatting
@@ -62,7 +82,9 @@ body {
   }
 
   .episodeVideo {
-    width: 100vw;
+    width: 29vw;
     height: auto;
   }
+
+  
 }

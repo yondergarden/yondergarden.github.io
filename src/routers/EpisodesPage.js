@@ -98,20 +98,30 @@ const EpisodesPage = () => {
 
   const isPremium = currentEpisode ? currentEpisode.premium : false;
 
+  const DisplayEpisode = () => {
+    return (
+      <div className="episode-container center-home">
+        {currentEpisode.episode_panels.map((src, index) => (
+          <video
+            key={`${currentEpisode.id}-${index}`}
+            className="episodeVideo"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src={src} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <div>
-      <video
-        key={currentEpisode.id}
-        className="menu-container center-home layer-50 episodeVideo"
-        autoPlay
-        muted
-        loop
-        playsInline
-      >
-        <source className="" src={currentEpisode.mp4} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <Background />
+      <DisplayEpisode />
+      {/* <Background /> */}
       <Routes>
         {episodesData.map(episode => (
           <Route
