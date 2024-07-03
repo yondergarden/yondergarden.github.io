@@ -12,10 +12,15 @@ const Background = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsPortrait(window.innerHeight > window.innerWidth);
+            const isCurrentlyPortrait = window.innerHeight > window.innerWidth;
+            setIsPortrait(isCurrentlyPortrait);
+            console.log(isCurrentlyPortrait);
         };
 
         window.addEventListener('resize', handleResize);
+
+        // Call handleResize initially to set the correct state
+        handleResize();
 
         return () => {
             window.removeEventListener('resize', handleResize);
@@ -24,8 +29,8 @@ const Background = () => {
 
     const DisplayBackground = () => {
         return (
-          <div style={{ position: 'relative', height: '100vh' }}>
-              {[...Array(6)].map((_, i) => (
+          <div>
+              {[...Array(7)].map((_, i) => (
                   <video
                       key={i}
                       className='home-bg-video'
@@ -33,12 +38,21 @@ const Background = () => {
                       muted
                       loop
                       playsInline
-                      style={{
-                        zIndex: -i,
-                        position: 'absolute',
-                        top: '50%',
-                        transform: `translate(-50%, calc(-50% - ${i} * (10vh - 10vw)))`
-                      }}
+                      style={
+                          isPortrait
+                          ? {
+                              zIndex: -i,
+                              position: 'absolute',
+                              top: '50%',
+                              transform: `translate(-50%, calc(-50% - ${i} * (10vh - 10vw)))`
+                            }
+                          : {
+                              zIndex: -i,
+                              position: 'absolute',
+                              top: '50%',
+                              transform: `translate(calc(-350vh + ${i} * 100vh), -50%)`
+                            }
+                      }
                   >
                       <source src={backgroundImage} type="video/mp4"/>
                       Your browser does not support the video tag.
@@ -50,7 +64,21 @@ const Background = () => {
                       key={i}
                       className='home-frame'
                       src={yonderGrassImage}
-                      style={{ zIndex: -10 + i, position: 'absolute', top: '100%', transform: `translate(-50%, calc(-100% - ${i} * (10vh - 10vw)))`}} // Adjust 50px to change the offset
+                      style={
+                        isPortrait
+                        ? {
+                          zIndex: -10 + i,
+                          position: 'absolute',
+                          top: '100%',
+                          transform: `translate(-50%, calc(-100% - ${i} * (10vh - 10vw)))`
+                        }
+                        : {
+                          zIndex: -10 + i,
+                          position: 'absolute',
+                          top: '100%',
+                          transform: `translate(calc(-350vh + ${i} * 100vh), -50%)`
+                        }
+                      }
                   />
               ))}
               <img className='home-frame' src={frameImage}/>
