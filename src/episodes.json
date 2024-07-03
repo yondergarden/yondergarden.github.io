@@ -6,10 +6,10 @@
     "content": "Content for Episode 1",
     "thumbnail": "https://i.imgur.com/SEHtwdy.mp4",
     "episode_panels": [
-      "https://episodevideos.s3.us-east-2.amazonaws.com/e1BrutalWinter/painTreePanel1.mp4",
-      "https://episodevideos.s3.us-east-2.amazonaws.com/e1BrutalWinter/painTreePanel2.mp4",
-      "https://episodevideos.s3.us-east-2.amazonaws.com/e1BrutalWinter/painTreePanel1.mp4",
-      "https://episodevideos.s3.us-east-2.amazonaws.com/e1BrutalWinter/painTreePanel2.mp4"
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4"
     ]
   },
   {
@@ -19,10 +19,10 @@
     "content": "Content for Episode 2",
     "thumbnail": "https://i.imgur.com/SEHtwdy.mp4",
     "episode_panels": [
-      "https://episodevideos.s3.us-east-2.amazonaws.com/e1BrutalWinter/painTreePanel1.mp4",
-      "https://episodevideos.s3.us-east-2.amazonaws.com/e1BrutalWinter/painTreePanel2.mp4",
-      "https://episodevideos.s3.us-east-2.amazonaws.com/e1BrutalWinter/painTreePanel1.mp4",
-      "https://episodevideos.s3.us-east-2.amazonaws.com/e1BrutalWinter/painTreePanel2.mp4"
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4"
     ]
   },
   {
