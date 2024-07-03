@@ -66,6 +66,15 @@
   transform: translate(-50%, -50%);
 }
 
+.home-frame {
+  position: fixed;
+  min-height: 100vh;
+  max-height: 100vh;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .hidden {
     display: none;
 }
@@ -75,230 +84,6 @@
 ========================*/
 
 @media (orientation: portrait) {
-  #bg1 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, -75%)
-  }
-
-  #bg2 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, -70%)
-  }
-
-  #bg3 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, -65%)
-  }
-
-  #bg4 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, -60%)
-  }
-
-  #bg5 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, -55%)
-  }
-
-  #bg6 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, -50%)
-  }
-
-  #bg7 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, -45%)
-  }
-
-  #bg8 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, -40%)
-  }
-
-  #bg9 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, -35%)
-  }
-
-  #bg10 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, -30%)
-  }
-
-  #bg11 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, -25%)
-  }
-
-  #bg12 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, -20%)
-  }
-
-  #bg13 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, -15%)
-  }
-
-  #bg14 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, -10%)
-  }
-
-  #bg15 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, -5%)
-  }
-
-  #bg16 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, 0%)
-  }
-
-  #grass1 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, 75%)
-  }
-
-  #grass2 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, 70%)
-  }
-
-  #grass3 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, 65%)
-  }
-
-  #grass4 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, 60%)
-  }
-
-  #grass5 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, 55%)
-  }
-
-  #grass6 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, 50%)
-  }
-
-  #grass7 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, 45%)
-  }
-
-  #grass8 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, 40%)
-  }
-
-  #grass9 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, 35%)
-  }
-
-  #grass10 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, 30%)
-  }
-
-  #grass11 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, 25%)
-  }
-
-  #grass12 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, 20%)
-  }
-
-  #grass13 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, 15%)
-  }
-
-  #grass14 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, 10%)
-  }
-
-  #grass15 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, 5%)
-  }
-
-  #grass16 {
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-    transform: translate(0%, 0%)
-  }
-
   .bind-bg {
     z-index: 5;
     width: 100vw;
@@ -346,6 +131,15 @@
     min-width: 100vw;
     max-width: 100vw;
     max-height: 1000vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .home-frame {
+    position: fixed;
+    min-height: 100vw;
+    max-height: 100vw;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
