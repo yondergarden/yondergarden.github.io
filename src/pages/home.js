@@ -4,6 +4,26 @@ import '../styles/Home.css';
 import '../styles/Yonder.css';
 import { Link } from 'react-router-dom';
 
+function usePreventScroll() {
+  useEffect(() => {
+    // Detect if the user is on an iOS device
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+    if (!isIOS) {
+      return;
+    }
+
+    const handleTouchMove = (event) => {
+      event.preventDefault();
+    };
+
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    return () => {
+      document.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, []);
+}
 
 const Home = () => {
   const [episodesOpen, setEpisodesOpen] = useState(false);
@@ -190,6 +210,8 @@ const Home = () => {
     const hasTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     setIsTouchDevice(hasTouchScreen);
   }, []);
+
+  usePreventScroll();
 
   return (
     <>

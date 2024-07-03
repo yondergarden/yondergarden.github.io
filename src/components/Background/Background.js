@@ -1,6 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import './Background.css';
 
+function usePreventScroll() {
+  useEffect(() => {
+    // Detect if the user is on an iOS device
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+    if (!isIOS) {
+      return;
+    }
+
+    const handleTouchMove = (event) => {
+      event.preventDefault();
+    };
+
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    return () => {
+      document.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, []);
+}
 
 const Background = () => {
     let titleImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/TitleDefault.png"
@@ -40,6 +60,9 @@ const Background = () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+
+    usePreventScroll();
+
 
     const DisplayBackground = () => {
         return (
