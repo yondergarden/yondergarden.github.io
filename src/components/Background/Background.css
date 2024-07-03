@@ -68,8 +68,8 @@
 
 .home-frame {
   position: fixed;
-  min-height: 100vh;
-  max-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  max-height: calc(var(--vh, 1vh) * 100);
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);

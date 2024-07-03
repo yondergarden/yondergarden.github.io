@@ -11,6 +11,21 @@ const Background = () => {
     const [isPortrait, setIsPortrait] = useState(window.innerHeight > window.innerWidth);
 
     useEffect(() => {
+      const setVH = () => {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      };
+
+      setVH();
+      window.addEventListener('resize', setVH);
+
+      // Cleanup event listener on component unmount
+      return () => {
+        window.removeEventListener('resize', setVH);
+      };
+    }, []);
+
+    useEffect(() => {
         const handleResize = () => {
             const isCurrentlyPortrait = window.innerHeight > window.innerWidth;
             setIsPortrait(isCurrentlyPortrait);
