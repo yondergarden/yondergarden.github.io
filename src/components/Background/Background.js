@@ -46,7 +46,7 @@ const Background = () => {
                               transform: `translate(-50%, calc(-50% - ${i} * (10vh - 10vw)))`
                             }
                           : {
-                              zIndex: -i,
+                              zIndex: -20 - i,
                               position: 'absolute',
                               top: '50%',
                               transform: `translate(calc(-350vh + ${i} * 100vh), -50%)`
@@ -58,7 +58,7 @@ const Background = () => {
                   </video>
               ))}
               <img className='home-frame' src={yonderGrassImage}/>
-              {[...Array(5)].map((_, i) => (
+              {[...Array(7)].map((_, i) => (
                   <img
                       key={i}
                       className='home-frame'
@@ -72,9 +72,9 @@ const Background = () => {
                           transform: `translate(-50%, calc(-100% - ${i} * (10vh - 10vw)))`
                         }
                         : {
-                          zIndex: i,
+                          zIndex: -10 - i,
                           position: 'absolute',
-                          top: '100%',
+                          top: '50%',
                           transform: `translate(calc(-350vh + ${i} * 100vh), -50%)`
                         }
                       }
