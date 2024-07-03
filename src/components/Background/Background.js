@@ -14,7 +14,6 @@ const Background = () => {
         const handleResize = () => {
             const isCurrentlyPortrait = window.innerHeight > window.innerWidth;
             setIsPortrait(isCurrentlyPortrait);
-            console.log(isCurrentlyPortrait);
         };
 
         window.addEventListener('resize', handleResize);
@@ -73,7 +72,7 @@ const Background = () => {
                           transform: `translate(-50%, calc(-100% - ${i} * (10vh - 10vw)))`
                         }
                         : {
-                          zIndex: -10 + i,
+                          zIndex: i,
                           position: 'absolute',
                           top: '100%',
                           transform: `translate(calc(-350vh + ${i} * 100vh), -50%)`
