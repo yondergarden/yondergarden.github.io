@@ -25,7 +25,7 @@ const Background = () => {
     const DisplayBackground = () => {
         return (
           <div style={{ position: 'relative', height: '100vh' }}>
-              {[...Array(5)].map((_, i) => (
+              {[...Array(6)].map((_, i) => (
                   <video
                       key={i}
                       className='home-bg-video'
@@ -33,13 +33,26 @@ const Background = () => {
                       muted
                       loop
                       playsInline
-                      style={{ zIndex: -i, position: 'absolute', top: '50%', transform: `translate(-50%, ${-50 + i * -10}vh)`}} // Adjust 50px to change the offset
+                      style={{
+                        zIndex: -i,
+                        position: 'absolute',
+                        top: '50%',
+                        transform: `translate(-50%, calc(-50% - ${i} * (10vh - 10vw)))`
+                      }}
                   >
                       <source src={backgroundImage} type="video/mp4"/>
                       Your browser does not support the video tag.
                   </video>
               ))}
               <img className='home-frame' src={yonderGrassImage}/>
+              {[...Array(5)].map((_, i) => (
+                  <img
+                      key={i}
+                      className='home-frame'
+                      src={yonderGrassImage}
+                      style={{ zIndex: -10 + i, position: 'absolute', top: '100%', transform: `translate(-50%, ${-50 - i * 5}vh)`}} // Adjust 50px to change the offset
+                  />
+              ))}
               <img className='home-frame' src={frameImage}/>
               <img className='home-frame' src={titleImage}/>
           </div>
