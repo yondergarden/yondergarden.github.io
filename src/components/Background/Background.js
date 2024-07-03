@@ -50,7 +50,7 @@ const Background = () => {
                       key={i}
                       className='home-frame'
                       src={yonderGrassImage}
-                      style={{ zIndex: -10 + i, position: 'absolute', top: '100%', transform: `translate(-50%, ${-50 - i * 5}vh)`}} // Adjust 50px to change the offset
+                      style={{ zIndex: -10 + i, position: 'absolute', top: '100%', transform: `translate(-50%, calc(-100% - ${i} * (10vh - 10vw)))`}} // Adjust 50px to change the offset
                   />
               ))}
               <img className='home-frame' src={frameImage}/>
