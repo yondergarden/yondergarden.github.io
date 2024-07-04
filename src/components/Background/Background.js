@@ -87,7 +87,7 @@ const Background = () => {
                               zIndex: -20 - i,
                               position: 'absolute',
                               top: '50%',
-                              transform: `translate(calc(-350vh + ${i} * 100vh), -50%)`
+                              transform: `translate(calc(calc(var(--vh, 1vh) * -350) + ${i} * calc(var(--vh, 1vh) * 100)), -50%)`
                             }
                       }
                   >
@@ -107,13 +107,13 @@ const Background = () => {
                           zIndex: -10 + i,
                           position: 'absolute',
                           top: '100%',
-                          transform: `translate(-50%, calc(-100% - ${i} * (10vh - 10vw)))`
+                          transform: `translate(-50%, calc(-100% - ${i} * (calc(var(--vh, 1vh) * 10) - 10vw)))`
                         }
                         : {
                           zIndex: -10 - i,
                           position: 'absolute',
                           top: '50%',
-                          transform: `translate(calc(-350vh + ${i} * 100vh), -50%)`
+                          transform: `translate(calc(-350vh + ${i} * calc(var(--vh, 1vh) * 100)), -50%)`
                         }
                       }
                   />
