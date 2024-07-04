@@ -52,31 +52,33 @@
 }
 
 .bg-align {
-  width: 100vh;
-  height: 100vh;
+  width: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100);
   z-index: 5;
 }
 
 .home-bg-video {
   position: fixed;
-  min-height: 100vh;
-  max-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  max-height: calc(var(--vh, 1vh) * 100);
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  overflow: hidden;
 }
 
 .home-frame {
   position: fixed;
-  min-height: 100vh;
-  max-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  max-height: calc(var(--vh, 1vh) * 100);
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  overflow: hidden;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 /*======================
@@ -130,7 +132,7 @@
     position: fixed;
     min-width: 100vw;
     max-width: 100vw;
-    max-height: 1000vh;
+    max-height: calc(var(--vh, 1vh) * 1000);
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
