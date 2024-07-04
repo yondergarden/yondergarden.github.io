@@ -81,7 +81,7 @@ const Background = () => {
                               zIndex: -i,
                               position: 'absolute',
                               top: '50%',
-                              transform: `translate(-50%, calc(-50% - ${i} * (10vh - 10vw)))`
+                              transform: `translate(-50%, calc(-50% - ${i} * (calc(var(--vh, 1vh) * 10) - 10vw)))`
                             }
                           : {
                               zIndex: -20 - i,
