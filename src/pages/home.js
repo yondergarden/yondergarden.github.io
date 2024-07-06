@@ -107,7 +107,7 @@ const Home = () => {
         <div className="menu-container center-home">
           <div className='episodes-box'>
             <button type="button" className="closeButton" onClick={() => { setEpisodesOpen(false) }}>x</button>
-            <h1 className="simple-centered">☆ 𝖊𝖕𝖎𝖘𝖔𝖉𝖊𝖘 ☆</h1>
+            <h1 className="about-info unifrakturFont">✧ episodes ✧</h1>
             <div className="episodes-icon-container">
               {thumbnailList.map(({ id, title, thumbnail }) => (
                 <div className="episodes-icon-wrapper" key={id}>
@@ -128,12 +128,19 @@ const Home = () => {
   const DisplaySubscribe = () => {
     return (
       <div>
-        <div className="menu-container center-home premium-box">
+        <div className="menu-container center-home">
           <div className='info-box'>
-            <button type="button" className="closeButton" onClick={() => { setSubscribeOpen(false) }}>x</button>
-            <h1 className="simple-centered unifrakturFont">♥️ subscribe! ♥️</h1>
-            <p className="simple-centered">Follow Yonder Garden and never miss an episode!</p>
-            <h1 className="simple-centered">\(🌸^.^)/</h1>
+            <div className='about-info'>
+              <button type="button" className="closeButton" onClick={() => { setSubscribeOpen(false) }}>x</button>
+              <h1 className="unifrakturFont">♥ subscribe! ♥</h1>
+              <p className="simple-centered" style={{fontSize: 'calc(var(--vh, 1vh) * 2.5)'}}>Follow Yonder Garden and never miss an episode!</p>
+              <div className="social-links">
+                <a href="https://www.patreon.com/yondergarden" target="_blank" rel="noopener noreferrer">Patreon</a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">TikTok</a>
+                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">X</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -156,7 +163,7 @@ const Home = () => {
           <div className='info-box'>
             <button type="button" className="closeButton" onClick={() => { setAboutOpen(false) }}>x</button>
             <div className="about-info">
-              <h1 className="unifrakturFont">* about *</h1>
+              <h1 className="unifrakturFont">❀ about ❀</h1>
               <h2><i>Yonder Garden is an animated webcomic that comes in 2 flavors.</i></h2>
               <div className="boxes">
                 <div className="rectangle">
