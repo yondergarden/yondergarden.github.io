@@ -131,9 +131,8 @@ const Home = () => {
         <div className="menu-container center-home premium-box">
           <div className='info-box'>
             <button type="button" className="closeButton" onClick={() => { setSubscribeOpen(false) }}>x</button>
-            <h1 className="simple-centered unifrakturFont">relinquish thy email address.</h1>
-            <h1 className="simple-centered">🤍</h1>
-            <EmailForm />
+            <h1 className="simple-centered unifrakturFont">♥️ subscribe! ♥️</h1>
+            <p className="simple-centered">Follow Yonder Garden and never miss an episode!</p>
             <h1 className="simple-centered">\(🌸^.^)/</h1>
           </div>
         </div>

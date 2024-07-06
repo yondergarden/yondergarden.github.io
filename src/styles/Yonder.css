@@ -44,7 +44,7 @@
 
 .simple-centered {
   text-align: center;
-  font-size: 4vh;
+  font-size: calc(var(--vh, 1vh) * 4);
 }
 
 .menu-container {
