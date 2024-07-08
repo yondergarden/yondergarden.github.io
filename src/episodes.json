@@ -2,26 +2,40 @@
   {
     "id": 1,
     "title": "Cold Bird",
+    "premium": true,
     "content": "Content for Episode 1",
-    "mp4landscape": "https://episodevideos.s3.us-east-2.amazonaws.com/e1BrutalWinter_landscape.mp4",
-    "mp4portrait": "https://episodevideos.s3.us-east-2.amazonaws.com/e1BrutalWinter_portrait.mp4",
     "thumbnail": "https://i.imgur.com/SEHtwdy.mp4",
-    "premium" : true
+    "episode_panels": [
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4"
+    ]
   },
   {
     "id": 2,
     "title": "The Primordial Will",
+    "premium": false,
     "content": "Content for Episode 2",
-    "mp4": "https://i.imgur.com/QjjVfsy.mp4",
     "thumbnail": "https://i.imgur.com/SEHtwdy.mp4",
-    "premium" : false
+    "episode_panels": [
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4"
+    ]
   },
   {
     "id": 3,
     "title": "Hexahedron'd",
+    "premium": false,
     "content": "Content for Episode 3",
-    "mp4": "https://i.imgur.com/wgdtjg5.mp4",
     "thumbnail": "https://i.imgur.com/SEHtwdy.mp4",
-    "premium" : false
+    "episode_panels": [
+      "https://i.imgur.com/wgdtjg5.mp4",
+      "https://i.imgur.com/wgdtjg5.mp4",
+      "https://i.imgur.com/wgdtjg5.mp4",
+      "https://i.imgur.com/wgdtjg5.mp4"
+    ]
   }
 ]
