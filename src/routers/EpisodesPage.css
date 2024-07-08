@@ -36,24 +36,24 @@ body {
 
 .episodeVideo {
   /* border: solid; */
-  width: 30vh;
-  height: 30vh;
+  width: calc(var(--vh, 1vh) * 29.5);
+  height: calc(var(--vh, 1vh) * 29.5);
   padding: 0.000001%;
 }
 
 .episode-container {
-  border: solid;
-  top: 20vh;
+  border: none;
+  top: calc(var(--vh, 1vh) * 20);
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-content: space-evenly;
-  min-width: 63vh;
-  max-width: 63vh;
-  min-height: 63vh;
-  max-height: 63vh;
+  min-width: calc(var(--vh, 1vh) * 63);
+  max-width: calc(var(--vh, 1vh) * 63);
+  min-height: calc(var(--vh, 1vh) * 63);
+  max-height: calc(var(--vh, 1vh) * 63);
   z-index: 1;
 }
 
@@ -82,9 +82,27 @@ body {
   }
 
   .episodeVideo {
-    width: 29vw;
-    height: auto;
+    /* border: solid; */
+    width: 29.5vw;
+    height: 29.5vw;
+    padding: 0.000001%;
   }
 
-  
+  .episode-container {
+    border: none;
+    top: 50%;
+    transform: translate(-50%, -47%);
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    min-width: 63vw;
+    max-width: 63vw;
+    min-height: 63vw;
+    max-height: 63vw;
+    z-index: 1;
+  }
+
 }
