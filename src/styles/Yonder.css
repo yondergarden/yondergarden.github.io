@@ -48,17 +48,17 @@
 }
 
 .menu-container {
-  top: 20vh;
+  top: calc(var(--vh, 1vh) * 20);
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-content: space-evenly;
-  min-width: 60vh;
-  max-width: 60vh;
-  min-height: 60vh;
-  max-height: 60vh;
+  min-width: calc(var(--vh, 1vh) * 60);
+  max-width: calc(var(--vh, 1vh) * 60);
+  min-height: calc(var(--vh, 1vh) * 60);
+  max-height: calc(var(--vh, 1vh) * 60);
   z-index: 500;
 }
 

@@ -4,6 +4,27 @@ import '../styles/Home.css';
 import '../styles/Yonder.css';
 import { Link } from 'react-router-dom';
 
+function usePreventScroll() {
+  useEffect(() => {
+    // Detect if the user is on an iOS device
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+    if (!isIOS) {
+      return;
+    }
+
+    const handleTouchMove = (event) => {
+      event.preventDefault();
+    };
+
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    return () => {
+      document.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, []);
+}
+
 const Home = () => {
   const [episodesOpen, setEpisodesOpen] = useState(false);
   const [subscribeOpen, setSubscribeOpen] = useState(false);
@@ -12,10 +33,10 @@ const Home = () => {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const episodesData = require('../episodes.json');
 
-  let episodesMenuImage = "https://homepagebuttons.s3.us-east-2.amazonaws.com/_0004_episodesButton.png";
-  let subscribeMenuImage = "https://homepagebuttons.s3.us-east-2.amazonaws.com/_0005_subscribeButton.png";
-  let aboutMenuImage = "https://homepagebuttons.s3.us-east-2.amazonaws.com/_0007_aboutButton.png";
-  let premiumMenuImage = "https://homepagebuttons.s3.us-east-2.amazonaws.com/_0006_premiumButton.png";
+  let episodesMenuImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0004_episodesButton.png";
+  let subscribeMenuImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0005_subscribeButton.png";
+  let aboutMenuImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0007_aboutButton.png";
+  let premiumMenuImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0006_premiumButton.png";
 
   // Function to preload images
   function preloadImage(url) {
@@ -24,10 +45,10 @@ const Home = () => {
   }
 
   // Preload the hover images
-  preloadImage('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0000_episodesButtonHover.png');
-  preloadImage('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0001_subscribeButtonHover.png');
-  preloadImage('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0002_premiumButtonHover.png');
-  preloadImage('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0003_aboutButtonHover.png');
+  preloadImage('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0000_episodesButtonHover.png');
+  preloadImage('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0001_subscribeButtonHover.png');
+  preloadImage('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0002_premiumButtonHover.png');
+  preloadImage('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0003_aboutButtonHover.png');
 
   const EpisodeSelect = (episodeNumber) => {
     const episodesUrl = `#/episodes/${episodeNumber}`;
@@ -189,6 +210,8 @@ const Home = () => {
     const hasTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     setIsTouchDevice(hasTouchScreen);
   }, []);
+
+  usePreventScroll();
 
   return (
     <>

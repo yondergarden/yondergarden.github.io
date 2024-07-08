@@ -1,7 +1,7 @@
 .image-button {
   z-index: 2;
-  width: 50vh;
-  height: 13vh;
+  width: calc(var(--vh, 1vh) * 50);
+  height: calc(var(--vh, 1vh) * 13);
 }
 
 .image-button:hover {
@@ -9,29 +9,29 @@
 }
 
 .image-button:active {
-  width: 50vh;
-  height: 13vh;
+  width: calc(var(--vh, 1vh) * 50);
+  height: calc(var(--vh, 1vh) * 13);
 }
 
 #episodes-button:hover {
     cursor: pointer;
-    content: url('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0000_episodesButtonHover.png');
+    content: url('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0000_episodesButtonHover.png');
   }
 
 #premium-button:hover {
   cursor: pointer;
-  content: url('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0002_premiumButtonHover.png');
+  content: url('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0002_premiumButtonHover.png');
 }
 
 #subscribe-button:hover {
   cursor: pointer;
-  content: url('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0001_subscribeButtonHover.png');
+  content: url('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0001_subscribeButtonHover.png');
   z-index: 100;
 }
 
 #about-button:hover {
   cursor: pointer;
-  content: url('https://homepagebuttons.s3.us-east-2.amazonaws.com/_0003_aboutButtonHover.png');
+  content: url('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0003_aboutButtonHover.png');
 }
 
 .spin-hover:hover {
@@ -44,8 +44,8 @@
   transform: translate(-50%, 0%);
   margin-left: auto;
   margin-right: auto;
-  width: 100vh;
-  height: 100vh;
+  width: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 .center-home-premium {
@@ -54,8 +54,8 @@
   transform: translate(-50%, 0%);
   margin-left: auto;
   margin-right: auto;
-  width: 100vh;
-  height: 100vh;
+  width: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100);
   filter: hue-rotate(0deg);
   animation: hueRotate 3s linear infinite;
 }
@@ -74,13 +74,13 @@
 ========================*/
 
 .info-box {
-  border: .5vh solid #000000;
+  border: calc(var(--vh, 1vh) * 0.5) solid #000000;
   background-color: pink;
   z-index: 49;
-  min-width: 54vh;
-  max-width: 54vh;
-  min-height: 54vh;
-  max-height: 54vh;
+  min-width: calc(var(--vh, 1vh) * 54);
+  max-width: calc(var(--vh, 1vh) * 54);
+  min-height: calc(var(--vh, 1vh) * 54);
+  max-height: calc(var(--vh, 1vh) * 54);
   overflow: hidden
 }
 
@@ -92,13 +92,13 @@
 }
 
 h1 {
-    font-size: 6vh;
-    margin: 2vh 0;
+    font-size: calc(var(--vh, 1vh) * 6);
+    margin: calc(var(--vh, 1vh) * 2) 0;
 }
 
 h2 {
     font-size: 1.2em;
-    margin: 2vh;
+    margin: calc(var(--vh, 1vh) * 2);
 }
 
 .boxes {
@@ -108,17 +108,17 @@ h2 {
 
 .rectangle {
     background-color: #ffffe0; /* Light yellow */
-    margin: 1vh;
-    padding: 2vh;
-    border: 0.3vh solid black; /* Black border */
-    border-radius: 2vh;
-    box-shadow: 0 0 1vh yellow; /* Yellow glow */
+    margin: calc(var(--vh, 1vh) * 1);
+    padding: calc(var(--vh, 1vh) * 2);
+    border: calc(var(--vh, 1vh) * 0.3) solid black; /* Black border */
+    border-radius: calc(var(--vh, 1vh) * 2);
+    box-shadow: 0 0 calc(var(--vh, 1vh) * 1) yellow; /* Yellow glow */
     flex: 1;
     max-width: 45%;
 }
 
 .rectangle h3 {
-    margin: 0 0 1vh;
+    margin: 0 0 calc(var(--vh, 1vh) * 1);
     font-size: 1.5em;
 }
 
@@ -130,19 +130,19 @@ h2 {
 .progress-container {
     display: flex;
     align-items: center;
-    margin-top: 2vh;
-    margin-left: 1vh;
-    margin-right: 1vh;
+    margin-top: calc(var(--vh, 1vh) * 2);
+    margin-left: calc(var(--vh, 1vh) * 1);
+    margin-right: calc(var(--vh, 1vh) * 1);
 }
 
 .progress-bar {
-    width: 50vh;
-    height: 2vh;
+    width: calc(var(--vh, 1vh) * 50);
+    height: calc(var(--vh, 1vh) * 2);
     background-color: #ddd;
-    border: 0.3vh solid black; /* Black border */
-    border-radius: 10vh;
+    border: calc(var(--vh, 1vh) * 0.3) solid black; /* Black border */
+    border-radius: calc(var(--vh, 1vh) * 10);
     overflow: hidden;
-    box-shadow: 0 0 1vh blue;
+    box-shadow: 0 0 calc(var(--vh, 1vh) * 1) blue;
     position: relative;
 }
 
@@ -152,7 +152,7 @@ h2 {
 }
 
 .progress-text {
-  margin-right: 1vh;
+  margin-right: calc(var(--vh, 1vh) * 1);
 }
 
 /*======================
@@ -160,7 +160,7 @@ h2 {
 ========================*/
 
 .subscribeHeader {
-  margin-top: 10vh;
+  margin-top: calc(var(--vh, 1vh) * 10);
 }
 
 /*======================
@@ -168,13 +168,13 @@ h2 {
 ========================*/
 
 .episodes-box {
-  border: .5vh solid #000000;
+  border: calc(var(--vh, 1vh) * 0.5) solid #000000;
   background-color: pink;
   z-index: 49;
-  min-width: 54vh;
-  max-width: 54vh;
-  min-height: 54vh;
-  max-height: 54vh;
+  min-width: calc(var(--vh, 1vh) * 54);
+  max-width: calc(var(--vh, 1vh) * 54);
+  min-height: calc(var(--vh, 1vh) * 54);
+  max-height: calc(var(--vh, 1vh) * 54);
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -184,8 +184,8 @@ h2 {
   flex-flow: row wrap;
   justify-content: space-evenly;
   align-items: center;
-  gap: 1vh;
-  margin: 3vh 3vh 3vh 6vh;
+  gap: calc(var(--vh, 1vh) * 1);
+  margin: calc(var(--vh, 1vh) * 3) calc(var(--vh, 1vh) * 3) calc(var(--vh, 1vh) * 3) calc(var(--vh, 1vh) * 6);
 }
 
 .episodes-icon-wrapper {
@@ -202,7 +202,7 @@ h2 {
   transition: opacity 0.3s ease, visibility 0.3s ease;
   background-color: yellow;
   color: red;
-  border: 0.2vh solid black;
+  border: calc(var(--vh, 1vh) * 0.2) solid black;
   padding: 5px;
   text-align: center;
   display: inline-block;
@@ -213,11 +213,11 @@ h2 {
 
 .episodes-icon {
   object-fit: cover;
-  border: 0.3vh solid black;
+  border: calc(var(--vh, 1vh) * 0.3) solid black;
   display: inline-block;
   background-repeat: no-repeat;
   font-size: 50px;
-  max-width: 9vh;
+  max-width: calc(var(--vh, 1vh) * 9);
   position: relative;
 }
 
@@ -249,12 +249,12 @@ h2 {
 
 .closeButton {
   position: fixed;
-  top: 5vh;
-  left: 5vh;
+  top: calc(var(--vh, 1vh) * 5);
+  left: calc(var(--vh, 1vh) * 5);
   background: #FF6666; /* Handle color */
   border: 'solid black';
   color: #5D2E8C; /* Track color */
-  padding: 0.5vh;
+  padding: calc(var(--vh, 1vh) * 0.5);
   width: auto;
   height: auto;
   text-align: center;
@@ -292,7 +292,7 @@ h2 {
 }
 
 ::-webkit-scrollbar {
-  width: 1.5vh; /* Width of the scrollbar */
+  width: calc(var(--vh, 1vh) * 1.5); /* Width of the scrollbar */
 }
 
 /*======================
@@ -337,13 +337,13 @@ h2 {
 
   .episodes-box {
     position: absolute;
-    border: .5vh solid #000000;
+    border: calc(var(--vh, 1vh) * 0.5) solid #000000;
     background-color: pink;
     z-index: 49;
     min-width: 95vw;
     max-width: 95vw;
-    min-height: 90vh;
-    max-height: 90vh;
+    min-height: calc(var(--vh, 1vh) * 90);
+    max-height: calc(var(--vh, 1vh) * 90);
     overflow-y: scroll;
     overflow-x: hidden;
   }
@@ -352,13 +352,13 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    gap: 1vh;
-    margin: 3vh 3vh 3vh 6vh;
+    gap: calc(var(--vh, 1vh) * 1);
+    margin: calc(var(--vh, 1vh) * 3) calc(var(--vh, 1vh) * 3) calc(var(--vh, 1vh) * 3) calc(var(--vh, 1vh) * 6);
   }
 
   .episodes-icon {
     object-fit: cover;
-    border: 0.3vh solid black;
+    border: calc(var(--vh, 1vh) * 0.3) solid black;
     display: inline-block;
     background-repeat: no-repeat;
     font-size: 50px;
@@ -373,7 +373,7 @@ h2 {
     background: #FF6666;
     border: 'solid black';
     color: #5D2E8C;
-    padding: 0.5vh;
+    padding: calc(var(--vh, 1vh) * 0.5);
     width: auto;
     height: auto;
     text-align: center;
@@ -381,7 +381,7 @@ h2 {
 
   .info-box {
     position: absolute;
-    border: .5vh solid #000000;
+    border: calc(var(--vh, 1vh) * 0.5) solid #000000;
     background-color: pink;
     z-index: 49;
     min-width: 95vw;

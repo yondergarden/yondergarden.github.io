@@ -6,6 +6,7 @@
 
 body{
  background-color:#F7DDDD;
+ overflow-x: hidden;
 }
 
 .App {
