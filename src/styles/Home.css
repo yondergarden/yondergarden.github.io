@@ -93,6 +93,11 @@
   font-weight: bold;
 }
 
+#theMainQuest {
+  background-color: lightgray;
+  box-shadow: 0 0 1vw gray;
+}
+
 /*======================
     About Pop-up
 ========================*/

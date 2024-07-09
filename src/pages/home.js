@@ -170,7 +170,7 @@ const Home = () => {
                   <h3 className="simple-centered unifrakturFont">Ephemeralia</h3>
                   <p>Comic strips unimportant or irrelevant to the main storyline. These can be read in any order.</p>
                 </div>
-                <div className="rectangle">
+                <div className="rectangle" id="theMainQuest">
                   <h3 className="simple-centered unifrakturFont">The Main Quest</h3>
                   <p>Long-form episodes that tell the main story over time. <b>The Main Quest is currently locked!</b></p>
                 </div>
