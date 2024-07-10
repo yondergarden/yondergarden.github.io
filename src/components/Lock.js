@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import './Lock.css';
-import JSZip from 'jszip';
-
 
 const baseUrl = 'https://yondergarden.s3.us-east-2.amazonaws.com/wizardframes/';
 const versionSuffix = '.png';
 const frameCount = 120;
+const bannerBaseUrl = 'https://yondergarden.s3.us-east-2.amazonaws.com/premiumbanner/';
+const bannerCount = 37;
 
 const spriteUrls = Array.from({ length: frameCount }, (_, index) => {
   return `${baseUrl}wizardUnlock.0.${index + 1}${versionSuffix}`;
+});
+
+const bannerUrls = Array.from({ length: bannerCount }, (_, index) => {
+  return `${bannerBaseUrl}premiumBanner.0.${index + 1}${versionSuffix}`;
 });
 
 const loadImage = (url) => {
@@ -20,8 +24,8 @@ const loadImage = (url) => {
   });
 };
 
-const loadAllImages = async () => {
-  const images = await Promise.all(spriteUrls.map(url => loadImage(url)));
+const loadAllImages = async (urls) => {
+  const images = await Promise.all(urls.map(url => loadImage(url)));
   return images;
 };
 
@@ -50,18 +54,31 @@ const LockComponent = () => {
   const [showWizard, setShowWizard] = useState(false);
   const [images, setImages] = useState([]);
   const [currentFrame, setCurrentFrame] = useState(0);
+  const [bannerImages, setBannerImages] = useState([]);
+  const [currentBanner, setCurrentBanner] = useState(0);
+
 
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const loadedImages = await loadAllImages();
+        const loadedImages = await loadAllImages(spriteUrls);
         setImages(loadedImages);
       } catch (error) {
         console.error(error);
       }
     };
 
+    const fetchBanners = async () => {
+      try {
+        const loadedBanners = await loadAllImages(bannerUrls);
+        setBannerImages(loadedBanners);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
     fetchImages();
+    fetchBanners();
   }, []);
 
   useEffect(() => {
@@ -77,10 +94,17 @@ const LockComponent = () => {
           }
           return newFrame;
         });
-      }, 1000 / 24); // 30 frames per second
+      }, 1000 / 24); // 24 frames per second
     }
     return () => clearInterval(frameInterval);
   }, [showWizard]);
+
+  useEffect(() => {
+    const bannerInterval = setInterval(() => {
+      setCurrentBanner(prevBanner => (prevBanner + 1) % bannerCount);
+    }, 1000/24);
+    return () => clearInterval(bannerInterval);
+  }, []);
 
   const invertPageColors = () => {
     document.body.classList.add("invert-colors");
@@ -243,6 +267,12 @@ const LockComponent = () => {
           />
         </div>
       )}
+      <div className="premium-banner">
+        <img
+          src={bannerImages[currentBanner]?.src}
+          alt="Premium Banner"
+        />
+      </div>
     </>
   );
 };
