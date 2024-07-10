@@ -107,7 +107,7 @@ const Home = () => {
         <div className="menu-container center-home">
           <div className='episodes-box'>
             <button type="button" className="closeButton" onClick={() => { setEpisodesOpen(false) }}>x</button>
-            <h1 className="about-info unifrakturFont">✧ episodes ✧</h1>
+            <h1 className="unifrakturFont menuBoxTitle">✧ episodes ✧</h1>
             <div className="episodes-icon-container">
               {thumbnailList.map(({ id, title, thumbnail }) => (
                 <div className="episodes-icon-wrapper" key={id}>
@@ -130,9 +130,8 @@ const Home = () => {
       <div>
         <div className="menu-container center-home">
           <div className='info-box'>
-            <div className='about-info'>
-              <button type="button" className="closeButton" onClick={() => { setSubscribeOpen(false) }}>x</button>
-              <h1 className="unifrakturFont">♥ subscribe! ♥</h1>
+            <button type="button" className="closeButton" onClick={() => { setSubscribeOpen(false) }}>x</button>
+              <h1 className="unifrakturFont menuBoxTitle">♥ subscribe! ♥</h1>
               <p className="simple-centered" style={{fontSize: 'calc(var(--vh, 1vh) * 2.5)'}}>Follow Yonder Garden and never miss an episode!</p>
               <div className="social-links">
                 <a href="https://www.patreon.com/yondergarden" target="_blank" rel="noopener noreferrer">Patreon</a>
@@ -140,7 +139,6 @@ const Home = () => {
                 <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">TikTok</a>
                 <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">X</a>
               </div>
-            </div>
           </div>
         </div>
       </div>

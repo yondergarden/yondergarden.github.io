@@ -207,6 +207,12 @@ h2 {
   overflow-x: hidden;
 }
 
+.menuBoxTitle {
+  position: relative;
+  left: 50%;
+  transform: translate(-28%, 0);
+}
+
 .episodes-icon-container {
   display: flex;
   flex-flow: row wrap;
@@ -374,6 +380,12 @@ h2 {
     max-height: calc(var(--vh, 1vh) * 90);
     overflow-y: scroll;
     overflow-x: hidden;
+  }
+
+  .menuBoxTitle {
+    position: relative;
+    left: 50%;
+    transform: translate(-28%, -25%);
   }
 
   .episodes-icon-container {
