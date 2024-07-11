@@ -88,6 +88,10 @@
   height: auto;
 }
 
+.social-links a:hover img {
+  filter: brightness(0) saturate(100%) invert(74%) sepia(99%) saturate(1118%) hue-rotate(0deg) brightness(200%) contrast(105%);
+}
+
 #theMainQuest {
   background-color: lightgray;
   box-shadow: 0 0 1vw gray;
