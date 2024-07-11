@@ -107,7 +107,7 @@ const Home = () => {
         <div className="menu-container center-home">
           <div className='episodes-box'>
             <button type="button" className="closeButton" onClick={() => { setEpisodesOpen(false) }}>x</button>
-            <h1 className="unifrakturFont menuBoxTitle">✧ episodes ✧</h1>
+            <h1 className="unifrakturFont menuBoxTitle">episodes</h1>
             <div className="episodes-icon-container">
               {thumbnailList.map(({ id, title, thumbnail }) => (
                 <div className="episodes-icon-wrapper" key={id}>
@@ -131,8 +131,9 @@ const Home = () => {
         <div className="menu-container center-home">
           <div className='info-box'>
             <button type="button" className="closeButton" onClick={() => { setSubscribeOpen(false) }}>x</button>
-              <h1 className="unifrakturFont menuBoxTitle">♥ subscribe! ♥</h1>
-              <p className="simple-centered" style={{fontSize: 'calc(var(--vh, 1vh) * 2.5)'}}>Follow Yonder Garden and never miss an episode!</p>
+              <h1 className="unifrakturFont menuBoxTitle">subscribe!</h1>
+              <p className="simple-centered" style={{fontSize: 'calc(var(--vh, 1vh) * 2.5)'}}><i>Follow Yonder Garden</i></p>
+              <p className="simple-centered" style={{fontSize: 'calc(var(--vh, 1vh) * 2.5)'}}><i>and never miss an episode!</i></p>
               <div className="social-links">
                 <a href="https://www.patreon.com/yondergarden" target="_blank" rel="noopener noreferrer">
                   <img src="https://seeklogo.com/images/P/patreon-logo-C0B52F951B-seeklogo.com.png" alt="Patreon" width="32" height="32" />
@@ -175,7 +176,7 @@ const Home = () => {
           <div className='info-box'>
             <button type="button" className="closeButton" onClick={() => { setAboutOpen(false) }}>x</button>
             <div className="about-info">
-              <h1 className="unifrakturFont">❀ about ❀</h1>
+              <h1 className="unifrakturFont">about</h1>
               <h2><i>Yonder Garden is an animated webcomic that comes in 2 flavors.</i></h2>
               <div className="boxes">
                 <div className="rectangle">

@@ -70,26 +70,22 @@
 }
 
 .social-links {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-  gap: 10px;
-  justify-items: center;
-  align-items: center;
+  padding: calc(var(--vh, 1vh) * 5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: calc(var(--vh, 1vh) * 5);
 }
 
 .social-links a {
   display: inline-block;
+  flex: 0 1 calc(var(--vh, 1vh) * 1);
 }
 
 .social-links img {
   display: block;
-  width: 32px;
-  height: 32px;
-}
-
-.social-links a:hover {
-  background-color: white;
-  font-weight: bold;
+  width: calc(var(--vh, 1vh) * 8);
+  height: auto;
 }
 
 #theMainQuest {
@@ -210,7 +206,7 @@ h2 {
 .menuBoxTitle {
   position: relative;
   left: 50%;
-  transform: translate(-28%, 0);
+  transform: translate(-19%, 0);
 }
 
 .episodes-icon-container {
@@ -385,7 +381,7 @@ h2 {
   .menuBoxTitle {
     position: relative;
     left: 50%;
-    transform: translate(-28%, -25%);
+    transform: translate(-19%, -25%);
   }
 
   .episodes-icon-container {
@@ -441,21 +437,22 @@ h2 {
   }
 
   .social-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-    gap: 10px;
-    justify-items: center;
-    align-items: center;
+    padding: 10vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10vw;
   }
 
   .social-links a {
     display: inline-block;
+    flex: 0 1 15vw;
   }
 
   .social-links img {
     display: block;
-    width: 32px;
-    height: 32px;
+    width: 100%;
+    height: auto;
   }
 
   h1 {
