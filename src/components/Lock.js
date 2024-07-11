@@ -116,6 +116,8 @@ const LockComponent = () => {
     }
   };
 
+
+
   const resetLockNumber = () => {
     setLockNumber(0);
     setTimeout(() => {
