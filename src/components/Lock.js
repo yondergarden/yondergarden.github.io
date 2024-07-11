@@ -5,7 +5,7 @@ const baseUrl = 'https://yondergarden.s3.us-east-2.amazonaws.com/wizardframes/';
 const versionSuffix = '.png';
 const frameCount = 120;
 const bannerBaseUrl = 'https://yondergarden.s3.us-east-2.amazonaws.com/premiumbanner/';
-const bannerCount = 37;
+const bannerCount = 16;
 
 const spriteUrls = Array.from({ length: frameCount }, (_, index) => {
   return `${baseUrl}wizardUnlock.0.${index + 1}${versionSuffix}`;
@@ -267,8 +267,9 @@ const LockComponent = () => {
           />
         </div>
       )}
-      <div className="premium-banner">
+      <div>
         <img
+          className="premium-banner"
           src={bannerImages[currentBanner]?.src}
           alt="Premium Banner"
         />

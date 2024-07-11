@@ -146,8 +146,9 @@
 
 .premium-banner {
   position: absolute;
-  top: 10%;
-  left: 70%;
+  width: calc(var(--vh, 1vh) * 30);
+  top: 17%;
+  left: calc(((var(--vh, 1vh) * -100) + 100vw)/2 + var(--vh, 1vh) * 87);
   transform: translate(-50%, -50%);
   z-index: 1000;
 }
@@ -239,5 +240,14 @@
     background-size: contain; /* Ensure the image fits within the container */
     background-repeat: no-repeat; /* Prevent repeating of the background image */
     animation: fadeInOut 5s forwards; /* 4.5 seconds total: 0.5s fade-in, 4s visible, 0.5s fade-out */
+  }
+
+  .premium-banner {
+    position: absolute;
+    width: 30vw;
+    top: calc(var(--vh, 1vh) * 50 - 33vw);
+    left: 87vw;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
   }
 }
