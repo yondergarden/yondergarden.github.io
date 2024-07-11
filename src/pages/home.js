@@ -134,10 +134,24 @@ const Home = () => {
               <h1 className="unifrakturFont menuBoxTitle">♥ subscribe! ♥</h1>
               <p className="simple-centered" style={{fontSize: 'calc(var(--vh, 1vh) * 2.5)'}}>Follow Yonder Garden and never miss an episode!</p>
               <div className="social-links">
-                <a href="https://www.patreon.com/yondergarden" target="_blank" rel="noopener noreferrer">Patreon</a>
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-                <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">TikTok</a>
-                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">X</a>
+                <a href="https://www.patreon.com/yondergarden" target="_blank" rel="noopener noreferrer">
+                  <img src="https://seeklogo.com/images/P/patreon-logo-C0B52F951B-seeklogo.com.png" alt="Patreon" width="32" height="32" />
+                </a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                  <img src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-256.png" alt="Instagram" width="32" height="32" />
+                </a>
+                <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+                  <img src="https://cdn1.iconfinder.com/data/icons/social-media-2293/32/tiktok-256.png" alt="TikTok" width="32" height="32" />
+                </a>
+                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                  <img src="https://cdn4.iconfinder.com/data/icons/social-media-black-white-2/1227/X-256.png" alt="Twitter" width="32" height="32" />
+                </a>
+                <a href="https://www.tumblr.com" target="_blank" rel="noopener noreferrer">
+                  <img src="https://cdn1.iconfinder.com/data/icons/social-media-rounded-corners/512/Rounded_Tumblr5_svg-256.png" alt="Tumblr" width="32" height="32" />
+                </a>
+                <a href="https://www.reddit.com" target="_blank" rel="noopener noreferrer">
+                  <img src="https://cdn0.iconfinder.com/data/icons/picons-social/57/75-reddit-2-256.png" alt="Reddit" width="32" height="32" />
+                </a>
               </div>
           </div>
         </div>

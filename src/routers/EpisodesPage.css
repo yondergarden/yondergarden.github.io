@@ -54,7 +54,7 @@ body {
   max-width: calc(var(--vh, 1vh) * 63);
   min-height: calc(var(--vh, 1vh) * 63);
   max-height: calc(var(--vh, 1vh) * 63);
-  z-index: 1;
+  z-index: 0;
 }
 
 

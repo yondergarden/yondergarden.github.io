@@ -77,6 +77,10 @@
   overflow: hidden;
 }
 
+#frame-frame {
+  z-index: 1;
+}
+
 .hidden {
   display: none;
 }
@@ -145,5 +149,9 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  #frame-frame {
+    z-index: 10;
   }
 }

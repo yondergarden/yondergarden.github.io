@@ -70,26 +70,25 @@
 }
 
 .social-links {
-  margin-top: calc(var(--vh, 1vh) * 2);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 10px;
+  justify-items: center;
   align-items: center;
 }
 
 .social-links a {
+  display: inline-block;
+}
+
+.social-links img {
   display: block;
-  margin: 10px 0;
-  padding: 10px 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  text-decoration: none;
-  color: #000;
-  font-size: calc(var(--vh, 1vh) * 2);
-  transition: background-color 0.3s ease;
+  width: 32px;
+  height: 32px;
 }
 
 .social-links a:hover {
-  background-color: yellow;
+  background-color: white;
   font-weight: bold;
 }
 
@@ -156,6 +155,7 @@ h2 {
 }
 
 .progress-container {
+    padding-right: 10px;
     display: flex;
     align-items: center;
     margin-top: calc(var(--vh, 1vh) * 2);
@@ -441,22 +441,21 @@ h2 {
   }
 
   .social-links {
-    margin-top: 2vw;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 10px;
+    justify-items: center;
     align-items: center;
   }
 
   .social-links a {
+    display: inline-block;
+  }
+
+  .social-links img {
     display: block;
-    margin: 1vw 0;
-    padding: 2vw 5vw;
-    background-color: #fff;
-    border-radius: 1vw;
-    text-decoration: none;
-    color: #000;
-    font-size: 4vw;
-    transition: background-color 0.3s ease;
+    width: 32px;
+    height: 32px;
   }
 
   h1 {
