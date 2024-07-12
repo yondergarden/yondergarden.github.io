@@ -120,7 +120,7 @@ const Background = () => {
                       }
                   />
               ))}
-              <img className='home-frame' src={frameImage}/>
+              <img className='home-frame' id='frame-frame' src={frameImage}/>
               <img className='home-frame' src={titleImage}/>
           </div>
 
