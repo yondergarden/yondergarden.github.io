@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Background.css';
 
 function usePreventScroll() {
   useEffect(() => {
-    // Detect if the user is on an iOS device
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
     if (!isIOS) {
@@ -22,117 +21,143 @@ function usePreventScroll() {
   }, []);
 }
 
-
 const Background = () => {
-    let titleImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/TitleDefault.png"
-    let backgroundImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/BackgroundCirclesDefault.mp4"
-    let frameImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/FrameDefault.png";
-    let yonderGrassImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/GrassDefault.png"
+  let titleImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/TitleDefault.png";
+  let backgroundImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/BackgroundCirclesDefault.mp4";
+  let frameImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/FrameDefault.png";
+  let yonderGrassImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/GrassDefault.png";
 
+  const [isPortrait, setIsPortrait] = useState(window.innerHeight > window.innerWidth);
+  const videoRefs = useRef([]);
 
-    const [isPortrait, setIsPortrait] = useState(window.innerHeight > window.innerWidth);
+  useEffect(() => {
+    const setVH = () => {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
 
-    useEffect(() => {
-      const setVH = () => {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-      };
+    setVH();
+    window.addEventListener('resize', setVH);
 
-      setVH();
-      window.addEventListener('resize', setVH);
+    return () => {
+      window.removeEventListener('resize', setVH);
+    };
+  }, []);
 
-      // Cleanup event listener on component unmount
-      return () => {
-        window.removeEventListener('resize', setVH);
-      };
-    }, []);
+  useEffect(() => {
+    const handleResize = () => {
+      const isCurrentlyPortrait = window.innerHeight > window.innerWidth;
+      setIsPortrait(isCurrentlyPortrait);
+    };
 
-    useEffect(() => {
-        const handleResize = () => {
-            const isCurrentlyPortrait = window.innerHeight > window.innerWidth;
-            setIsPortrait(isCurrentlyPortrait);
-        };
+    window.addEventListener('resize', handleResize);
 
-        window.addEventListener('resize', handleResize);
+    handleResize();
 
-        // Call handleResize initially to set the correct state
-        handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
+  usePreventScroll();
 
-    usePreventScroll();
+  useEffect(() => {
+    const syncVideos = () => {
+      videoRefs.current.forEach((video) => {
+        video.currentTime = 0;
+        video.play();
+      });
+    };
 
-
-    const DisplayBackground = () => {
-        return (
-          <div>
-              {[...Array(7)].map((_, i) => (
-                  <video
-                      key={i}
-                      className='home-bg-video'
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      style={
-                          isPortrait
-                          ? {
-                              zIndex: -i,
-                              position: 'absolute',
-                              top: '50%',
-                              transform: `translate(-50%, calc(-50% - ${i} * (calc(var(--vh, 1vh) * 10) - 10vw)))`
-                            }
-                          : {
-                              zIndex: -20 - i,
-                              position: 'absolute',
-                              top: '50%',
-                              transform: `translate(calc(calc(var(--vh, 1vh) * -350) + ${i} * calc(var(--vh, 1vh) * 100)), -50%)`
-                            }
-                      }
-                  >
-                      <source src={backgroundImage} type="video/mp4"/>
-                      Your browser does not support the video tag.
-                  </video>
-              ))}
-              <img className='home-frame' src={yonderGrassImage}/>
-              {[...Array(7)].map((_, i) => (
-                  <img
-                      key={i}
-                      className='home-frame'
-                      src={yonderGrassImage}
-                      style={
-                        isPortrait
-                        ? {
-                          zIndex: -10 + i,
-                          position: 'absolute',
-                          top: '100%',
-                          transform: `translate(-50%, calc(-100% - ${i} * (calc(var(--vh, 1vh) * 10) - 10vw)))`
-                        }
-                        : {
-                          zIndex: -10 - i,
-                          position: 'absolute',
-                          top: '50%',
-                          transform: `translate(calc(-350vh + ${i} * calc(var(--vh, 1vh) * 100)), -50%)`
-                        }
-                      }
-                  />
-              ))}
-              <img className='home-frame' id='frame-frame' src={frameImage}/>
-              <img className='home-frame' src={titleImage}/>
-          </div>
-
-        );
+    const handleTimeUpdate = () => {
+      const firstVideo = videoRefs.current[0];
+      if (firstVideo && firstVideo.currentTime >= firstVideo.duration - 0.1) {
+        syncVideos();
       }
+    };
 
+    Promise.all(videoRefs.current.map(video => new Promise((resolve) => {
+      video.oncanplay = resolve;
+    }))).then(() => {
+      syncVideos();
+      videoRefs.current.forEach(video => {
+        video.addEventListener('timeupdate', handleTimeUpdate);
+      });
+    });
 
+    return () => {
+      videoRefs.current.forEach(video => {
+        video.removeEventListener('timeupdate', handleTimeUpdate);
+      });
+    };
+  }, []);
+
+  const DisplayBackground = () => {
     return (
       <div>
-        <DisplayBackground/>
+        {[...Array(7)].map((_, i) => (
+          <video
+            key={i}
+            ref={(el) => (videoRefs.current[i] = el)}
+            className="home-bg-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={
+              isPortrait
+                ? {
+                    zIndex: -i,
+                    position: 'absolute',
+                    top: '50%',
+                    transform: `translate(-50%, calc(-50% - ${i} * (calc(var(--vh, 1vh) * 10) - 10vw)))`,
+                  }
+                : {
+                    zIndex: -20 - i,
+                    position: 'absolute',
+                    top: '50%',
+                    transform: `translate(calc(calc(var(--vh, 1vh) * -350) + ${i} * calc(var(--vh, 1vh) * 100)), -50%)`,
+                  }
+            }
+          >
+            <source src={backgroundImage} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        ))}
+        <img className="home-frame" src={yonderGrassImage} />
+        {[...Array(7)].map((_, i) => (
+          <img
+            key={i}
+            className="home-frame"
+            src={yonderGrassImage}
+            style={
+              isPortrait
+                ? {
+                    zIndex: -10 + i,
+                    position: 'absolute',
+                    top: '100%',
+                    transform: `translate(-50%, calc(-100% - ${i} * (calc(var(--vh, 1vh) * 10) - 10vw)))`,
+                  }
+                : {
+                    zIndex: -10 - i,
+                    position: 'absolute',
+                    top: '50%',
+                    transform: `translate(calc(-350vh + ${i} * calc(var(--vh, 1vh) * 100)), -50%)`,
+                  }
+            }
+          />
+        ))}
+        <img className="home-frame" id="frame-frame" src={frameImage} />
+        <img className="home-frame" src={titleImage} />
       </div>
     );
-}
+  };
+
+  return (
+    <div>
+      <DisplayBackground />
+    </div>
+  );
+};
 
 export default Background;
