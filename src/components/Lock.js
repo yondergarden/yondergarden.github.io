@@ -273,7 +273,6 @@ const LockComponent = () => {
         <img
           className="premium-banner"
           src={bannerImages[currentBanner]?.src}
-          alt="Premium Banner"
         />
       </div>
     </>

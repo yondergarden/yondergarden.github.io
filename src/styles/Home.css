@@ -69,34 +69,6 @@
   }
 }
 
-.social-links {
-  padding: calc(var(--vh, 1vh) * 5);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: calc(var(--vh, 1vh) * 5);
-}
-
-.social-links a {
-  display: inline-block;
-  flex: 0 1 calc(var(--vh, 1vh) * 1);
-}
-
-.social-links img {
-  display: block;
-  width: calc(var(--vh, 1vh) * 8);
-  height: auto;
-}
-
-.social-links a:hover img {
-  filter: brightness(0) saturate(100%) invert(74%) sepia(99%) saturate(1118%) hue-rotate(0deg) brightness(200%) contrast(105%);
-}
-
-#theMainQuest {
-  background-color: lightgray;
-  box-shadow: 0 0 1vw gray;
-}
-
 /*======================
     About Pop-up
 ========================*/
@@ -124,7 +96,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.2em;
+    font-size: calc(var(--vh, 1vh) * 2);
     margin: calc(var(--vh, 1vh) * 2);
 }
 
@@ -146,16 +118,16 @@ h2 {
 
 .rectangle h3 {
     margin: 0 0 calc(var(--vh, 1vh) * 1);
-    font-size: 1.5em;
+    font-size: calc(var(--vh, 1vh) * 2.65);
 }
 
 .rectangle p {
     margin: 0;
-    font-size: 1em;
+    font-size: calc(var(--vh, 1vh) * 1.75);
 }
 
 .progress-container {
-    padding-right: 10px;
+    padding-right: calc(var(--vh, 1vh) * 1);
     display: flex;
     align-items: center;
     margin-top: calc(var(--vh, 1vh) * 2);
@@ -175,12 +147,17 @@ h2 {
 }
 
 .progress {
-    height: 100%;
+    height: calc(var(--vh, 1vh) * 100);
     background-color: yellow;
 }
 
 .progress-text {
   margin-right: calc(var(--vh, 1vh) * 1);
+}
+
+#theMainQuest {
+  background-color: lightgray;
+  box-shadow: 0 0 1vw gray;
 }
 
 /*======================
@@ -189,6 +166,29 @@ h2 {
 
 .subscribeHeader {
   margin-top: calc(var(--vh, 1vh) * 10);
+}
+
+.social-links {
+  padding: calc(var(--vh, 1vh) * 5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: calc(var(--vh, 1vh) * 5);
+}
+
+.social-links a {
+  display: inline-block;
+  flex: 0 1 calc(var(--vh, 1vh) * 1);
+}
+
+.social-links img {
+  display: block;
+  width: calc(var(--vh, 1vh) * 8);
+  height: auto;
+}
+
+.social-links a:hover img {
+  filter: brightness(0) saturate(100%) invert(74%) sepia(99%) saturate(1118%) hue-rotate(0deg) brightness(200%) contrast(105%);
 }
 
 /*======================
