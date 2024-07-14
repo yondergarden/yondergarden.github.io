@@ -38,18 +38,6 @@ const Home = () => {
   let aboutMenuImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0007_aboutButton.png";
   let premiumMenuImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0006_premiumButton.png";
 
-  // Function to preload images
-  function preloadImage(url) {
-    var img = new Image();
-    img.src = url;
-  }
-
-  // Preload the hover images
-  preloadImage('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0000_episodesButtonHover.png');
-  preloadImage('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0001_subscribeButtonHover.png');
-  preloadImage('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0002_premiumButtonHover.png');
-  preloadImage('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0003_aboutButtonHover.png');
-
   const EpisodeSelect = (episodeNumber) => {
     const episodesUrl = `#/episodes/${episodeNumber}`;
     window.location.href = episodesUrl;

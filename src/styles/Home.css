@@ -14,24 +14,24 @@
 }
 
 #episodes-button:hover {
-    cursor: pointer;
-    content: url('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0000_episodesButtonHover.png');
-  }
+  cursor: pointer;
+  filter: brightness(150%);
+}
 
 #premium-button:hover {
   cursor: pointer;
-  content: url('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0002_premiumButtonHover.png');
+  filter: brightness(150%);
 }
 
 #subscribe-button:hover {
   cursor: pointer;
-  content: url('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0001_subscribeButtonHover.png');
+  filter: brightness(150%);
   z-index: 100;
 }
 
 #about-button:hover {
   cursor: pointer;
-  content: url('https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0003_aboutButtonHover.png');
+  filter: brightness(150%);
 }
 
 .spin-hover:hover {
