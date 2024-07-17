@@ -5,18 +5,37 @@ import Home from "./pages/home.js";
 import EpisodesPage from "./routers/EpisodesPage";
 import Background from "./components/Background/Background"
 import PreLoader1 from "./components/PreLoader1";
+import assetUrls from './config/assetUrls';
+import { preloadImages, preloadVideos } from './utils/preloadAssets';
+
 
 const episodesData = require('./episodes.json');
 
 function App() {
-  const [loading, setLoading] = useState(true); // Initialize loading state
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading with a timeout
-    setTimeout(() => {
-      setLoading(false); // Set loading to false after a number of milliseconds
-    }, 0);
-  }, []); // Run this effect only once after the component mounts
+    const imageUrls = [
+      assetUrls.frameImage,
+      assetUrls.titleImage,
+      assetUrls.yonderGrassImage,
+      assetUrls.episodesMenuImage,
+      assetUrls.subscribeMenuImage,
+      assetUrls.aboutMenuImage,
+      assetUrls.premiumMenuImage,
+      // Add other image URLs to preload here
+    ];
+
+    const videoUrls = [
+      assetUrls.backgroundVideo,
+      // Add other video URLs to preload here
+    ];
+
+    Promise.all([preloadImages(imageUrls), preloadVideos(videoUrls)])
+      .then(() => {
+        setIsLoading(false);
+      });
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,12 +53,10 @@ function App() {
   }, []); // Empty dependency array means this effect runs only once, on component mount
 
   return (
-    <>
-      {/* Render the PreLoader1 component if loading state is true */}
-      {loading ? (
-        <PreLoader1 />
-      ) : (
-        <>
+    isLoading ? (
+      <PreLoader1 />
+    ) : (
+      <>
         <Background />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -47,13 +64,12 @@ function App() {
             <Route
               key={episode.id}
               path={`/episodes/${episode.id}`}
-              element={<EpisodesPage episode={episode}/>}
+              element={<EpisodesPage episode={episode} />}
             />
           ))}
         </Routes>
-        </>
-      )}
-    </>
+      </>
+    )
   );
 }
 
