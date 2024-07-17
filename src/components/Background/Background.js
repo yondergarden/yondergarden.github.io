@@ -121,7 +121,7 @@ const Background = () => {
                   }
             }
           >
-            <source src={assetUrls.backgroundImage} type="video/mp4" />
+            <source src={assetUrls.backgroundVideo} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         ))}

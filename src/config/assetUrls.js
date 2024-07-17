@@ -1,7 +1,5 @@
-// src/config/assetUrls.js
-
 const assetUrls = {
-  backgroundImage: 'https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/BackgroundCirclesDefault.mp4',
+  backgroundVideo: 'https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/BackgroundCirclesDefault.mp4',
   frameImage: 'https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/FrameDefault.png',
   titleImage: 'https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/TitleDefault.png',
   yonderGrassImage: 'https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/GrassDefault.png',
