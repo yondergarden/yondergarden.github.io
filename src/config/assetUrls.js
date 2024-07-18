@@ -7,6 +7,12 @@ const assetUrls = {
   subscribeMenuImage: 'https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0005_subscribeButton.png',
   aboutMenuImage: 'https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0007_aboutButton.png',
   premiumMenuImage: 'https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0006_premiumButton.png',
+  keyComputerImage: 'https://yondergarden.s3.us-east-2.amazonaws.com/keyComputer.png',
+  lockImage: "https://yondergarden.s3.us-east-2.amazonaws.com/lockandkeypad/lock.png",
+  lockImage0: "https://yondergarden.s3.us-east-2.amazonaws.com/lockandkeypad/lock0.png",
+  lockImage1: "https://yondergarden.s3.us-east-2.amazonaws.com/lockandkeypad/lock1.png",
+  lockImage2: "https://yondergarden.s3.us-east-2.amazonaws.com/lockandkeypad/lock2.png",
+  lockImage3: "https://yondergarden.s3.us-east-2.amazonaws.com/lockandkeypad/lock3.png"
 };
 
 export default assetUrls;

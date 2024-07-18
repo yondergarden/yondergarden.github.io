@@ -23,11 +23,6 @@ function usePreventScroll() {
 }
 
 const Background = () => {
-  let titleImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/TitleDefault.png";
-  let backgroundImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/BackgroundCirclesDefault.mp4";
-  let frameImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/FrameDefault.png";
-  let yonderGrassImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/GrassDefault.png";
-
   const [isPortrait, setIsPortrait] = useState(window.innerHeight > window.innerWidth);
   const videoRefs = useRef([]);
 

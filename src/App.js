@@ -3,13 +3,11 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Home from "./pages/home.js";
 import EpisodesPage from "./routers/EpisodesPage";
+import episodesData from './episodes.json';
 import Background from "./components/Background/Background"
 import PreLoader1 from "./components/PreLoader1";
 import assetUrls from './config/assetUrls';
 import { preloadImages, preloadVideos } from './utils/preloadAssets';
-
-
-const episodesData = require('./episodes.json');
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,12 +21,19 @@ function App() {
       assetUrls.subscribeMenuImage,
       assetUrls.aboutMenuImage,
       assetUrls.premiumMenuImage,
-      // Add other image URLs to preload here
+      assetUrls.keyComputerImage,
+      assetUrls.lockImage,
+      assetUrls.lockImage0,
+      assetUrls.lockImage1,
+      assetUrls.lockImage2,
+      assetUrls.lockImage3
     ];
+
+    const episodeThumbnails = episodesData.map(episode => episode.thumbnail);
 
     const videoUrls = [
       assetUrls.backgroundVideo,
-      // Add other video URLs to preload here
+      ...episodeThumbnails
     ];
 
     Promise.all([preloadImages(imageUrls), preloadVideos(videoUrls)])

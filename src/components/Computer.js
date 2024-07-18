@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
-import './Computer.css'; // Import the CSS file
+import './Computer.css';
+import assetUrls from '../config/assetUrls';
+
 
 const Computer = () => {
   useEffect(() => {
@@ -23,7 +25,7 @@ const Computer = () => {
     <div className="computer-container">
       <a href="https://www.patreon.com/YonderGarden" target="_blank" rel="noopener noreferrer">
         <img
-          src="https://cdn.glitch.global/7090e318-2f18-421d-a082-1848387275b2/computer.png?v=1716659074831" // Replace with your image URL
+          src={assetUrls.keyComputerImage}
           alt="Computer"
           className="computer-image"
         />

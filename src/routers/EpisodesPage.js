@@ -5,6 +5,7 @@ import LockComponent from '../components/Lock';
 import Computer from '../components/Computer';
 import episodesData from '../episodes.json'; // Assuming episodes.json exports an array of episodes
 import Background from "../components/Background/Background";
+import PreLoader1 from "../components/PreLoader1"; // Import the loading animation component
 import "./EpisodesPage.css";
 
 const EpisodesPage = () => {

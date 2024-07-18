@@ -34,11 +34,6 @@ const Home = () => {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const episodesData = require('../episodes.json');
 
-  let episodesMenuImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0004_episodesButton.png";
-  let subscribeMenuImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0005_subscribeButton.png";
-  let aboutMenuImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0007_aboutButton.png";
-  let premiumMenuImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0006_premiumButton.png";
-
   const EpisodeSelect = (episodeNumber) => {
     const episodesUrl = `#/episodes/${episodeNumber}`;
     window.location.href = episodesUrl;
