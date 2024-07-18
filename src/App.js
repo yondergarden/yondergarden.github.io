@@ -68,7 +68,7 @@ function App() {
           {episodesData.map(episode => (
             <Route
               key={episode.id}
-              path={`/episodes/${episode.id}`}
+              path={`/episodes/${episode.id}/*`}
               element={<EpisodesPage episode={episode} />}
             />
           ))}
