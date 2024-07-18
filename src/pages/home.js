@@ -3,6 +3,7 @@ import React from 'react';
 import '../styles/Home.css';
 import '../styles/Yonder.css';
 import { Link } from 'react-router-dom';
+import assetUrls from '../config/assetUrls';
 
 function usePreventScroll() {
   useEffect(() => {
@@ -32,11 +33,6 @@ const Home = () => {
   const [aboutOpen, setAboutOpen] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const episodesData = require('../episodes.json');
-
-  let episodesMenuImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0004_episodesButton.png";
-  let subscribeMenuImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0005_subscribeButton.png";
-  let aboutMenuImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0007_aboutButton.png";
-  let premiumMenuImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/_0006_premiumButton.png";
 
   const EpisodeSelect = (episodeNumber) => {
     const episodesUrl = `#/episodes/${episodeNumber}`;
@@ -203,12 +199,12 @@ const Home = () => {
 
     return (
       <div className="menu-container center-home">
-        <img id="episodes-button" className="image-button" onClick={() => handleClick(setEpisodesOpen)} src={episodesMenuImage} alt="" />
-        <img id="subscribe-button" className="image-button spin-hover" onClick={() => handleClick(setSubscribeOpen)} src={subscribeMenuImage} alt="" />
+        <img id="episodes-button" className="image-button" onClick={() => handleClick(setEpisodesOpen)} src={assetUrls.episodesMenuImage} alt="" />
+        <img id="subscribe-button" className="image-button spin-hover" onClick={() => handleClick(setSubscribeOpen)} src={assetUrls.subscribeMenuImage} alt="" />
         <a href="https://www.patreon.com/YonderGarden" target="_blank" rel="noopener noreferrer">
-          <img id="premium-button" className="image-button" onClick={() => handleClick(setPremiumOpen)} src={premiumMenuImage} alt="" />
+          <img id="premium-button" className="image-button" onClick={() => handleClick(setPremiumOpen)} src={assetUrls.premiumMenuImage} alt="" />
         </a>
-        <img id="about-button" className="image-button" onClick={() => handleClick(setAboutOpen)} src={aboutMenuImage} alt="" />
+        <img id="about-button" className="image-button" onClick={() => handleClick(setAboutOpen)} src={assetUrls.aboutMenuImage} alt="" />
       </div>
     );
   }

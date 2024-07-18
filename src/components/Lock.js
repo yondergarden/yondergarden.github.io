@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Lock.css';
+import assetUrls from '../config/assetUrls';
+
 
 const baseUrl = 'https://yondergarden.s3.us-east-2.amazonaws.com/wizardframes/';
 const versionSuffix = '.png';
@@ -223,12 +225,12 @@ const LockComponent = () => {
     }
   };
 
-  const imageSources = [
-    "https://cdn.glitch.global/7090e318-2f18-421d-a082-1848387275b2/lock.png?v=1715190939505",
-    "https://cdn.glitch.global/7090e318-2f18-421d-a082-1848387275b2/lock0.png?v=1715190938644",
-    "https://cdn.glitch.global/7090e318-2f18-421d-a082-1848387275b2/lock1.png?v=1715190937664",
-    "https://cdn.glitch.global/7090e318-2f18-421d-a082-1848387275b2/lock2.png?v=1715190936872",
-    "https://cdn.glitch.global/7090e318-2f18-421d-a082-1848387275b2/lock3.png?v=1715190940266"
+  const lockImageSources = [
+    assetUrls.lockImage,
+    assetUrls.lockImage0,
+    assetUrls.lockImage1,
+    assetUrls.lockImage2,
+    assetUrls.lockImage3
   ];
 
   return (
@@ -237,7 +239,7 @@ const LockComponent = () => {
         <>
           <div className="lock-component">
             <img
-              src={imageSources[lockNumber]}
+              src={lockImageSources[lockNumber]}
               alt="Lock"
               className="lock-image"
             />

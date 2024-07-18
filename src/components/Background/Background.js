@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Background.css';
+import assetUrls from '../../config/assetUrls';
 
 function usePreventScroll() {
   useEffect(() => {
@@ -22,11 +23,6 @@ function usePreventScroll() {
 }
 
 const Background = () => {
-  let titleImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/TitleDefault.png";
-  let backgroundImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/BackgroundCirclesDefault.mp4";
-  let frameImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/FrameDefault.png";
-  let yonderGrassImage = "https://yondergarden.s3.us-east-2.amazonaws.com/defaultassets/GrassDefault.png";
-
   const [isPortrait, setIsPortrait] = useState(window.innerHeight > window.innerWidth);
   const videoRefs = useRef([]);
 
@@ -120,16 +116,16 @@ const Background = () => {
                   }
             }
           >
-            <source src={backgroundImage} type="video/mp4" />
+            <source src={assetUrls.backgroundVideo} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         ))}
-        <img className="home-frame" src={yonderGrassImage} />
+        <img className="home-frame" src={assetUrls.yonderGrassImage} />
         {[...Array(7)].map((_, i) => (
           <img
             key={i}
             className="home-frame"
-            src={yonderGrassImage}
+            src={assetUrls.yonderGrassImage}
             style={
               isPortrait
                 ? {
@@ -147,8 +143,8 @@ const Background = () => {
             }
           />
         ))}
-        <img className="home-frame" id="frame-frame" src={frameImage} />
-        <img className="home-frame" src={titleImage} />
+        <img className="home-frame" id="frame-frame" src={assetUrls.frameImage} />
+        <img className="home-frame" src={assetUrls.titleImage} />
       </div>
     );
   };
