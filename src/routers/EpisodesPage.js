@@ -26,6 +26,8 @@ const EpisodesPage = () => {
     const initialEpisodeNumber = extractNumberFromPath(window.location.pathname);
     return episodesData.find(episode => episode.id === initialEpisodeNumber) || episodesData[0];
   });
+  const [isLoading, setIsLoading] = useState(true);
+
 
   useEffect(() => {
     const handleOrientationChange = () => {
@@ -47,6 +49,24 @@ const EpisodesPage = () => {
       setCurrentEpisode(newEpisode);
     }
   }, [location]);
+
+  useEffect(() => {
+    const preloadPanelVideos = () => {
+      const videoElements = currentEpisode.episode_panels.map((src) => {
+        return new Promise((resolve) => {
+          const video = document.createElement('video');
+          video.src = src;
+          video.onloadeddata = () => resolve();
+        });
+      });
+
+      Promise.all(videoElements).then(() => setIsLoading(false));
+    };
+
+    if (currentEpisode) {
+      preloadPanelVideos();
+    }
+  }, [currentEpisode]);
 
   const EpisodeDeltaChange = (delta) => {
     const episodeNumber = currentEpisode.id;
@@ -121,8 +141,8 @@ const EpisodesPage = () => {
 
   return (
     <div>
-      <DisplayEpisode />
-      {/* <Background /> */}
+      {isLoading && <PreLoader1 />}
+      {!isLoading && <DisplayEpisode />}
       <Routes>
         {episodesData.map(episode => (
           <Route
@@ -132,7 +152,7 @@ const EpisodesPage = () => {
           />
         ))}
       </Routes>
-      {isPremium && <LockComponent />}
+      {isPremium && !isLoading && <LockComponent />}
       {isPremium && <Computer />}
       <EpisodeNavOverlay />
     </div>
