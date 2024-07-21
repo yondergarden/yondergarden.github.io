@@ -5,7 +5,7 @@
   height: calc(var(--vh, 1vh) * 100);
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(calc(-50% - 2px), -50%);
   z-index: 500;
 }
 
@@ -176,7 +176,7 @@
     position: absolute;
     width: 100vw;
     height: 100vw;
-    left: -50%;
+    left: calc(-50% - 1px);
     top: 50%;
     transform: translate(50%, -50%);
     z-index: 500;
