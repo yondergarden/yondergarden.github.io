@@ -36,7 +36,13 @@ const Home = () => {
 
   const EpisodeSelect = (episodeNumber) => {
     const episodesUrl = `#/episodes/${episodeNumber}`;
-    window.location.href = episodesUrl;
+    if (isTouchDevice) {
+      setTimeout(() => {
+        window.location.href = episodesUrl;
+      }, 250);
+    } else {
+      window.location.href = episodesUrl;
+    }
   };
 
   const EmailForm = () => {
@@ -90,7 +96,21 @@ const Home = () => {
       <div>
         <div className="menu-container center-home">
           <div className='episodes-box'>
-            <button type="button" className="closeButton" onClick={() => { setEpisodesOpen(false) }}>x</button>
+            <button
+              type="button"
+              className="closeButton"
+              onClick={() => {
+                if (isTouchDevice) {
+                  setTimeout(() => {
+                    setEpisodesOpen(false);
+                  }, 250);
+                } else {
+                  setEpisodesOpen(false);
+                }
+              }}
+            >
+              x
+            </button>
             <h1 className="unifrakturFont menuBoxTitle">episodes</h1>
             <div className="episodes-icon-container">
               {thumbnailList.map(({ id, title, thumbnail }) => (
@@ -114,7 +134,21 @@ const Home = () => {
       <div>
         <div className="menu-container center-home">
           <div className='info-box'>
-            <button type="button" className="closeButton" onClick={() => { setSubscribeOpen(false) }}>x</button>
+            <button
+              type="button"
+              className="closeButton"
+              onClick={() => {
+                if (isTouchDevice) {
+                  setTimeout(() => {
+                    setSubscribeOpen(false);
+                  }, 250);
+                } else {
+                  setSubscribeOpen(false);
+                }
+              }}
+            >
+              x
+            </button>
               <h1 className="unifrakturFont menuBoxTitle">subscribe!</h1>
               <p className="simple-centered" style={{fontSize: 'calc(var(--vh, 1vh) * 2.5)'}}><i>Follow Yonder Garden</i></p>
               <p className="simple-centered" style={{fontSize: 'calc(var(--vh, 1vh) * 2.5)'}}><i>and never miss an episode!</i></p>
@@ -158,7 +192,21 @@ const Home = () => {
       <div>
         <div className="menu-container center-home">
           <div className='info-box'>
-            <button type="button" className="closeButton" onClick={() => { setAboutOpen(false) }}>x</button>
+            <button
+              type="button"
+              className="closeButton"
+              onClick={() => {
+                if (isTouchDevice) {
+                  setTimeout(() => {
+                    setAboutOpen(false);
+                  }, 250);
+                } else {
+                  setAboutOpen(false);
+                }
+              }}
+            >
+              x
+            </button>
             <div className="about-info">
               <h1 className="unifrakturFont">about</h1>
               <h2><i>Yonder Garden is an animated webcomic that comes in 2 flavors.</i></h2>
@@ -201,8 +249,26 @@ const Home = () => {
       <div className="menu-container center-home">
         <img id="episodes-button" className="image-button" onClick={() => handleClick(setEpisodesOpen)} src={assetUrls.episodesMenuImage} alt="" />
         <img id="subscribe-button" className="image-button spin-hover" onClick={() => handleClick(setSubscribeOpen)} src={assetUrls.subscribeMenuImage} alt="" />
-        <a href="https://www.patreon.com/YonderGarden" target="_blank" rel="noopener noreferrer">
-          <img id="premium-button" className="image-button" onClick={() => handleClick(setPremiumOpen)} src={assetUrls.premiumMenuImage} alt="" />
+        <a
+          href="https://www.patreon.com/YonderGarden"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => {
+            if (isTouchDevice) {
+              e.preventDefault();
+              setTimeout(() => {
+                window.open("https://www.patreon.com/YonderGarden", "_blank", "noopener,noreferrer");
+              }, 250);
+            }
+          }}
+        >
+          <img
+            id="premium-button"
+            className="image-button"
+            onClick={() => setPremiumOpen(true)}
+            src={assetUrls.premiumMenuImage}
+            alt=""
+          />
         </a>
         <img id="about-button" className="image-button" onClick={() => handleClick(setAboutOpen)} src={assetUrls.aboutMenuImage} alt="" />
       </div>

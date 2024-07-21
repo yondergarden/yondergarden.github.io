@@ -189,7 +189,7 @@ const LockComponent = () => {
     setLockNumber(num);
     setTimeout(() => {
       setLockNumber(0);
-    }, 100);
+    }, 150);
 
     if (concatenatedString !== ":(" && concatenatedString !== ":)") {
       setConcatenatedString(concatenatedString + (num - 1).toString());
