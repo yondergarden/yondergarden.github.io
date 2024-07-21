@@ -251,6 +251,7 @@ h2 {
   display: inline-block;
   background-repeat: no-repeat;
   font-size: 50px;
+  min-width: calc(var(--vh, 1vh) * 9);
   max-width: calc(var(--vh, 1vh) * 9);
   position: relative;
 }
@@ -402,6 +403,7 @@ h2 {
     display: inline-block;
     background-repeat: no-repeat;
     font-size: 50px;
+    min-width: 25vw;
     max-width: 25vw;
     position: relative;
   }
