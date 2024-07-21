@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.b746facc.css",
-    "main.js": "/static/js/main.04db9247.js",
+    "main.css": "/static/css/main.8575d903.css",
+    "main.js": "/static/js/main.71feef73.js",
     "static/js/787.510ee1e4.chunk.js": "/static/js/787.510ee1e4.chunk.js",
     "static/media/UnifrakturCook-Bold.ttf": "/static/media/UnifrakturCook-Bold.c3e4de08782a35f2d335.ttf",
     "index.html": "/index.html",
-    "main.b746facc.css.map": "/static/css/main.b746facc.css.map",
-    "main.04db9247.js.map": "/static/js/main.04db9247.js.map",
+    "main.8575d903.css.map": "/static/css/main.8575d903.css.map",
+    "main.71feef73.js.map": "/static/js/main.71feef73.js.map",
     "787.510ee1e4.chunk.js.map": "/static/js/787.510ee1e4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b746facc.css",
-    "static/js/main.04db9247.js"
+    "static/css/main.8575d903.css",
+    "static/js/main.71feef73.js"
   ]
 }
