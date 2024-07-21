@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Cold Bird",
-    "premium": false,
+    "premium": true,
     "content": "Content for Episode 1",
     "thumbnail": "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/ephemeralia1tree-and-bird/ephemeralia1tree-and-birdThumbnail.mp4",
     "episode_panels": [
