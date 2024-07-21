@@ -81,6 +81,16 @@
   z-index: 1;
 }
 
+.yonder-garden-title {
+  position: fixed;
+  min-height: calc(var(--vh, 1vh) * 97);
+  max-height: calc(var(--vh, 1vh) * 97);
+  left: 50%;
+  top: 50%;
+  transform: translate(-49.75%, -52%);
+  overflow: hidden;
+}
+
 .hidden {
   display: none;
 }
@@ -153,5 +163,14 @@
 
   #frame-frame {
     z-index: 10;
+  }
+
+  .yonder-garden-title {
+    position: absolute;
+    min-height: 97vw;
+    max-height: 97vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-49.75%, -52%);
   }
 }
