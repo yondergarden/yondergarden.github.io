@@ -21,6 +21,8 @@ body {
 .episode-nav-button:hover {
   cursor: pointer;
   filter: hue-rotate(180deg) saturate(5) brightness(0.95);
+  transform: scale(1.1);
+  z-index: 10000;
 }
 
 .episode-nav-stack {

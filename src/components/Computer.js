@@ -1,9 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Computer.css';
 import assetUrls from '../config/assetUrls';
 
 
 const Computer = () => {
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  useEffect(() => {
+    const hasTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    setIsTouchDevice(hasTouchScreen);
+  }, []);
+
   useEffect(() => {
     const setVhProperty = () => {
       const vh = window.innerHeight * 0.01;
@@ -23,7 +30,19 @@ const Computer = () => {
 
   return (
     <div className="computer-container">
-      <a href="https://www.patreon.com/YonderGarden" target="_blank" rel="noopener noreferrer">
+      <a 
+        href="https://www.patreon.com/YonderGarden"
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={(e) => {
+          if (isTouchDevice) {
+            e.preventDefault();
+            setTimeout(() => {
+              window.open("https://www.patreon.com/YonderGarden", "_blank", "noopener,noreferrer");
+            }, 250);
+          }
+        }}
+      >
         <img
           src={assetUrls.keyComputerImage}
           alt="Computer"

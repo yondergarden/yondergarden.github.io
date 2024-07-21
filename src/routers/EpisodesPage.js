@@ -11,6 +11,13 @@ import "./EpisodesPage.css";
 const EpisodesPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+
+  useEffect(() => {
+    const hasTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    setIsTouchDevice(hasTouchScreen);
+  }, []);
 
   // Extract the final number from the path
   const extractNumberFromPath = (path) => {
@@ -107,11 +114,70 @@ const EpisodesPage = () => {
     return (
       <div className="center-home interactive-layer-1000">
         <div className="episode-nav-stack">
-          <img className="episode-nav-button" onClick={GoToFirstEpisode} src={firstButtonImage} alt="" />
-          <img className="episode-nav-button" onClick={() => EpisodeDeltaChange(-1)} src={prevEpisodeImage} alt="" />
-          <img className="episode-nav-button" onClick={() => navigate('/')} src={homeImage} alt="" />
-          <img className="episode-nav-button" onClick={() => EpisodeDeltaChange(1)} src={nextEpisodeImage} alt="" />
-          <img className="episode-nav-button" onClick={GoToLastEpisode} src={lastButtonImage} alt="" />
+        <img
+          className="episode-nav-button"
+          onClick={() => {
+            if (isTouchDevice) {
+              setTimeout(GoToFirstEpisode, 250);
+            } else {
+              GoToFirstEpisode();
+            }
+          }}
+          src={firstButtonImage}
+          alt=""
+        />
+
+        <img
+          className="episode-nav-button"
+          onClick={() => {
+            if (isTouchDevice) {
+              setTimeout(() => EpisodeDeltaChange(-1), 250);
+            } else {
+              EpisodeDeltaChange(-1);
+            }
+          }}
+          src={prevEpisodeImage}
+          alt=""
+        />
+
+        <img
+          className="episode-nav-button"
+          onClick={() => {
+            if (isTouchDevice) {
+              setTimeout(() => navigate('/'), 250);
+            } else {
+              navigate('/');
+            }
+          }}
+          src={homeImage}
+          alt=""
+        />
+
+        <img
+          className="episode-nav-button"
+          onClick={() => {
+            if (isTouchDevice) {
+              setTimeout(() => EpisodeDeltaChange(1), 250);
+            } else {
+              EpisodeDeltaChange(1);
+            }
+          }}
+          src={nextEpisodeImage}
+          alt=""
+        />
+
+        <img
+          className="episode-nav-button"
+          onClick={() => {
+            if (isTouchDevice) {
+              setTimeout(GoToLastEpisode, 250);
+            } else {
+              GoToLastEpisode();
+            }
+          }}
+          src={lastButtonImage}
+          alt=""
+        />
         </div>
       </div>
     );

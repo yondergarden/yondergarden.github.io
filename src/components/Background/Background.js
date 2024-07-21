@@ -144,7 +144,7 @@ const Background = () => {
           />
         ))}
         <img className="home-frame" id="frame-frame" src={assetUrls.frameImage} />
-        <img className="home-frame" src={assetUrls.titleImage} />
+        <img className="yonder-garden-title" src={assetUrls.titleImage} />
       </div>
     );
   };

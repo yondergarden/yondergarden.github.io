@@ -259,11 +259,12 @@ h2 {
 .episodes-icon:hover {
   cursor: pointer;
   transform: scale(1.05);
+  filter: brightness(150%) hue-rotate(90deg);
 }
 
 .episodes-icon:active {
   cursor: pointer;
-  transform: rotate(3.5deg) scale(1);
+  transform: scale(1.075);
 }
 
 /*======================
@@ -298,14 +299,14 @@ h2 {
 
 .closeButton:hover {
   cursor: pointer;
-  background: #FFFF00; /* Handle color on hover */
-  transform: scale(1.1)
+  background: #FFFF00;
+  transform: scale(1)
 }
 
 .closeButton:active {
   cursor: pointer;
-  background: #CCFF66; /* Handle color on hover */
-  transform: scale(1)
+  background: #FFFF00;
+  transform: scale(1.5)
 }
 
 /*======================
