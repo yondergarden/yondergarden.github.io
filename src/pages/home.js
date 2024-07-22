@@ -209,7 +209,7 @@ const Home = () => {
             </button>
             <div className="about-info">
               <h1 className="unifrakturFont">about</h1>
-              <h2><i>Yonder Garden is an animated webcomic that comes in 2 flavors.</i></h2>
+              <h2><i>Yonder Garden is an animated webcomic<br/>that comes in 2 flavors.</i></h2>
               <div className="boxes">
                 <div className="rectangle">
                   <h3 className="simple-centered unifrakturFont">Ephemeralia</h3>
