@@ -36,16 +36,17 @@ function App() {
       ...episodeThumbnails
     ];
 
-    Promise.all([preloadImages(imageUrls), preloadVideos(videoUrls)])
-      .then(() => {
-        console.log('All assets loaded successfully');
+    const preloadAssets = async () => {
+      try {
+        await Promise.all([preloadImages(imageUrls), preloadVideos(videoUrls)]);
         setIsLoading(false);
-      })
-      .catch(error => {
+      } catch (error) {
         console.error('Error preloading assets:', error);
-        // Fallback to setting loading to false even if there's an error
         setIsLoading(false);
-      });
+      }
+    };
+
+    preloadAssets();
   }, []);
 
   useEffect(() => {
@@ -53,15 +54,13 @@ function App() {
       document.body.style.height = window.innerHeight + 'px';
     };
 
-    // Initial call to set the height
     handleResize();
-
     window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []); // Empty dependency array means this effect runs only once, on component mount
+  }, []);
 
   return (
     isLoading ? (
