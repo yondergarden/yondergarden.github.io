@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from "./pages/home.js";
 import EpisodesPage from "./routers/EpisodesPage";
 import episodesData from './episodes.json';
-import Background from "./components/Background/Background"
+import Background from "./components/Background/Background";
 import PreLoader1 from "./components/PreLoader1";
 import assetUrls from './config/assetUrls';
 import { preloadImages, preloadVideos } from './utils/preloadAssets';
@@ -38,6 +38,12 @@ function App() {
 
     Promise.all([preloadImages(imageUrls), preloadVideos(videoUrls)])
       .then(() => {
+        console.log('All assets loaded successfully');
+        setIsLoading(false);
+      })
+      .catch(error => {
+        console.error('Error preloading assets:', error);
+        // Fallback to setting loading to false even if there's an error
         setIsLoading(false);
       });
   }, []);
