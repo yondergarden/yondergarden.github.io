@@ -56,6 +56,7 @@ const LockComponent = () => {
   const [showWizard, setShowWizard] = useState(false);
   const [images, setImages] = useState([]);
   const [currentFrame, setCurrentFrame] = useState(0);
+  const [wizardImages, setWizardImages] = useState([]);
   const [bannerImages, setBannerImages] = useState([]);
   const [currentBanner, setCurrentBanner] = useState(0);
   const [lockImages, setLockImages] = useState([]);
@@ -63,26 +64,25 @@ const LockComponent = () => {
 
 
   useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const loadedImages = await loadAllImages(spriteUrls);
-        setImages(loadedImages);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+    // Load wizard images
+    Promise.all(assetUrls.wizardImages.map(url => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = url;
+      });
+    })).then(setWizardImages);
 
-    const fetchBanners = async () => {
-      try {
-        const loadedBanners = await loadAllImages(bannerUrls);
-        setBannerImages(loadedBanners);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchImages();
-    fetchBanners();
+    // Load banner images
+    Promise.all(assetUrls.premiumBannerImages.map(url => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = url;
+      });
+    })).then(setBannerImages);
   }, []);
 
   useEffect(() => {
@@ -277,7 +277,7 @@ const LockComponent = () => {
           <div
             className="wizard-sprite"
             style={{
-              backgroundImage: `url(${images[currentFrame]?.src})`,
+              backgroundImage: `url(${wizardImages[currentFrame]?.src})`,
             }}
           />
         </div>
