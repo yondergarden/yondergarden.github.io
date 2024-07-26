@@ -12,7 +12,13 @@ const assetUrls = {
   lockImage0: "https://yondergarden.s3.us-east-2.amazonaws.com/lockandkeypad/lock0.png",
   lockImage1: "https://yondergarden.s3.us-east-2.amazonaws.com/lockandkeypad/lock1.png",
   lockImage2: "https://yondergarden.s3.us-east-2.amazonaws.com/lockandkeypad/lock2.png",
-  lockImage3: "https://yondergarden.s3.us-east-2.amazonaws.com/lockandkeypad/lock3.png"
+  lockImage3: "https://yondergarden.s3.us-east-2.amazonaws.com/lockandkeypad/lock3.png",
+  wizardImages: Array.from({ length: 120 }, (_, index) =>
+  `https://yondergarden.s3.us-east-2.amazonaws.com/wizardframes/wizardUnlock.0.${index + 1}.png`
+  ),
+  premiumBannerImages: Array.from({ length: 16 }, (_, index) =>
+    `https://yondergarden.s3.us-east-2.amazonaws.com/premiumbanner/premiumBanner.0.${index + 1}.png`
+  )
 };
 
 export default assetUrls;

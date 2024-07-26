@@ -26,7 +26,9 @@ function App() {
       assetUrls.lockImage0,
       assetUrls.lockImage1,
       assetUrls.lockImage2,
-      assetUrls.lockImage3
+      assetUrls.lockImage3,
+      ...assetUrls.wizardImages,
+      ...assetUrls.premiumBannerImages
     ];
 
     const episodeThumbnails = episodesData.map(episode => episode.thumbnail);

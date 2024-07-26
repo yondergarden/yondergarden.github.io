@@ -56,31 +56,33 @@ const LockComponent = () => {
   const [showWizard, setShowWizard] = useState(false);
   const [images, setImages] = useState([]);
   const [currentFrame, setCurrentFrame] = useState(0);
+  const [wizardImages, setWizardImages] = useState([]);
   const [bannerImages, setBannerImages] = useState([]);
   const [currentBanner, setCurrentBanner] = useState(0);
+  const [lockImages, setLockImages] = useState([]);
+
 
 
   useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const loadedImages = await loadAllImages(spriteUrls);
-        setImages(loadedImages);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+    // Load wizard images
+    Promise.all(assetUrls.wizardImages.map(url => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = url;
+      });
+    })).then(setWizardImages);
 
-    const fetchBanners = async () => {
-      try {
-        const loadedBanners = await loadAllImages(bannerUrls);
-        setBannerImages(loadedBanners);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchImages();
-    fetchBanners();
+    // Load banner images
+    Promise.all(assetUrls.premiumBannerImages.map(url => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = url;
+      });
+    })).then(setBannerImages);
   }, []);
 
   useEffect(() => {
@@ -129,24 +131,18 @@ const LockComponent = () => {
 
   const handleMouseEnter = (num) => {
     if (!isTouch) {
-      setLockNumber(num);
       setHoveredButton(num);
     }
   };
 
   const handleMouseLeave = () => {
     if (!isTouch) {
-      setLockNumber(0);
+      setHoveredButton(0);
     }
   };
 
   const handleMouseClick = (num) => {
     if (!isTouch) {
-      setLockNumber(0);
-      setTimeout(() => {
-        setLockNumber(hoveredButton);
-      }, 100);
-
       if (concatenatedString !== ":(" && concatenatedString !== ":)") {
         setConcatenatedString(concatenatedString + (num - 1).toString());
       }
@@ -225,24 +221,39 @@ const LockComponent = () => {
     }
   };
 
-  const lockImageSources = [
-    assetUrls.lockImage,
-    assetUrls.lockImage0,
-    assetUrls.lockImage1,
-    assetUrls.lockImage2,
-    assetUrls.lockImage3
-  ];
+  useEffect(() => {
+    // Preload lock images
+    const lockImageSources = [
+      assetUrls.lockImage,
+      assetUrls.lockImage0,
+      assetUrls.lockImage1,
+      assetUrls.lockImage2,
+      assetUrls.lockImage3
+    ];
+
+    Promise.all(lockImageSources.map(src => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = src;
+      });
+    })).then(setLockImages);
+  }, []);
 
   return (
     <>
       {showLock && (
         <>
           <div className="lock-component">
-            <img
-              src={lockImageSources[lockNumber]}
-              alt="Lock"
-              className="lock-image"
-            />
+            {lockImages.map((img, index) => (
+              <img
+                key={index}
+                src={img.src}
+                alt={`Lock ${index}`}
+                className={`lock-image ${hoveredButton === index ? 'visible' : 'hidden'}`}
+              />
+            ))}
           </div>
           <div className="invisible-button-container">
             {[1, 2, 3, 4].map((num) => (
@@ -266,7 +277,7 @@ const LockComponent = () => {
           <div
             className="wizard-sprite"
             style={{
-              backgroundImage: `url(${images[currentFrame]?.src})`,
+              backgroundImage: `url(${wizardImages[currentFrame]?.src})`,
             }}
           />
         </div>
