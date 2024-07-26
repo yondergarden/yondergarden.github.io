@@ -208,7 +208,7 @@ const EpisodesPage = () => {
   return (
     <div>
       {isLoading && <PreLoader1 />}
-      {!isLoading && <DisplayEpisode />}
+      {!isLoading && (isPremium ? <><LockComponent /><DisplayEpisode /></> : <DisplayEpisode />)}
       <Routes>
         {episodesData.map(episode => (
           <Route
@@ -218,7 +218,6 @@ const EpisodesPage = () => {
           />
         ))}
       </Routes>
-      {isPremium && !isLoading && <LockComponent />}
       {isPremium && <Computer />}
       <EpisodeNavOverlay />
     </div>
