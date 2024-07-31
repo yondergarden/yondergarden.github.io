@@ -31,7 +31,17 @@ const loadAllImages = async (urls) => {
   return images;
 };
 
-const LockComponent = () => {
+const LockComponent = ({ onReady }) => {
+
+  useEffect(() => {
+    // Call onReady after a short delay to ensure the component is fully rendered
+    const timer = setTimeout(() => {
+      onReady();
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [onReady]);
+
   useEffect(() => {
     const setVhProperty = () => {
       const vh = window.innerHeight * 0.01;
