@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 import LockComponent from '../components/Lock';
@@ -12,7 +12,7 @@ const EpisodesPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isTouchDevice, setIsTouchDevice] = useState(false);
-
+  const [lockReady, setLockReady] = useState(false);
 
   useEffect(() => {
     const hasTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
@@ -183,7 +183,12 @@ const EpisodesPage = () => {
     );
   };
 
+  const onLockReady = useCallback(() => {
+    setLockReady(true);
+  }, []);
+
   const isPremium = currentEpisode ? currentEpisode.premium : false;
+
 
   const DisplayEpisode = () => {
     return (
@@ -208,7 +213,14 @@ const EpisodesPage = () => {
   return (
     <div>
       {isLoading && <PreLoader1 />}
-      {!isLoading && (isPremium ? <><LockComponent /><DisplayEpisode /></> : <DisplayEpisode />)}
+      {!isLoading && (
+        <>
+          {isPremium && (
+            <LockComponent onReady={onLockReady} />
+          )}
+          {(!isPremium || lockReady) && <DisplayEpisode />}
+        </>
+      )}
       <Routes>
         {episodesData.map(episode => (
           <Route
