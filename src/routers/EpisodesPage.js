@@ -215,10 +215,14 @@ const EpisodesPage = () => {
       {isLoading && <PreLoader1 />}
       {!isLoading && (
         <>
-          {isPremium && (
-            <LockComponent onReady={onLockReady} />
+          {isPremium ? (
+            <>
+              <LockComponent onReady={onLockReady} />
+              {lockReady && <DisplayEpisode />}
+            </>
+          ) : (
+            <DisplayEpisode />
           )}
-          {(isPremium && lockReady) && <DisplayEpisode />}
         </>
       )}
       <Routes>
