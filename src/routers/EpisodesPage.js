@@ -218,7 +218,7 @@ const EpisodesPage = () => {
           {isPremium && (
             <LockComponent onReady={onLockReady} />
           )}
-          {(!isPremium || lockReady) && <DisplayEpisode />}
+          {(isPremium && lockReady) && <DisplayEpisode />}
         </>
       )}
       <Routes>
