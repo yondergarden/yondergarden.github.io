@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "Cold Bird",
-    "premium": true,
+    "title": "Tree and Bird",
+    "premium": false,
     "content": "Content for Episode 1",
     "thumbnail": "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/ephemeralia1tree-and-bird/ephemeralia1tree-and-birdThumbnail.mp4",
     "episode_panels": [
@@ -14,15 +14,15 @@
   },
   {
     "id": 2,
-    "title": "The Primordial Will",
+    "title": "Flood 2.0",
     "premium": true,
     "content": "Content for Episode 2",
-    "thumbnail": "https://i.imgur.com/SEHtwdy.mp4",
+    "thumbnail": "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e2flood-two/e2-flood-two-thumbnail.mp4",
     "episode_panels": [
-      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4",
-      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4",
-      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4",
-      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e1BrutalWinter/painTreePanel1.mp4"
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e2flood-two/e2-flood-two-panel1.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e2flood-two/e2-flood-two-panel2.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e2flood-two/e2-flood-two-panel3.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e2flood-two/e2-flood-two-panel4.mp4"
     ]
   },
   {
@@ -30,12 +30,12 @@
     "title": "Hexahedron'd",
     "premium": false,
     "content": "Content for Episode 3",
-    "thumbnail": "https://i.imgur.com/SEHtwdy.mp4",
+    "thumbnail": "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e3urthel-licks-mushroom/e3urthel-licks-mushroomThumbnail.mp4",
     "episode_panels": [
-      "https://i.imgur.com/wgdtjg5.mp4",
-      "https://i.imgur.com/wgdtjg5.mp4",
-      "https://i.imgur.com/wgdtjg5.mp4",
-      "https://i.imgur.com/wgdtjg5.mp4"
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e3urthel-licks-mushroom/e3urthel-licks-mushroomPanel1.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e3urthel-licks-mushroom/e3urthel-licks-mushroomPanel2.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e3urthel-licks-mushroom/e3urthel-licks-mushroomPanel3.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e3urthel-licks-mushroom/e3urthel-licks-mushroomPanel4.mp4"
     ]
   }
 ]
