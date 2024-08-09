@@ -60,9 +60,9 @@ function App() {
   }, []); // Empty dependency array means this effect runs only once, on component mount
 
   return (
-    isLoading ? (
-      <PreLoader1 />
-    ) : (
+    // isLoading ? (
+    //   <PreLoader1 />
+    // ) : (
       <>
         <Background />
         <Routes>
@@ -76,7 +76,7 @@ function App() {
           ))}
         </Routes>
       </>
-    )
+    // )
   );
 }
 
