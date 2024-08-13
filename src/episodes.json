@@ -27,7 +27,7 @@
   },
   {
     "id": 3,
-    "title": "Hexahedron'd",
+    "title": "Urthel Licks Mushroom",
     "premium": false,
     "content": "Content for Episode 3",
     "thumbnail": "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e3urthel-licks-mushroom/e3urthel-licks-mushroomThumbnail.mp4",
@@ -36,6 +36,19 @@
       "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e3urthel-licks-mushroom/e3urthel-licks-mushroomPanel2.mp4",
       "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e3urthel-licks-mushroom/e3urthel-licks-mushroomPanel3.mp4",
       "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e3urthel-licks-mushroom/e3urthel-licks-mushroomPanel4.mp4"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Freak Show",
+    "premium": true,
+    "content": "Content for Episode 3",
+    "thumbnail": "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e4freak-show/e4freak-show-thumbnail.mp4",
+    "episode_panels": [
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e4freak-show/e4freak-show-panel1.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e4freak-show/e4freak-show-panel2.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e4freak-show/e4freak-show-panel3.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e4freak-show/e4freak-show-panel4.mp4"
     ]
   }
 ]
