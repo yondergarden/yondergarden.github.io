@@ -9,6 +9,27 @@ import PreLoader1 from "./components/PreLoader1";
 import assetUrls from './config/assetUrls';
 import { preloadImages, preloadVideos } from './utils/preloadAssets';
 
+function usePreventScroll() {
+  useEffect(() => {
+    // Detect if the user is on an iOS device
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+    // if (!isIOS) {
+    //   return;
+    // }
+
+    const handleTouchMove = (event) => {
+      event.preventDefault();
+    };
+
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    return () => {
+      document.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, []);
+}
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -59,10 +80,12 @@ function App() {
     };
   }, []); // Empty dependency array means this effect runs only once, on component mount
 
+  usePreventScroll();
+
   return (
-    // isLoading ? (
-    //   <PreLoader1 />
-    // ) : (
+    isLoading ? (
+      <PreLoader1 />
+    ) : (
       <>
         <Background />
         <Routes>
@@ -76,7 +99,7 @@ function App() {
           ))}
         </Routes>
       </>
-    // )
+    )
   );
 }
 
