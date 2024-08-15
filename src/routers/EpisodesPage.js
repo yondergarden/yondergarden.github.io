@@ -58,20 +58,33 @@ const EpisodesPage = () => {
   }, [location]);
 
   useEffect(() => {
-    const preloadPanelVideos = () => {
-      const videoElements = currentEpisode.episode_panels.map((src) => {
-        return new Promise((resolve) => {
-          const video = document.createElement('video');
-          video.src = src;
-          video.onloadeddata = () => resolve();
+    // Detect if the user is on an iPhone
+    const isIPhone = /iPhone/.test(navigator.userAgent) && !window.MSStream;
+
+    if (isIPhone) {
+      // For iPhone, set a 5-second timeout
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 5000);
+
+      // Clean up the timer if the component unmounts
+      return () => clearTimeout(timer);
+    } else {
+      // For all other devices, use the existing logic
+      const preloadPanelVideos = () => {
+        const videoElements = currentEpisode.episode_panels.map((src) => {
+          return new Promise((resolve) => {
+            const video = document.createElement('video');
+            video.src = src;
+            video.onloadeddata = () => resolve();
+          });
         });
-      });
+        Promise.all(videoElements).then(() => setIsLoading(false));
+      };
 
-      Promise.all(videoElements).then(() => setIsLoading(false));
-    };
-
-    if (currentEpisode) {
-      preloadPanelVideos();
+      if (currentEpisode) {
+        preloadPanelVideos();
+      }
     }
   }, [currentEpisode]);
 

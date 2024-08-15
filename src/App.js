@@ -34,35 +34,48 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const imageUrls = [
-      assetUrls.frameImage,
-      assetUrls.titleImage,
-      assetUrls.yonderGrassImage,
-      assetUrls.episodesMenuImage,
-      assetUrls.subscribeMenuImage,
-      assetUrls.aboutMenuImage,
-      assetUrls.premiumMenuImage,
-      assetUrls.keyComputerImage,
-      assetUrls.lockImage,
-      assetUrls.lockImage0,
-      assetUrls.lockImage1,
-      assetUrls.lockImage2,
-      assetUrls.lockImage3,
-      ...assetUrls.wizardImages,
-      ...assetUrls.premiumBannerImages
-    ];
+    // Detect if the user is on an iPhone
+    const isIPhone = /iPhone/.test(navigator.userAgent) && !window.MSStream;
 
-    const episodeThumbnails = episodesData.map(episode => episode.thumbnail);
-
-    const videoUrls = [
-      assetUrls.backgroundVideo,
-      ...episodeThumbnails
-    ];
-
-    Promise.all([preloadImages(imageUrls), preloadVideos(videoUrls)])
-      .then(() => {
+    if (isIPhone) {
+      // For iPhone, set a 5-second timeout
+      const timer = setTimeout(() => {
         setIsLoading(false);
-      });
+      }, 5000);
+
+      // Clean up the timer if the component unmounts
+      return () => clearTimeout(timer);
+    } else {
+      // For all other devices, use the existing logic
+      const imageUrls = [
+        assetUrls.frameImage,
+        assetUrls.titleImage,
+        assetUrls.yonderGrassImage,
+        assetUrls.episodesMenuImage,
+        assetUrls.subscribeMenuImage,
+        assetUrls.aboutMenuImage,
+        assetUrls.premiumMenuImage,
+        assetUrls.keyComputerImage,
+        assetUrls.lockImage,
+        assetUrls.lockImage0,
+        assetUrls.lockImage1,
+        assetUrls.lockImage2,
+        assetUrls.lockImage3,
+        ...assetUrls.wizardImages,
+        ...assetUrls.premiumBannerImages
+      ];
+
+      const episodeThumbnails = episodesData.map(episode => episode.thumbnail);
+      const videoUrls = [
+        assetUrls.backgroundVideo,
+        ...episodeThumbnails
+      ];
+
+      Promise.all([preloadImages(imageUrls), preloadVideos(videoUrls)])
+        .then(() => {
+          setIsLoading(false);
+        });
+    }
   }, []);
 
   useEffect(() => {
