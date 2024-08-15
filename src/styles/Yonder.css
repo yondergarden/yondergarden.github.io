@@ -1,3 +1,10 @@
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 @font-face {
   font-family: 'Unifraktur';
   src: url('../fonts/UnifrakturCook-Bold.ttf') format('truetype');
