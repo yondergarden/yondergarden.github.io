@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Lock.css';
 import assetUrls from '../config/assetUrls';
+import { useLock } from '../context/LockContext'; // Import the useLock hook
 
 
 const baseUrl = 'https://yondergarden.s3.us-east-2.amazonaws.com/wizardframes/';
@@ -56,7 +57,7 @@ const LockComponent = ({ onReady }) => {
     };
   }, []);
 
-  const [showLock, setShowLock] = useState(true);
+  const { showLock, setShowLock } = useLock(); // Use the useLock hook
   const [lockNumber, setLockNumber] = useState(0);
   const [hoveredButton, setHoveredButton] = useState(0);
   const [concatenatedString, setConcatenatedString] = useState("");
@@ -168,7 +169,9 @@ const LockComponent = ({ onReady }) => {
           }, 2000);
           setShowWizard(true);
           setConcatenatedString(":)");
-          setTimeout(() => setShowLock(false), 4000);
+          setTimeout(() => {
+            setShowLock(false); // Update the shared showLock state
+          }, 4000);
         } else {
           setConcatenatedString(":(");
         }
@@ -211,7 +214,9 @@ const LockComponent = ({ onReady }) => {
         }, 2000);
         setShowWizard(true);
         setConcatenatedString(":)");
-        setTimeout(() => setShowLock(false), 4000);
+        setTimeout(() => {
+          setShowLock(false); // Update the shared showLock state
+        }, 4000);
       } else {
         setConcatenatedString(":(");
       }

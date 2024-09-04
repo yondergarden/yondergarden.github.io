@@ -6,6 +6,7 @@ import Computer from '../components/Computer';
 import episodesData from '../episodes.json'; // Assuming episodes.json exports an array of episodes
 import Background from "../components/Background/Background";
 import PreLoader1 from "../components/PreLoader1"; // Import the loading animation component
+import { useLock } from '../context/LockContext'; // Import the useLock hook
 import "./EpisodesPage.css";
 
 const EpisodesPage = () => {
@@ -13,6 +14,8 @@ const EpisodesPage = () => {
   const location = useLocation();
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [lockReady, setLockReady] = useState(false);
+  const { showLock } = useLock(); // Use the useLock hook to access showLock state
+
 
   useEffect(() => {
     const hasTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
@@ -204,21 +207,32 @@ const EpisodesPage = () => {
 
 
   const DisplayEpisode = () => {
+    const lockedVideos = [
+      'https://yondergarden.s3.us-east-2.amazonaws.com/pleaseStandBy.mp4',
+      'https://yondergarden.s3.us-east-2.amazonaws.com/pleaseStandBy.mp4'
+    ];
+
     return (
       <div className="episode-container center-home">
-        {currentEpisode.episode_panels.map((src, index) => (
-          <video
-            key={`${currentEpisode.id}-${index}`}
-            className="episodeVideo"
-            autoPlay
-            muted
-            loop
-            playsInline
-          >
-            <source src={src} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        ))}
+        {currentEpisode.episode_panels.map((src, index) => {
+          const videoSrc = showLock && index >= currentEpisode.episode_panels.length - 2
+            ? lockedVideos[index - (currentEpisode.episode_panels.length - 2)]
+            : src;
+
+          return (
+            <video
+              key={`${currentEpisode.id}-${index}`}
+              className="episodeVideo"
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              <source src={videoSrc} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          );
+        })}
       </div>
     );
   };
