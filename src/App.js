@@ -8,6 +8,8 @@ import Background from "./components/Background/Background"
 import PreLoader1 from "./components/PreLoader1";
 import assetUrls from './config/assetUrls';
 import { preloadImages, preloadVideos } from './utils/preloadAssets';
+import { LockProvider } from './context/LockContext';
+
 
 function usePreventScroll() {
   useEffect(() => {
@@ -96,23 +98,25 @@ function App() {
   usePreventScroll();
 
   return (
-    isLoading ? (
-      <PreLoader1 />
-    ) : (
-      <>
-        <Background />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {episodesData.map(episode => (
-            <Route
-              key={episode.id}
-              path={`/episodes/${episode.id}/*`}
-              element={<EpisodesPage episode={episode} />}
-            />
-          ))}
-        </Routes>
-      </>
-    )
+    <LockProvider>
+      {isLoading ? (
+        <PreLoader1 />
+      ) : (
+        <>
+          <Background />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            {episodesData.map(episode => (
+              <Route
+                key={episode.id}
+                path={`/episodes/${episode.id}/*`}
+                element={<EpisodesPage episode={episode} />}
+              />
+            ))}
+          </Routes>
+        </>
+      )}
+    </LockProvider>
   );
 }
 
