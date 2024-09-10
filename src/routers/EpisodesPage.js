@@ -215,7 +215,7 @@ const EpisodesPage = () => {
     return (
       <div className="episode-container center-home">
         {currentEpisode.episode_panels.map((src, index) => {
-          const videoSrc = showLock && index >= currentEpisode.episode_panels.length - 2
+          const videoSrc = isPremium && showLock && index >= currentEpisode.episode_panels.length - 2
             ? lockedVideos[index - (currentEpisode.episode_panels.length - 2)]
             : src;
 
