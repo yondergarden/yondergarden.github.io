@@ -42,13 +42,26 @@
     "id": 4,
     "title": "Freak Show",
     "premium": true,
-    "content": "Content for Episode 3",
+    "content": "Content for Episode 4",
     "thumbnail": "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e4freak-show/e4freak-show-thumbnail.mp4",
     "episode_panels": [
       "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e4freak-show/e4freak-show-panel1.mp4",
       "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e4freak-show/e4freak-show-panel2.mp4",
       "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e4freak-show/e4freak-show-panel3.mp4",
       "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e4freak-show/e4freak-show-panel4.mp4"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Toilet King",
+    "premium": false,
+    "content": "Content for Episode 5",
+    "thumbnail": "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e5toilet-king/e5toilet-king-thumbnail.mp4",
+    "episode_panels": [
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e5toilet-king/e5toilet-king-panel1.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e5toilet-king/e5toilet-king-panel2.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e5toilet-king/e5toilet-king-panel3.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e5toilet-king/e5toilet-king-panel4.mp4"
     ]
   }
 ]
