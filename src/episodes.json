@@ -63,5 +63,18 @@
       "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e5toilet-king/e5toilet-king-panel3.mp4",
       "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e5toilet-king/e5toilet-king-panel4.mp4"
     ]
+  },
+  {
+    "id": 6,
+    "title": "Be Careful Out There",
+    "premium": true,
+    "content": "Content for Episode 6",
+    "thumbnail": "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e6be-careful-out-there/e6be-careful-out-there-thumbnail.mp4",
+    "episode_panels": [
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e6be-careful-out-there/e6be-careful-out-there-panel1.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e6be-careful-out-there/e6be-careful-out-there-panel2.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e6be-careful-out-there/e6be-careful-out-there-panel3.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e6be-careful-out-there/e6be-careful-out-there-panel4.mp4"
+    ]
   }
 ]
