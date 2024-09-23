@@ -68,7 +68,7 @@ const EpisodesPage = () => {
       // For iPhone, set a 5-second timeout
       const timer = setTimeout(() => {
         setIsLoading(false);
-      }, 5000);
+      }, 1000);
 
       // Clean up the timer if the component unmounts
       return () => clearTimeout(timer);
