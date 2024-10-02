@@ -196,8 +196,10 @@ const LockComponent = ({ onReady }) => {
   const handleTouchStart = (num) => {
     setIsTouch(true);
     setLockNumber(num);
+    setHoveredButton(num)
     setTimeout(() => {
       setLockNumber(0);
+      setHoveredButton(0)
     }, 150);
 
     if (concatenatedString !== ":(" && concatenatedString !== ":)") {
