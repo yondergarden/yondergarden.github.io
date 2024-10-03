@@ -213,6 +213,20 @@ h2 {
   transform: translate(-19%, 0);
 }
 
+.sort-toggle {
+  font-size: calc(var(--vh, 1vh) * 2);
+  color: red;
+  cursor: pointer;
+  text-decoration: underline;
+  position: absolute;
+  right: calc(var(--vh, 1vh) * 8.5);
+  top: calc(var(--vh, 1vh) * 12.5);
+}
+
+.sort-toggle:hover {
+  color: yellow;
+}
+
 .episodes-icon-container {
   display: flex;
   flex-flow: row wrap;
@@ -388,6 +402,20 @@ h2 {
     position: relative;
     left: 50%;
     transform: translate(-19%, -25%);
+  }
+
+  .sort-toggle {
+    font-size: calc(var(--vh, 1vh) * 3);
+    right: calc(var(--vh, 1vh) * 3.5);
+    top: calc(var(--vh, 1vh) * 10.5);
+  }
+
+  .sort-toggle:active {
+    -webkit-tap-highlight-color: yellow;
+  }
+
+  .sort-toggle:hover {
+    color: red;
   }
 
   .episodes-icon-container {

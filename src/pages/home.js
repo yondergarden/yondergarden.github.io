@@ -13,6 +13,7 @@ const Home = () => {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const episodesData = require('../episodes.json');
 
+
   const EpisodeSelect = (episodeNumber) => {
     const episodesUrl = `#/episodes/${episodeNumber}`;
     if (isTouchDevice) {
@@ -65,11 +66,16 @@ const Home = () => {
   };
 
   const DisplayEpisodes = () => {
-    const thumbnailList = episodesData.map((episode) => ({
-      id: episode.id,
-      title: episode.title,
-      thumbnail: episode.thumbnail
-    }));
+    const [sortOldestFirst, setSortOldestFirst] = useState(true);
+    const episodesData = require('../episodes.json');
+
+    const sortedEpisodes = [...episodesData].sort((a, b) => {
+      return sortOldestFirst ? a.id - b.id : b.id - a.id;
+    });
+
+    const handleSortToggle = () => {
+      setSortOldestFirst(!sortOldestFirst);
+    };
 
     return (
       <div>
@@ -91,8 +97,16 @@ const Home = () => {
               x
             </button>
             <h1 className="unifrakturFont menuBoxTitle">episodes</h1>
+            <div className="sort-toggle-container">
+              <div
+                className="sort-toggle"
+                onClick={handleSortToggle}
+              >
+                {sortOldestFirst ? "oldest first" : "newest first"}
+              </div>
+            </div>
             <div className="episodes-icon-container">
-              {thumbnailList.map(({ id, title, thumbnail }) => (
+              {sortedEpisodes.map(({ id, title, thumbnail }) => (
                 <div className="episodes-icon-wrapper" key={id}>
                   <video className="episodes-icon" id={id} autoPlay muted loop playsInline onClick={() => { EpisodeSelect(id) }}>
                     <source src={thumbnail} type="video/mp4" />
