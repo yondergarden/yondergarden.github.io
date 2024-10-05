@@ -25,46 +25,6 @@ const Home = () => {
     }
   };
 
-  const EmailForm = () => {
-    const [emailText, setEmailText] = useState('');
-
-    const handleEmailSend = () => {
-      fetch("https://wakeful-intriguing-channel.glitch.me/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ text: emailText }), // Use the key "text"
-      });
-
-      // Clear the input field after sending the email
-      setEmailText('');
-    };
-
-    const handleKeyPress = (e) => {
-      // Check if the Enter key is pressed
-      if (e.key === 'Enter') {
-        handleEmailSend();
-      }
-    };
-
-    return (
-      <div style={{ textAlign: 'center', marginTop: '50px' }}>
-        <input
-          type="text"
-          placeholder="Enter email address"
-          value={emailText}
-          onChange={(e) => setEmailText(e.target.value)}
-          onKeyPress={handleKeyPress}
-          style={{ padding: '8px', marginRight: '8px' }}
-        />
-        <button onClick={handleEmailSend} style={{ padding: '8px' }}>
-          submit
-        </button>
-      </div>
-    );
-  };
-
   const DisplayEpisodes = () => {
     const [sortOldestFirst, setSortOldestFirst] = useState(true);
     const episodesData = require('../episodes.json');

@@ -44,6 +44,7 @@ body {
 }
 
 .episode-container {
+  position: absolute;
   border: none;
   top: calc(var(--vh, 1vh) * 20);
   align-items: center;
@@ -56,7 +57,24 @@ body {
   max-width: calc(var(--vh, 1vh) * 62);
   min-height: calc(var(--vh, 1vh) * 62);
   max-height: calc(var(--vh, 1vh) * 62);
-  z-index: 0;
+  z-index: 1;
+}
+
+.locked-episode-container {
+  position: absolute;
+  border: none;
+  top: calc(var(--vh, 1vh) * 20);
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+  min-width: calc(var(--vh, 1vh) * 62);
+  max-width: calc(var(--vh, 1vh) * 62);
+  min-height: calc(var(--vh, 1vh) * 62);
+  max-height: calc(var(--vh, 1vh) * 62);
+  z-index: 0; /* Lower z-index to appear behind the episode-container */
 }
 
 
@@ -105,6 +123,16 @@ body {
     min-height: 61.5vw;
     max-height: 61.5vw;
     z-index: 1;
+  }
+
+  .locked-episode-container {
+    top: 50%;
+    transform: translate(-50%, -48.5%);
+    min-width: 61.5vw;
+    max-width: 61.5vw;
+    min-height: 61.5vw;
+    max-height: 61.5vw;
+    z-index: 0;
   }
 
 }

@@ -9,6 +9,33 @@ import PreLoader1 from "../components/PreLoader1"; // Import the loading animati
 import { useLock } from '../context/LockContext'; // Import the useLock hook
 import "./EpisodesPage.css";
 
+const LockedVideos = () => {
+  const lockedVideos = [
+    'https://yondergarden.s3.us-east-2.amazonaws.com/pleaseStandBy.mp4',
+    'https://yondergarden.s3.us-east-2.amazonaws.com/pleaseStandBy.mp4',
+    'https://yondergarden.s3.us-east-2.amazonaws.com/pleaseStandBy.mp4',
+    'https://yondergarden.s3.us-east-2.amazonaws.com/pleaseStandBy.mp4'
+  ];
+
+  return (
+    <div className="locked-episode-container center-home">
+      {lockedVideos.map((src, index) => (
+        <video
+          key={`locked-${index}`}
+          className="episodeVideo"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src={src} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      ))}
+    </div>
+  );
+};
+
 const EpisodesPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -205,21 +232,32 @@ const EpisodesPage = () => {
 
   const isPremium = currentEpisode ? currentEpisode.premium : false;
 
-
-  const DisplayEpisode = () => {
-    const lockedVideos = [
-      'https://yondergarden.s3.us-east-2.amazonaws.com/pleaseStandBy.mp4',
-      'https://yondergarden.s3.us-east-2.amazonaws.com/pleaseStandBy.mp4'
-    ];
-
+  const EpisodeContent = ({ episode }) => {
     return (
       <div className="episode-container center-home">
-        {currentEpisode.episode_panels.map((src, index) => {
-          const videoSrc = isPremium && showLock && index >= currentEpisode.episode_panels.length - 2
-            ? lockedVideos[index - (currentEpisode.episode_panels.length - 2)]
-            : src;
+        {episode.episode_panels.map((src, index) => (
+          <video
+            key={`${episode.id}-${index}`}
+            className="episodeVideo"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src={src} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        ))}
+      </div>
+    );
+  };
 
-          return (
+
+  const DisplayEpisode = () => {
+    return (
+      <>
+        <div className="episode-container center-home">
+          {currentEpisode.episode_panels.map((src, index) => (
             <video
               key={`${currentEpisode.id}-${index}`}
               className="episodeVideo"
@@ -228,27 +266,29 @@ const EpisodesPage = () => {
               loop
               playsInline
             >
-              <source src={videoSrc} type="video/mp4" />
+              <source src={src} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-          );
-        })}
-      </div>
+          ))}
+        </div>
+      </>
     );
   };
+
 
   return (
     <div>
       {isLoading && <PreLoader1 />}
       {!isLoading && (
         <>
+          <LockedVideos />
           {isPremium ? (
             <>
               <LockComponent onReady={onLockReady} />
-              {lockReady && <DisplayEpisode />}
+              {lockReady && <EpisodeContent episode={currentEpisode} />}
             </>
           ) : (
-            <DisplayEpisode />
+            <EpisodeContent episode={currentEpisode} />
           )}
         </>
       )}
