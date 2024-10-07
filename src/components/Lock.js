@@ -18,20 +18,6 @@ const bannerUrls = Array.from({ length: bannerCount }, (_, index) => {
   return `${bannerBaseUrl}premiumBanner.0.${index + 1}${versionSuffix}`;
 });
 
-const loadImage = (url) => {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    img.onload = () => resolve(img);
-    img.onerror = () => reject(new Error(`Failed to load image: ${url}`));
-    img.src = url;
-  });
-};
-
-const loadAllImages = async (urls) => {
-  const images = await Promise.all(urls.map(url => loadImage(url)));
-  return images;
-};
-
 const LockComponent = ({ onReady }) => {
 
   useEffect(() => {
@@ -129,15 +115,6 @@ const LockComponent = ({ onReady }) => {
     if (lockImage) {
       lockImage.classList.add('brighten-lock');
     }
-  };
-
-
-
-  const resetLockNumber = () => {
-    setLockNumber(0);
-    setTimeout(() => {
-      setLockNumber(hoveredButton);
-    }, 100);
   };
 
   const handleMouseEnter = (num) => {
