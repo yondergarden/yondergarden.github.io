@@ -76,5 +76,18 @@
       "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e6be-careful-out-there/e6be-careful-out-there-panel3.mp4",
       "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e6be-careful-out-there/e6be-careful-out-there-panel4.mp4"
     ]
+  },
+  {
+    "id": 7,
+    "title": "Hotdog Kick",
+    "premium": false,
+    "content": "Content for Episode 7",
+    "thumbnail": "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e7hotdog-kick/e7hotdog-kick-thumbnail.mp4",
+    "episode_panels": [
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e7hotdog-kick/e7hotdog-kick-panel1.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e7hotdog-kick/e7hotdog-kick-panel2.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e7hotdog-kick/e7hotdog-kick-panel3.mp4",
+      "https://yondergarden.s3.us-east-2.amazonaws.com/episodeassets/e7hotdog-kick/e7hotdog-kick-panel4.mp4"
+    ]
   }
 ]
