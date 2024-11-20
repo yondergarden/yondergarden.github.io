@@ -26,12 +26,14 @@ const Home = () => {
   };
 
   const DisplayEpisodes = () => {
-    const [sortOldestFirst, setSortOldestFirst] = useState(true);
+    const [sortOldestFirst, setSortOldestFirst] = useState(false);
     const episodesData = require('../episodes.json');
-
     const sortedEpisodes = [...episodesData].sort((a, b) => {
       return sortOldestFirst ? a.id - b.id : b.id - a.id;
     });
+
+    // Find the newest episode (last in the sorted array when sorted newest first)
+    const newestEpisodeId = !sortOldestFirst ? sortedEpisodes[0].id : sortedEpisodes[sortedEpisodes.length - 1].id;
 
     const handleSortToggle = () => {
       setSortOldestFirst(!sortOldestFirst);
@@ -67,11 +69,39 @@ const Home = () => {
             </div>
             <div className="episodes-icon-container">
               {sortedEpisodes.map(({ id, title, thumbnail }) => (
-                <div className="episodes-icon-wrapper" key={id}>
-                  <video className="episodes-icon" id={id} autoPlay muted loop playsInline onClick={() => { EpisodeSelect(id) }}>
+                <div
+                  className="episodes-icon-wrapper"
+                  key={id}
+                  style={{ position: 'relative' }}
+                >
+                  <video
+                    className="episodes-icon"
+                    id={id}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    onClick={() => { EpisodeSelect(id) }}
+                  >
                     <source src={thumbnail} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
+                  {id === newestEpisodeId && (
+                    <div
+                      style={{
+                        position: 'absolute',
+                        right: 'calc(var(--vh, 1vh) * 0.5)',
+                        bottom: 'calc(var(--vh, 1vh) * 1)',
+                        color: 'yellow',
+                        fontWeight: 'bold',
+                        backgroundColor: 'rgba(255,0,0,0.75)',
+                        padding: 'calc(var(--vh, 1vh) * 0.25)',
+                        borderRadius: 'calc(var(--vh, 1vh) * 0.25)'
+                      }}
+                    >
+                      NEW!
+                    </div>
+                  )}
                   <div className="episode-tooltip">{title}</div>
                 </div>
               ))}
